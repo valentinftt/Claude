@@ -34,3 +34,10 @@ node render.mjs && bash finish.sh
 
 - `template4.html` + `anim4.js` – Handyfoto → Profi-Reel (Drop) → Fakt (85 %, Wyzowl 2025) → Branchen-Montage → 3 Schritte (Material, 3D-Produktion, Wachstum) → Inklusive → Vergleich + Abo ab 99 € → CTA
 - `music4.py` – selbst komponierter Tech-House-Track (126 BPM), alle Schnitte auf dem Beat; schreibt `music4.wav` (Song + Effekte) und `sfx4.wav` (nur Effekte)
+
+## Video 5 „Fertige Reels“ (14,8 s, Tech-House-Song + Soundeffekte)
+
+- `reels.py` – schneidet aus echten Produkt-Clips (Mixkit) drei 9:16-Reels (Schmuck, Mode, Beauty) auf den Beat, mit Color-Grading, Zoom-Fahrten und Zeitlupe; die Frames landen in `reels/<name>_f/`
+- `template5.html` + `anim5.js` – Hook „Deine Produkte als fertiges Reel.“ → Drop: Reels laufen im Instagram-UI auf dem Handy (Schmuck → Mode → Beauty, mit Likes, Untertiteln und Benachrichtigungen) → „Jede Branche.“ mit drei Handys → CTA mit Reel-Abo ab 99 €/Monat
+- `build5.py` setzt alles zu `index5.html` zusammen (Beispiel-Marken: @lumiere.jewelry, @north.wear, @nova.skincare)
+- `music5.py` – Tech-House-Track (126 BPM), schreibt `music5.wav` (Song + Effekte) und `sfx5.wav` (nur Effekte); `render5.mjs` rendert die Frames
