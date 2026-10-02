@@ -22,3 +22,10 @@ node render.mjs && bash finish.sh
 - `template2.html` + `anim2.js` – Szenen und Timeline (Hook → Websites → Reels → Effekt → Preis → CTA)
 - `sfx2.py` – nur Soundeffekte (keine Musik), damit ein Trend-Sound darübergelegt werden kann
 - `build2.py` erzeugt `index2.html`, `render2.mjs` rendert die Frames (gleicher Ablauf wie oben)
+
+## Video 3 „Website-Renovierung“ (25 s, nur Soundeffekte)
+
+- `template3.html` + `anim3.js` – alte Website → Handy → Studien-Fakten → Chat junger Kunden → Renovierung (Vorher/Nachher) → Reels → Angebot (299 €, max. 7 Tage) → CTA
+- `base.css` / `reel.css` – gemeinsame Styles aus Video 2, `build3.py` setzt alles zu `index3.html` zusammen
+- `sfxlib.py` – gemeinsame Sound-Bausteine, `sfx3.py` – Effekte für Video 3
+- Fakten: Lindgaard et al., Carleton University (2006) – 50 ms Ersteindruck; Stanford Web Credibility Research – 75 % beurteilen Glaubwürdigkeit am Website-Design

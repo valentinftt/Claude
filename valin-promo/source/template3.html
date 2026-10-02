@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>VALÍN Studio Promo 3</title>
+<style>
+{{BASE_CSS}}
+{{REEL_CSS}}
+.emo{font-family:'Noto Color Emoji';line-height:1;}
+#hazard{position:absolute;left:0;top:-140px;width:3200px;height:2200px;z-index:50;background:repeating-linear-gradient(90deg,#c7f431 0 90px,#0b0b0b 90px 180px);}
+
+/* ---------- retro browser ---------- */
+.win{position:absolute;background:#d4d0c8;border:3px solid;border-color:#fff #404040 #404040 #fff;font-family:'Liberation Sans',sans-serif;color:#000;overflow:hidden;}
+.win .tb{height:40px;background:linear-gradient(90deg,#0a246a,#3a6ea5 60%,#a6caf0);color:#fff;font-weight:700;font-size:18px;display:flex;align-items:center;padding:0 6px 0 12px;gap:8px;}
+.win .tb span{margin-right:auto;white-space:nowrap;overflow:hidden;}
+.win .tb i{width:30px;height:26px;background:#d4d0c8;border:2px solid;border-color:#fff #404040 #404040 #fff;color:#000;font-style:normal;font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.win .mnu{height:30px;display:flex;gap:22px;align-items:center;padding:0 12px;font-size:16px;}
+.win .adr{height:38px;display:flex;align-items:center;gap:8px;padding:0 8px;font-size:16px;}
+.win .adr div{flex:1;height:28px;background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080;display:flex;align-items:center;padding:0 8px;font-size:16px;}
+.win .adr b{height:28px;padding:0 10px;border:2px solid;border-color:#fff #404040 #404040 #fff;font-weight:400;display:flex;align-items:center;}
+.win .st{position:absolute;left:0;right:0;bottom:0;height:32px;display:flex;align-items:center;gap:10px;padding:0 10px;font-size:15px;border-top:2px solid #fff;}
+.win .st .pb{margin-left:auto;width:220px;height:20px;border:2px solid;border-color:#808080 #fff #fff #808080;padding:2px;display:flex;gap:2px;}
+.win .st .pb i{width:12px;background:#0a246a;display:block;}
+.oldsite{position:absolute;left:3px;right:3px;top:110px;bottom:34px;overflow:hidden;background:#fbf6dc;font-family:'Liberation Serif',serif;}
+.ohead{height:118px;background:linear-gradient(#1e5799,#7db9e8);border-bottom:5px ridge #e6c200;display:flex;flex-direction:column;justify-content:center;padding-left:28px;}
+.ohead b{font-style:italic;font-size:56px;color:#ffde00;text-shadow:3px 3px 0 #c00000,5px 5px 0 #000;}
+.ohead span{font-size:19px;color:#fff;margin-top:4px;}
+.marq{height:32px;background:#ffff00;color:#d00000;font-family:'Liberation Sans';font-weight:700;font-size:17px;white-space:nowrap;overflow:hidden;display:flex;align-items:center;}
+.marq span{display:inline-block;padding-left:20px;}
+.obody{display:flex;height:400px;}
+.onav{width:210px;background:#e8dfb8;border-right:3px dotted #8a7a3a;padding:14px 12px;display:flex;flex-direction:column;gap:12px;font-size:20px;}
+.onav a{color:#0000ee;text-decoration:underline;}
+.onav .nw{color:#fff;background:#e00;font-family:'Liberation Sans';font-weight:700;font-size:14px;padding:2px 6px;align-self:flex-start;transform:rotate(-8deg);}
+.omain{flex:1;padding:16px 22px;}
+.omain h1{font-size:34px;color:#003399;text-decoration:underline;font-weight:700;}
+.omain p{margin-top:10px;font-size:15px;line-height:1.35;color:#333;text-align:justify;}
+.orow{display:flex;gap:16px;margin-top:14px;align-items:flex-start;}
+.obroken{width:190px;height:120px;border:2px inset #999;display:flex;align-items:flex-start;padding:6px;gap:6px;font-size:13px;color:#666;font-family:'Liberation Sans';}
+.obroken i{width:16px;height:16px;border:1px solid #999;position:relative;display:block;flex:none;}
+.obroken i::after{content:'×';position:absolute;left:2px;top:-4px;color:#d00;font-weight:700;font-style:normal;}
+.ouc{flex:1;height:120px;background:repeating-linear-gradient(-45deg,#ffd400 0 22px,#111 22px 44px);display:flex;align-items:center;justify-content:center;}
+.ouc span{background:#ffd400;padding:6px 14px;font-family:'Liberation Sans';font-weight:700;font-size:22px;border:3px solid #111;}
+.ofoot{position:absolute;left:0;right:0;bottom:0;height:86px;background:#e8dfb8;border-top:3px double #8a7a3a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:15px;color:#333;}
+.ocount{display:flex;align-items:center;gap:8px;}
+.ocount i{display:inline-flex;width:22px;height:28px;background:#000;color:#3f3;font-family:'Liberation Mono';font-style:normal;font-size:20px;align-items:center;justify-content:center;}
+#oldwin{left:80px;top:560px;width:920px;height:780px;box-shadow:0 40px 90px rgba(0,0,0,.18);}
+#hg{width:20px;height:24px;}
+#err{left:250px;top:960px;width:580px;height:220px;z-index:6;box-shadow:0 30px 60px rgba(0,0,0,.3);}
+#err .eb{display:flex;gap:18px;align-items:center;padding:26px 26px 0;font-size:22px;}
+#err .eb svg{width:52px;height:52px;flex:none;}
+#err .eok{position:absolute;left:50%;bottom:20px;width:120px;margin-left:-60px;height:40px;border:2px solid;border-color:#fff #404040 #404040 #fff;outline:1px dotted #000;outline-offset:-6px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.fng{position:absolute;width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.2);border:3px solid rgba(255,255,255,.95);box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:5;}
+
+/* S2 old site on phone */
+.phone{position:absolute;border-radius:60px;background:#0b0b0b;padding:11px;box-shadow:0 40px 90px rgba(0,0,0,.25);}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:49px;overflow:hidden;background:#fff;}
+.sbar{height:44px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0;font-weight:700;font-size:17px;}
+#ophone{left:330px;top:560px;width:420px;height:840px;}
+#ocl{position:absolute;left:0;top:44px;width:914px;height:638px;transform-origin:0 0;}
+.xp{position:absolute;height:76px;padding:0 28px 0 12px;border-radius:38px;background:var(--ink);color:#fff;display:flex;align-items:center;gap:14px;font-weight:700;font-size:28px;z-index:5;white-space:nowrap;box-shadow:0 20px 40px rgba(0,0,0,.2);}
+.xp i{width:52px;height:52px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;}
+.xp svg{width:26px;height:26px;}
+
+/* S3 facts */
+#ring{position:absolute;left:240px;top:520px;width:600px;height:600px;}
+.ftop,.fbot,.fnum,.fsrc{position:absolute;left:0;right:0;text-align:center;}
+.ftop{top:420px;font-family:'Unbounded';font-weight:600;font-size:44px;}
+.fnum{top:715px;font-family:'Unbounded';font-weight:900;font-size:112px;letter-spacing:-.03em;line-height:1;}
+.fnum small{font-size:54px;font-weight:800;margin-left:8px;}
+.fbot{top:1160px;font-family:'Unbounded';font-weight:700;font-size:46px;line-height:1.15;}
+.fsrc{top:1375px;font-size:22px;color:var(--mute);}
+#s3 .m{display:block;}
+
+/* S4 chat */
+#cph{left:300px;top:560px;width:480px;height:880px;}
+#cph .scr{background:#f3f3ef;}
+.chd{height:120px;background:#fff;display:flex;align-items:flex-end;gap:16px;padding:0 24px 16px;border-bottom:1.5px solid rgba(0,0,0,.06);}
+.chd .av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#c7f431,#7fd1ff);display:flex;align-items:center;justify-content:center;font-family:'Unbounded';font-weight:800;font-size:22px;}
+.chd b{display:block;font-size:24px;}
+.chd span{display:block;font-size:17px;color:#43a047;}
+.msgs{position:absolute;left:18px;right:18px;top:150px;display:flex;flex-direction:column;gap:16px;}
+.bb{max-width:340px;padding:16px 22px;border-radius:28px;font-size:25px;line-height:1.3;font-weight:500;}
+.bb.l{align-self:flex-start;background:#fff;border-bottom-left-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);}
+.bb.r{align-self:flex-end;background:var(--lime);border-bottom-right-radius:8px;}
+.dd{display:flex;gap:8px;padding:8px 2px;}
+.dd i{width:12px;height:12px;border-radius:50%;background:#9d9d98;display:block;}
+.cin{position:absolute;left:18px;right:18px;bottom:22px;height:66px;border-radius:33px;background:#fff;display:flex;align-items:center;padding:0 24px;color:#a3a39e;font-size:22px;}
+#lost{left:80px;top:1300px;width:540px;}
+#lost .ic{background:var(--ink);}
+
+/* S5 renovation */
+#nb{position:absolute;left:80px;top:560px;width:920px;height:760px;border-radius:26px;background:#fff;box-shadow:0 40px 100px rgba(0,0,0,.14),0 0 0 1.5px rgba(0,0,0,.07);overflow:hidden;}
+#nb .chrome{height:60px;background:#f3f3ef;display:flex;align-items:center;gap:10px;padding:0 22px;}
+#nb .dot{width:13px;height:13px;border-radius:50%;background:#d4d4cf;}
+#nb .url{margin-left:16px;flex:1;height:36px;border-radius:18px;background:#fff;display:flex;align-items:center;padding:0 18px;font-size:19px;color:#555;gap:8px;}
+#nb .vp{position:absolute;left:0;right:0;top:60px;bottom:0;overflow:hidden;}
+#vOld{position:absolute;left:0;top:0;width:914px;height:700px;}
+#vOld .oldsite{top:0;bottom:0;left:0;right:0;}
+#vNew{position:absolute;inset:0;background:#fff;clip-path:inset(0 100% 0 0);}
+.nnav{height:76px;display:flex;align-items:center;gap:26px;padding:0 32px;}
+.nnav .br{font-family:'Unbounded';font-weight:800;font-size:25px;letter-spacing:.1em;margin-right:auto;}
+.nnav .lk{font-size:18px;font-weight:500;color:#555;}
+.nnav .bt{height:44px;padding:0 22px;border-radius:22px;background:var(--lime);font-size:17px;font-weight:700;display:flex;align-items:center;}
+.nhero{display:flex;gap:28px;padding:26px 32px 0;}
+.nhero .l{width:470px;padding-top:12px;}
+.nhero .ey{font-family:'Michroma';font-size:14px;letter-spacing:.24em;color:var(--mute);}
+.nhero h2{margin-top:14px;font-family:'Unbounded';font-weight:800;font-size:50px;line-height:1.08;letter-spacing:-.01em;}
+.nhero h2 mark{background:var(--lime);padding:0 6px;}
+.nhero p{margin-top:16px;font-size:19px;line-height:1.45;color:#5a5a55;}
+.nhero .btns{margin-top:22px;display:flex;gap:12px;}
+.nbtn{height:58px;padding:0 26px;border-radius:29px;display:flex;align-items:center;gap:8px;font-weight:700;font-size:19px;}
+.nbtn.d{background:var(--ink);color:#fff;}
+.nbtn.g{border:2px solid var(--ink);}
+.nimg{position:relative;width:360px;height:380px;border-radius:26px;background:radial-gradient(circle at 50% 45%,#ffe7b8,#f2c27a 60%,#e2a256);overflow:hidden;}
+.nimg .e1{position:absolute;left:90px;top:100px;font-size:150px;}
+.nimg .e2{position:absolute;left:30px;top:250px;font-size:70px;transform:rotate(-14deg);}
+.nimg .e3{position:absolute;left:250px;top:40px;font-size:64px;transform:rotate(18deg);}
+.ncards{display:flex;gap:16px;padding:22px 32px;}
+.ncards div{flex:1;height:120px;border-radius:20px;background:var(--soft);display:flex;align-items:center;gap:14px;padding:0 18px;font-family:'Unbounded';font-weight:700;font-size:20px;}
+.ncards .emo{font-size:46px;}
+#reno{position:absolute;inset:0;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;z-index:4;}
+#reno .card{width:600px;border-radius:30px;background:#fff;box-shadow:0 30px 70px rgba(0,0,0,.18);overflow:hidden;}
+#reno .tape{height:34px;background:repeating-linear-gradient(-45deg,#c7f431 0 26px,#0b0b0b 26px 52px);}
+#reno .in{padding:30px 40px 36px;}
+#reno b{display:flex;align-items:center;gap:16px;font-family:'Unbounded';font-weight:800;font-size:36px;}
+#reno b svg{width:46px;height:46px;}
+#reno .bar{margin-top:26px;height:26px;border-radius:13px;background:var(--soft);overflow:hidden;}
+#reno .bar i{display:block;height:100%;width:100%;background:var(--lime);transform-origin:0 50%;transform:scaleX(0);}
+#reno .pc{margin-top:12px;display:flex;justify-content:space-between;font-weight:700;font-size:22px;color:var(--mute);}
+#sl{position:absolute;top:60px;bottom:0;left:0;width:6px;margin-left:-3px;background:var(--lime);z-index:5;}
+#sl .kn{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;background:var(--lime);border:5px solid #fff;box-shadow:0 10px 30px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;}
+#sl .kn svg{width:46px;height:46px;}
+.tagc{position:absolute;top:84px;height:46px;padding:0 18px;border-radius:23px;font-family:'Michroma';font-size:16px;letter-spacing:.2em;display:flex;align-items:center;z-index:6;}
+#tVor{right:30px;background:#0b0b0b;color:#fff;}
+#tNach{left:30px;background:var(--lime);color:#0b0b0b;}
+#nmob{left:790px;top:960px;width:240px;height:480px;border-radius:40px;padding:9px;z-index:7;}
+#nmob .scr{border-radius:32px;}
+#nmob .mn{height:50px;display:flex;align-items:center;justify-content:space-between;padding:10px 16px 0;font-family:'Unbounded';font-weight:800;font-size:14px;letter-spacing:.1em;}
+#nmob .mn i{width:20px;height:2px;background:#0b0b0b;box-shadow:0 6px 0 #0b0b0b;display:block;}
+#nmob h4{padding:6px 16px 0;font-family:'Unbounded';font-weight:800;font-size:22px;line-height:1.1;}
+#nmob h4 mark{background:var(--lime);padding:0 4px;}
+#nmob .mi2{position:relative;margin:12px 12px 0;height:200px;border-radius:18px;background:radial-gradient(circle at 50% 45%,#ffe7b8,#f2c27a 60%,#e2a256);display:flex;align-items:center;justify-content:center;font-size:96px;}
+#nmob .mb{margin:12px;height:46px;border-radius:23px;background:var(--ink);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;}
+#mtag{position:absolute;left:730px;top:910px;height:48px;padding:0 20px;border-radius:24px;background:var(--lime);font-weight:700;font-size:21px;display:flex;align-items:center;z-index:8;}
+
+/* S6 reels (bakery) */
+.bigemo{position:absolute;left:0;right:0;text-align:center;}
+.txr{position:absolute;left:26px;right:26px;top:150px;color:#fff;}
+.txr b{display:block;font-family:'Unbounded';font-weight:900;font-size:44px;line-height:1;}
+.txr span{display:block;margin-top:22px;font-family:'Unbounded';font-weight:600;font-size:23px;line-height:1.5;}
+.txr span i{font-style:normal;color:var(--lime);}
+
+/* S7 offer */
+#anchor{position:absolute;left:80px;top:540px;font-size:32px;font-weight:600;color:#86867f;}
+#anchor b{color:#86867f;}
+#strk{position:absolute;left:76px;top:560px;width:600px;height:7px;background:var(--ink);border-radius:4px;transform-origin:0 50%;}
+#week{position:absolute;left:80px;top:630px;width:920px;height:390px;border-radius:30px;background:var(--soft);}
+#week .cl{position:absolute;left:40px;top:34px;font-family:'Michroma';font-size:18px;letter-spacing:.22em;color:var(--mute);}
+#days{position:absolute;left:40px;top:90px;display:flex;gap:12px;}
+.day{width:110px;height:180px;border-radius:20px;background:#fff;border:2px solid rgba(0,0,0,.08);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:18px 0;position:relative;overflow:hidden;}
+.day .fill{position:absolute;inset:0;background:var(--lime);transform-origin:50% 100%;transform:scaleY(0);}
+.day b{position:relative;font-family:'Unbounded';font-weight:800;font-size:40px;}
+.day s{position:relative;text-decoration:none;font-family:'Michroma';font-size:13px;letter-spacing:.1em;}
+.day.last .fill{background:var(--ink);}
+.day.last{color:#0b0b0b;}
+#launch{position:absolute;left:0;right:0;top:300px;text-align:center;font-size:25px;font-weight:600;color:#3b3b38;}
+#s7 .chips{top:1060px;}
+
+/* S8 CTA */
+#s8 .head{left:0;right:0;text-align:center;top:290px;}
+#s8 .head .m{display:block;}
+#s8 .lw{position:absolute;left:160px;top:610px;width:760px;}
+#logo{width:760px;height:auto;display:block;overflow:visible;}
+#tag8{position:absolute;left:0;right:0;top:765px;text-align:center;font-family:'Michroma';font-size:21px;letter-spacing:.32em;color:var(--mute);white-space:nowrap;}
+#h8{position:absolute;left:0;right:0;top:850px;text-align:center;font-family:'Unbounded';font-weight:800;font-size:60px;}
+#h8 .m{display:inline-block;}
+#dm{position:absolute;left:250px;top:960px;width:580px;height:84px;border-radius:42px;background:var(--soft);display:flex;align-items:center;justify-content:center;gap:16px;font-weight:700;font-size:31px;}
+#dm svg{width:34px;height:34px;}
+#cta{position:absolute;left:110px;top:1080px;width:860px;height:124px;border-radius:62px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;gap:18px;font-family:'Unbounded';font-weight:700;font-size:32px;}
+#cta .ar{width:64px;height:64px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;}
+#cta .ar svg{width:32px;height:32px;}
+.pr{position:absolute;left:110px;top:1080px;width:860px;height:124px;border-radius:62px;border:3px solid var(--ink);opacity:0;}
+#bio{position:absolute;left:0;right:0;top:1240px;text-align:center;font-size:27px;color:var(--mute);font-weight:500;}
+#bio b{color:var(--ink);font-weight:700;}
+#ringA{position:absolute;width:120px;height:120px;border-radius:50%;border:5px solid var(--lime);opacity:0;}
+</style>
+</head>
+<body>
+<div id="stage">
+ <div id="cam">
+  <div id="grid"></div>
+  <div class="glow" id="glowA"></div>
+  <div class="glow" id="glowB"></div>
+
+  <!-- S1 HOOK: old website -->
+  <section class="scene" id="s1"><div class="inner">
+   <div class="head" style="top:290px"><span class="m"><span class="mi">Ist das noch</span></span><span class="m"><span class="mi" data-fit="920"><span class="hl" id="hl1">deine Website?</span></span></span></div>
+   <div class="win" id="oldwin">
+    <div class="tb"><span>Bäckerei Müller – Homepage – Microsoft Internet Explorer</span><i>_</i><i>□</i><i>×</i></div>
+    <div class="mnu"><span>Datei</span><span>Bearbeiten</span><span>Ansicht</span><span>Favoriten</span><span>Extras</span><span>?</span></div>
+    <div class="adr">Adresse<div>http://www.baeckerei-mueller.de/index.html</div><b>Wechseln zu</b></div>
+    <div class="oldsite" id="oldsite">
+     <div class="ohead"><b>Bäckerei Müller</b><span>~ Ihr Bäcker seit 1987 ~</span></div>
+     <div class="marq"><span class="mq">+++ Herzlich Willkommen auf unserer Homepage +++ NEU: Jetzt auch per E-Mail erreichbar!!! +++ Herzlich Willkommen auf unserer Homepage +++</span></div>
+     <div class="obody">
+      <div class="onav"><a>» Startseite</a><a>» Über uns</a><a>» Angebote</a><span class="nw">NEU!</span><a>» Gästebuch</a><a>» Anfahrt</a><a>» Impressum</a></div>
+      <div class="omain"><h1>Herzlich Willkommen!</h1>
+       <p>Schön, dass Sie auf unsere Homepage gefunden haben. Hier finden Sie alle Informationen rund um unsere Bäckerei. Unsere Öffnungszeiten finden Sie unter dem Menüpunkt Anfahrt. Bitte tragen Sie sich auch in unser Gästebuch ein! Diese Seite wird ständig erweitert, schauen Sie also bald wieder vorbei.</p>
+       <div class="orow"><div class="obroken"><i></i>bild_laden.jpg</div><div class="ouc"><span>Seite im Aufbau!</span></div></div>
+      </div>
+     </div>
+     <div class="ofoot"><div class="ocount">Sie sind Besucher Nr. <i>0</i><i>0</i><i>4</i><i>2</i><i>1</i><i id="cnt7">7</i></div><div>© 2009 Bäckerei Müller · Optimiert für Internet Explorer 6 bei 800×600</div></div>
+     <div id="loadMask" class="lm" style="position:absolute;left:0;right:0;bottom:0;top:0;background:#fbf6dc;transform-origin:50% 100%"></div>
+    </div>
+    <div class="st"><svg id="hg" viewBox="0 0 20 24"><path d="M3 1h14v2c0 4-4 6-5 9 1 3 5 5 5 9v2H3v-2c0-4 4-6 5-9-1-3-5-5-5-9z" fill="#ffd400" stroke="#000" stroke-width="1.5"/></svg><span id="stTxt">Lädt... (3 von 27 Elementen)</span><div class="pb" id="pb"></div></div>
+   </div>
+   <div class="win" id="err"><div class="tb"><span>Microsoft Internet Explorer</span><i>×</i></div><div class="eb"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" fill="#d40000" stroke="#7a0000" stroke-width="2"/><path d="M17 17l18 18M35 17L17 35" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg><span>Auf dieser Seite ist ein Fehler aufgetreten.</span></div><div class="eok">OK</div></div>
+  </div></section>
+
+  <!-- S2 phone -->
+  <section class="scene" id="s2"><div class="inner">
+   <div class="head" style="top:290px"><span class="m"><span class="mi">Und am Handy?</span></span><span class="m"><span class="mi" data-fit="920"><span class="hl" id="hl2">Unbrauchbar.</span></span></span></div>
+   <div class="phone" id="ophone"><div class="scr"><div class="sbar"><span>9:41</span><span>●●● ▮</span></div><div id="ocl"></div><div class="fng" id="fg1" style="left:120px;top:300px"></div><div class="fng" id="fg2" style="left:220px;top:380px"></div></div></div>
+   <div class="xp" id="x1" style="left:40px;top:720px"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Nicht mobil</div>
+   <div class="xp" id="x2" style="left:600px;top:930px"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Lädt ewig</div>
+   <div class="xp" id="x3" style="left:60px;top:1150px"><i><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></i>Wirkt veraltet</div>
+  </div></section>
+
+  <!-- S3 facts -->
+  <section class="scene" id="s3"><div class="inner">
+   <div class="pill" id="fpill" style="left:420px;"><b>FAKT</b><span id="fkn">#1</span></div>
+   <svg id="ring" viewBox="0 0 600 600"><circle cx="300" cy="300" r="270" fill="none" stroke="#efefea" stroke-width="36"/><circle id="rp" cx="300" cy="300" r="270" fill="none" stroke="#c7f431" stroke-width="36" stroke-linecap="round" transform="rotate(-90 300 300)"/><g id="ticks" stroke="#0b0b0b" stroke-width="5" stroke-linecap="round"></g></svg>
+   <div class="ftop"><span class="m"><span class="mi f1">Besucher urteilen in</span></span></div>
+   <div class="ftop"><span class="m"><span class="mi f2">Ganze</span></span></div>
+   <div class="fnum"><span class="m"><span class="mi f1">0,05<small>Sek.</small></span></span></div>
+   <div class="fnum"><span class="m"><span class="mi f2"><span id="pct">0</span><small>%</small></span></span></div>
+   <div class="fbot"><span class="m"><span class="mi f1">über deine Website.</span></span></div>
+   <div class="fbot"><span class="m"><span class="mi f2" data-fit="960">beurteilen deine</span></span><span class="m"><span class="mi f2" data-fit="960"><span class="hl" id="hl3">Glaubwürdigkeit</span></span></span><span class="m"><span class="mi f2" data-fit="960">am Website-Design.</span></span></div>
+   <div class="fsrc"><span class="f1s">Quelle: Lindgaard et al., Carleton University (2006)</span></div>
+   <div class="fsrc"><span class="f2s">Quelle: Stanford Web Credibility Research</span></div>
+  </div></section>
+
+  <!-- S4 youth chat -->
+  <section class="scene" id="s4"><div class="inner">
+   <div class="head" style="top:290px"><span class="m"><span class="mi">Junge Kunden</span></span><span class="m"><span class="mi" data-fit="920"><span class="hl" id="hl4">checken dich online.</span></span></span></div>
+   <div class="phone" id="cph"><div class="scr">
+    <div class="chd"><div class="av">L</div><div><b>Lea</b><span>online</span></div></div>
+    <div class="msgs">
+     <div class="bb l" id="m1">Kennst du die Bäckerei Müller?</div>
+     <div class="bb r" id="m2">Hab grad die Website gesehen <span class="emo">😬</span></div>
+     <div class="bb r" id="m3">Sieht aus wie 2009 <span class="emo">😂</span></div>
+     <div class="bb l" id="m4"><span class="dd" id="m4d"><i></i><i></i><i></i></span><span id="m4t">Dann bestellen wir lieber woanders.</span></div>
+    </div>
+    <div class="cin">Nachricht …</div>
+   </div></div>
+   <div class="toast" id="lost"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#c7f431" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 11h6"/></svg></div><div><b>Kunde verloren.</b><span>an die Konkurrenz</span></div></div>
+  </div></section>
+
+  <!-- S5 renovation -->
+  <section class="scene" id="s5"><div class="inner">
+   <div class="head" style="top:290px"><span class="m"><span class="mi">Zeit für eine</span></span><span class="m"><span class="mi" data-fit="920"><span class="hl" id="hl5">Renovierung.</span></span></span></div>
+   <div id="nb">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><div class="url"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0b0b0b" stroke-width="2.4"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>baeckerei-mueller.de</div></div>
+    <div class="vp">
+     <div id="vOld"></div>
+     <div id="vNew">
+      <div class="nnav"><span class="br">MÜLLER</span><span class="lk">Sortiment</span><span class="lk">Über uns</span><span class="lk">Filialen</span><span class="bt">Vorbestellen</span></div>
+      <div class="nhero"><div class="l"><div class="ey">BÄCKEREI SEIT 1987</div><h2>Brot mit<br><mark>Liebe</mark> gebacken.</h2><p>Täglich frisch aus dem Steinofen. Jetzt online vorbestellen &amp; abholen.</p><div class="btns"><span class="nbtn d">Jetzt vorbestellen →</span><span class="nbtn g">Sortiment</span></div></div>
+       <div class="nimg"><span class="emo e1">🥐</span><span class="emo e2">🥖</span><span class="emo e3">🥨</span></div></div>
+      <div class="ncards"><div><span class="emo">🍞</span>Brot</div><div><span class="emo">🥐</span>Gebäck</div><div><span class="emo">🍰</span>Kuchen</div></div>
+     </div>
+     <div class="tagc" id="tVor">VORHER</div><div class="tagc" id="tNach">NACHHER</div>
+     <div id="reno"><div class="card"><div class="tape"></div><div class="in"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>Renovierung läuft …</b><div class="bar"><i id="rbar"></i></div><div class="pc"><span>baeckerei-mueller.de</span><span id="rpc">0 %</span></div></div></div></div>
+    </div>
+    <div id="sl"><div class="kn"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></div></div>
+   </div>
+   <div class="phone" id="nmob"><div class="scr"><div class="mn">MÜLLER<i></i></div><h4>Brot mit <mark>Liebe</mark> gebacken.</h4><div class="mi2"><span class="emo">🥐</span></div><div class="mb">Jetzt vorbestellen</div></div></div>
+   <div id="mtag">Mobil optimiert</div>
+  </div></section>
+
+  <!-- S6 reels -->
+  <section class="scene" id="s6"><div class="inner">
+   <div class="pill"><b>+</b>REELS &amp; TIKTOK</div>
+   <div class="head"><span class="m"><span class="mi">Plus Reels für</span></span><span class="m"><span class="mi" data-fit="920"><span class="hl" id="hl6">mehr Reichweite.</span></span></span></div>
+   <div class="ph" id="phL"><div class="scr" style="background:linear-gradient(170deg,#f1e7d6,#e2d3ba)">
+    <div class="pbar"><i id="pbL"></i></div>
+    <div class="vw"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4l13 8-13 8z"/></svg><span id="vL">0</span></div>
+    <div class="bigemo emo" id="eL" style="top:300px;font-size:130px">☕</div>
+    <div class="rcap" style="top:130px"><span style="font-size:30px" id="capL">Dein Frühstück?</span></div>
+    <div class="us"><i></i>baeckerei.mueller</div>
+   </div></div>
+   <div class="ph" id="phR"><div class="scr" style="background:radial-gradient(circle at 50% 45%,#2c2a26,#0e0e0e 70%)">
+    <div class="pbar"><i id="pbR"></i></div>
+    <div class="vw"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4l13 8-13 8z"/></svg><span id="vR">0</span></div>
+    <div class="txr" id="txr"><b>3 Gründe</b><span><i>01</i> Steinofen<br><i>02</i> Regional<br><i>03</i> Täglich frisch</span></div>
+    <div class="us"><i></i>baeckerei.mueller</div>
+   </div></div>
+   <div class="ph" id="phC"><div class="scr" style="background:radial-gradient(circle at 50% 42%,#e6ff8a,#c7f431 55%,#a9d21c)">
+    <div class="pbar"><i id="pbC"></i></div>
+    <div class="vw"><svg viewBox="0 0 24 24" fill="#fff"><path d="M7 4l13 8-13 8z"/></svg><span id="vC">0</span></div>
+    <div class="bigemo emo" id="eC" style="top:360px;font-size:170px">🥐</div>
+    <div class="rcap" style="top:150px"><span id="cw1">Frisch aus</span></div>
+    <div class="rcap" style="top:232px"><span id="cw2">dem Ofen.</span></div>
+    <div class="rl"><svg viewBox="0 0 24 24"><path id="hrt" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.6 4.5c2.1 0 3.6 1.2 5.4 3.2 1.8-2 3.3-3.2 5.4-3.2 3.6 0 5.7 3.8 4.2 7.3C19.5 16.4 12 21 12 21z" fill="none" stroke="#0b0b0b" stroke-width="1.8"/></svg><svg viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.7L3.5 20.5l1.4-4.6A8.5 8.5 0 1 1 20.5 11.5z" fill="none" stroke="#0b0b0b" stroke-width="1.8" stroke-linejoin="round"/></svg><svg viewBox="0 0 24 24"><path d="M21.5 3.5L10.5 13.5M21.5 3.5l-6.5 18-4.5-8-8-4.5z" fill="none" stroke="#0b0b0b" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+    <div class="us" style="color:#0b0b0b"><i style="background:#0b0b0b"></i>baeckerei.mueller</div>
+   </div></div>
+   <div class="toast" id="toast6" style="left:500px;top:1290px;width:520px"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M19 8v6M16 11h6"/></svg></div><div><b>+<span id="fol">0</span> neue Follower</b><span>neue Kunden aus der Region</span></div></div>
+  </div></section>
+
+  <!-- S7 offer -->
+  <section class="scene" id="s7"><div class="inner">
+   <div class="head" style="top:290px"><span class="m"><span class="mi">Website-Upgrade</span></span><span class="m"><span class="mi" data-fit="920"><span class="hl" id="hl7">ab 299 €.</span></span></span></div>
+   <div id="anchor">Klassische Webdesigner: oft <b>1.000 €+</b></div>
+   <div id="strk"></div>
+   <div id="week"><div class="cl">ONLINE IN MAX. 7 TAGEN</div>
+    <div id="days">
+     <div class="day"><div class="fill"></div><s>TAG</s><b>1</b></div><div class="day"><div class="fill"></div><s>TAG</s><b>2</b></div><div class="day"><div class="fill"></div><s>TAG</s><b>3</b></div><div class="day"><div class="fill"></div><s>TAG</s><b>4</b></div><div class="day"><div class="fill"></div><s>TAG</s><b>5</b></div><div class="day"><div class="fill"></div><s>TAG</s><b>6</b></div>
+     <div class="day last" id="d7"><div class="fill"></div><s id="d7s">TAG</s><b id="d7b">7</b><svg id="d7c" viewBox="0 0 24 24" style="position:absolute;left:25px;top:50px;width:60px;height:60px" fill="none" stroke="#c7f431" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    </div>
+    <div id="launch">Von alt zu neu – <b>in max. 7 Tagen online.</b></div>
+   </div>
+   <div class="chips"><div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Kostenloses Erstgespräch</div><div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Website + Reels</div></div>
+  </div></section>
+
+  <!-- S8 CTA -->
+  <section class="scene" id="s8"><div class="inner">
+   <div class="head"><span class="m"><span class="mi">Wie alt ist</span></span><span class="m"><span class="mi" data-fit="920"><span class="hl" id="hl8">deine Website?</span></span></span></div>
+   <div class="lw" id="lw">{{LOGO}}</div>
+   <div id="ringA"></div>
+   <div id="tag8">WEBSITES · REELS · DESIGN</div>
+   <div id="h8"><span class="m"><span class="mi">Zeit für ein Upgrade.</span></span></div>
+   <div id="dm"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.2" stroke-linejoin="round"><path d="M21.5 3.5L10.5 13.5M21.5 3.5l-6.5 18-4.5-8-8-4.5z"/></svg>Schreib uns eine DM</div>
+   <div class="pr" id="pr1"></div><div class="pr" id="pr2"></div>
+   <div id="cta"><span data-fit="640">KOSTENLOSES ERSTGESPRÄCH</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+   <div id="bio">oder: <b>Link in Bio</b> · ab 299 € · in max. 7 Tagen online</div>
+  </div></section>
+
+  <div id="wipe"></div>
+  <div id="hazard"></div>
+ </div>
+ <canvas id="grain" width="540" height="960"></canvas>
+</div>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="node_modules/gsap/dist/DrawSVGPlugin.min.js"></script>
+<script src="anim3.js"></script>
+</body>
+</html>
