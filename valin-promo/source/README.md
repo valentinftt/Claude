@@ -16,3 +16,9 @@ python3 -m http.server 8765 &
 pip install numpy scipy && python3 audio.py
 node render.mjs && bash finish.sh
 ```
+
+## Video 2 (Weiß + Lime, 22 s, nur Soundeffekte)
+
+- `template2.html` + `anim2.js` – Szenen und Timeline (Hook → Websites → Reels → Effekt → Preis → CTA)
+- `sfx2.py` – nur Soundeffekte (keine Musik), damit ein Trend-Sound darübergelegt werden kann
+- `build2.py` erzeugt `index2.html`, `render2.mjs` rendert die Frames (gleicher Ablauf wie oben)
