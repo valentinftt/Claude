@@ -1,0 +1,47 @@
+
+@font-face{font-family:'Unbounded';src:url('node_modules/@fontsource-variable/unbounded/files/unbounded-latin-wght-normal.woff2') format('woff2');font-weight:200 900;}
+@font-face{font-family:'Unbounded';src:url('node_modules/@fontsource-variable/unbounded/files/unbounded-latin-ext-wght-normal.woff2') format('woff2');font-weight:200 900;unicode-range:U+0100-02AF,U+1E00-1EFF,U+20AC;}
+@font-face{font-family:'Michroma';src:url('node_modules/@fontsource/michroma/files/michroma-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2') format('woff2');font-weight:400;}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2');font-weight:500;}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2');font-weight:600;}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2') format('woff2');font-weight:700;}
+
+:root{--bg:#ffffff;--ink:#0b0b0b;--lime:#c7f431;--mute:#6f6f6a;--soft:#f3f3ef;--line:rgba(0,0,0,.055);}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:'Inter',sans-serif;color:var(--ink);}
+#cam{position:absolute;inset:0;transform-origin:50% 45%;}
+.scene{position:absolute;inset:0;visibility:hidden;}
+.inner{position:absolute;inset:0;transform-origin:50% 50%;}
+#grid{position:absolute;inset:-200px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:120px 120px;}
+.glow{position:absolute;border-radius:50%;}
+#glowA{width:1400px;height:1400px;left:-600px;top:-200px;background:radial-gradient(circle,rgba(199,244,49,.28),rgba(199,244,49,.08) 38%,transparent 66%);}
+#glowB{width:1300px;height:1300px;right:-600px;top:900px;background:radial-gradient(circle,rgba(199,244,49,.22),rgba(199,244,49,.06) 38%,transparent 66%);}
+
+.U{font-family:'Unbounded',sans-serif;}
+.m{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em;}
+.mi{display:inline-block;white-space:nowrap;}
+/* lime marker highlight */
+.hl{position:relative;display:inline-block;z-index:0;}
+.hl::before{content:'';position:absolute;left:-.12em;right:-.12em;top:.12em;bottom:.02em;background:var(--lime);z-index:-1;transform:scaleX(var(--hl,0));transform-origin:0 50%;border-radius:.08em;}
+
+.pill{position:absolute;left:80px;top:250px;height:54px;padding:0 24px;border-radius:27px;background:var(--ink);color:#fff;display:flex;align-items:center;gap:14px;font-family:'Michroma';font-size:19px;letter-spacing:.2em;}
+.pill b{color:var(--lime);font-weight:400;}
+.head{position:absolute;left:80px;top:330px;font-family:'Unbounded';font-weight:800;font-size:80px;line-height:1.1;letter-spacing:-.015em;}
+.chips{position:absolute;left:0;right:0;top:1400px;display:flex;justify-content:center;gap:16px;}
+.chip{height:64px;padding:0 28px;border-radius:32px;border:2px solid var(--ink);display:flex;align-items:center;gap:12px;font-weight:700;font-size:26px;background:#fff;}
+.chip svg{width:26px;height:26px;}
+
+#wipe{position:absolute;left:0;top:-140px;width:3200px;height:2200px;background:var(--lime);z-index:50;}
+#grain{position:absolute;inset:0;width:1080px;height:1920px;z-index:80;opacity:.028;pointer-events:none;}
+
+.cursor{position:absolute;left:0;top:0;width:44px;height:58px;z-index:30;}
+.ripple{position:absolute;left:0;top:0;width:60px;height:60px;border-radius:50%;border:4px solid var(--ink);z-index:29;opacity:0;}
+.toast{position:absolute;width:520px;height:110px;border-radius:28px;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,.16),0 0 0 1.5px rgba(0,0,0,.06);display:flex;align-items:center;gap:20px;padding:0 24px;z-index:25;}
+.toast .ic{width:62px;height:62px;border-radius:18px;background:var(--lime);display:flex;align-items:center;justify-content:center;flex:none;}
+.toast .ic svg{width:32px;height:32px;}
+.toast b{display:block;font-size:26px;font-weight:700;}
+.toast span{display:block;margin-top:4px;font-size:20px;color:var(--mute);}
+.toast b span{display:inline;margin:0;font-size:inherit;color:inherit;}
+
