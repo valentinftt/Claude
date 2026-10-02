@@ -5,7 +5,7 @@ BPM = 128
 B = 60 / BPM
 S16 = B / 4
 BAR = 4 * B
-DUR = 17 * B + 0.03
+DUR = 25 * B + 0.03
 N = int(SR * DUR)
 r = np.random.default_rng(5)
 
@@ -101,21 +101,22 @@ def duck(at, depth=0.7, rel=0.22):
     i = int(at * SR); t = t_(rel); c = 1 - depth * np.exp(-t * 16)
     j = min(N, i + len(c)); side[i:j] = np.minimum(side[i:j], c[: j - i])
 
-DROP = 2 * B            # camera flash -> finished reel
-END = 12 * B            # end card
-STOP = 17 * B
+DROP = 4 * B            # camera flash -> finished reel
+END = 19 * B            # end card
+STOP = 25 * B
 roots = [57, 53, 55, 52]  # Am F G Em
 chords = {57: [57, 60, 64, 67], 53: [53, 57, 60, 64], 55: [55, 59, 62, 67], 52: [52, 55, 59, 64]}
 bass_steps = [2, 3, 6, 7, 10, 11, 14, 15]
 stab_steps = [3, 6, 11, 14]
 
 # intro (2 beats): filtered hats + pad swell + snare roll
-for s in range(8):
-    put(drums, HAT, s * S16 * 2 + S16, 0.35)
-t = 0.0; k = 0
+for s in range(16):
+    put(drums, HAT, s * S16 * 2 + S16, 0.3 + 0.15 * (s / 16))
+put(drums, KICK, 0.0, 0.6); put(drums, KICK, B, 0.5)
+t = 2 * B
 while t < DROP - 0.02:
-    put(drums, CLAP, t, 0.12 + 0.45 * (t / DROP) ** 1.5); k += 1
-    t += S16 if t > B else B / 2
+    put(drums, CLAP, t, 0.15 + 0.5 * ((t - 2 * B) / (2 * B)) ** 1.5)
+    t += S16 if t > 3 * B else B / 2
 put(pads, pad(chords[57], DROP + 0.1), 0.0, 0.9)
 put(fxm, riser(DROP), 0.0, 0.75)
 
@@ -142,7 +143,7 @@ for g in range(gbeats):
             put(stabs, stab(chords[root]), ts, 0.95)
     if g % 4 == 3: put(drums, RIM, tb + 3 * S16, 0.7)
 # little fills into the bursts and into the end card
-for at in (DROP + 2 * B - S16, DROP + 7 * B - S16):
+for at in (DROP + 4 * B - S16, DROP + 11.5 * B - S16):
     put(drums, CLAP, at, 0.45)
 for k in range(4): put(drums, CLAP, END - B + k * S16, 0.3 + 0.12 * k)
 
@@ -153,31 +154,29 @@ music = lowpass_sweep(music, 12000, 900, STOP - B, DUR)
 # ---------- sound effects ----------
 M = Mix(DUR); add = M.add
 r_ = lambda x: DROP + x * B
-add(swish(0.18, 0.2), 0.02)
-add(tick(2600, 0.12, 0.03), 0.16); add(tick(3100, 0.1, 0.03), 0.22)            # autofocus
-add(click(0.9), 0.47); add(tick(5200, 0.3, 0.03), 0.49)                          # shutter
-add(whoosh(0.32, 0.25, 200, 9000, 0.75), DROP - 0.32)                            # zoom into the photo
-add(boom(1.6, 1.0), DROP); add(shimmer(1.6, 0.4), DROP, rv=0.7)                  # drop
-add(bell(note(100), 0.6, 0.12), DROP + 0.18, pan=-0.4, rv=0.5)                  # sparkle on the stone
-add(bell(note(105), 0.5, 0.08), DROP + 0.32, pan=0.4, rv=0.5)
-add(whoosh(0.12, 0.25, 400, 8000, 0.45), r_(1.55) - 0.12)                        # "Dein Reel." flies out
-for c in (2, 2.5, 4.5, 5, 7, 7.5):
-    add(swish(0.32, 0.16), r_(c) - 0.06, pan=(-0.3 if c % 1 else 0.3))
-for c in (2, 7):                                                                 # crystal bursts
-    add(shimmer(0.9, 0.3), r_(c), rv=0.6); add(boom(0.6, 0.35), r_(c))
-add(bell(note(93), 0.7, 0.14), r_(2.5) + 0.1, rv=0.6)                           # box opens / Gold Edition
-add(bell(note(100), 0.7, 0.1), r_(2.5) + 0.24, rv=0.6, pan=0.3)
-add(bell(note(98), 0.6, 0.09), r_(5) + 0.05, pan=-0.3, rv=0.5)                  # "Funkelt."
-add(bell(note(105), 0.5, 0.07), r_(5.5) + 0.05, pan=0.3, rv=0.5)
-add(bell(note(110), 0.4, 0.06), r_(6) + 0.05, rv=0.5)
-add(bell(note(105), 0.9, 0.16), r_(7.5) + 0.06, rv=0.7); add(shimmer(1.2, 0.22), r_(7.5), rv=0.6)  # hero ring
-for k in range(6): add(bell(note(100 + (k * 7) % 12), 0.3, 0.05), r_(8) + k * B * 0.5, pan=(-0.5 if k % 2 else 0.5), rv=0.4)
-add(whoosh(0.3, 0.3, 250, 9000, 0.7), END - 0.3)
-add(boom(1.4, 0.8), END); add(shimmer(1.3, 0.25), END, rv=0.6)
-add(pop(800, 0.35), END + 0.38)                                                  # logo accent
-add(pop(1000, 0.3), END + B); add(pop(1150, 0.28), END + B + 0.1)
+add(swish(0.18, 0.2), 0.04)
+add(tick(2600, 0.12, 0.03), 0.47); add(tick(3100, 0.1, 0.03), 0.54)            # autofocus
+add(click(0.9), 0.98); add(tick(5200, 0.3, 0.03), 1.0)                           # shutter
+add(whoosh(0.38, 0.25, 200, 9000, 0.75), DROP - 0.38)                            # zoom into the photo
+add(boom(1.8, 1.0), DROP); add(shimmer(1.8, 0.4), DROP, rv=0.7)                  # drop
+add(bell(note(100), 0.7, 0.12), DROP + 0.2, pan=-0.4, rv=0.5)                   # sparkle on the stone
+add(bell(note(105), 0.6, 0.08), DROP + 0.38, pan=0.4, rv=0.5)
+add(whoosh(0.15, 0.3, 400, 8000, 0.45), r_(3.1) - 0.15)                          # "Dein Reel." flies out
+for c in (4, 5, 8.5, 11.5):
+    add(swish(0.3, 0.2), r_(c) - 0.07, pan=(-0.3 if c % 1 else 0.3))
+add(shimmer(1.0, 0.32), r_(4), rv=0.6); add(boom(0.7, 0.4), r_(4))             # crystal burst
+add(bell(note(93), 0.8, 0.14), r_(5) + 0.25, rv=0.6)                            # box opens / Gold Edition
+add(bell(note(100), 0.8, 0.1), r_(5) + 0.42, rv=0.6, pan=0.3)
+for i, n_ in enumerate((98, 105, 110)):                                          # "Funkelt. Für immer."
+    add(bell(note(n_), 0.6, 0.08), r_(8.5) + 0.1 + i * B * 0.75, pan=(i - 1) * 0.35, rv=0.5)
+add(bell(note(105), 1.0, 0.16), r_(11.5) + 0.08, rv=0.7); add(shimmer(1.4, 0.24), r_(11.5), rv=0.6)  # hero ring
+for k in range(6): add(bell(note(100 + (k * 7) % 12), 0.3, 0.05), r_(12.2) + k * B * 0.5, pan=(-0.5 if k % 2 else 0.5), rv=0.4)
+add(whoosh(0.35, 0.3, 250, 9000, 0.7), END - 0.35)
+add(boom(1.6, 0.8), END); add(shimmer(1.5, 0.25), END, rv=0.6)
+add(pop(800, 0.35), END + 0.45)                                                  # logo accent
+add(pop(1000, 0.3), END + B); add(pop(1150, 0.28), END + B + 0.14)
 add(kaching(0.45), END + 2 * B, rv=0.25)
-for i in range(3): add(pop(1000 + i * 150, 0.3), END + (2.75 + i * 0.5) * B)
+for i in range(3): add(pop(1000 + i * 150, 0.3), END + (3 + i * 0.5) * B)
 
 # ---------- final mix ----------
 ir_t = t_(1.8)
