@@ -41,3 +41,9 @@ node render.mjs && bash finish.sh
 - `template5.html` + `anim5.js` – Hook „Deine Produkte als fertiges Reel.“ → Drop: Reels laufen im Instagram-UI auf dem Handy (Schmuck → Mode → Beauty, mit Likes, Untertiteln und Benachrichtigungen) → „Jede Branche.“ mit drei Handys → CTA mit Reel-Abo ab 99 €/Monat
 - `build5.py` setzt alles zu `index5.html` zusammen (Beispiel-Marken: @lumiere.jewelry, @north.wear, @nova.skincare)
 - `music5.py` – Tech-House-Track (126 BPM), schreibt `music5.wav` (Song + Effekte) und `sfx5.wav` (nur Effekte); `render5.mjs` rendert die Frames
+
+## Story-Highlight-Cover „Ads“
+
+- `highlights/ads.html` – Cover-Vorlage (Parameter: `v=dark|light|lime`, `m=icon|word`, `s=sq` für 1080×1080, sonst 1080×1920)
+- `highlights/shot.mjs` rendert per Playwright, z. B. `node highlights/shot.mjs ../highlights "Ads_Dark_Icon:v=dark&m=icon&s=sq"`
+- Ergebnisse liegen in `valin-promo/highlights/` (`*_Story.png` = Story-Format zum Hochladen)
