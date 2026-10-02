@@ -1,0 +1,86 @@
+/* title:VALÍN Story 4;cls:dk */
+.dkbg .gl{left:-200px;top:700px;}
+#kk{top:345px;}
+#tm{position:absolute;left:0;right:0;top:395px;text-align:center;font-family:'Unbounded';font-weight:900;font-size:180px;line-height:1;letter-spacing:-.03em;color:var(--lime);z-index:20;font-variant-numeric:tabular-nums;}
+#tm small{font-size:90px;margin-left:12px;}
+#ph{left:300px;top:650px;width:480px;height:880px;z-index:10;}
+#ph .sb{color:#0b0b0b;}
+#pg{position:absolute;left:0;top:64px;height:6px;width:100%;background:#0a84ff;transform-origin:0 50%;z-index:24;}
+.sk{position:absolute;left:28px;right:28px;border-radius:16px;background:#ececea;overflow:hidden;}
+.sk::after{content:'';position:absolute;top:0;bottom:0;width:60%;left:var(--sh,-60%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);}
+#spin{position:absolute;left:50%;top:420px;width:96px;height:96px;margin-left:-48px;z-index:6;}
+#ld{position:absolute;left:0;right:0;top:540px;text-align:center;font-size:24px;font-weight:600;color:#8a8a85;z-index:6;}
+.saf{position:absolute;left:0;right:0;bottom:0;height:96px;background:rgba(247,247,245,.98);border-top:1px solid rgba(0,0,0,.08);display:flex;align-items:flex-start;justify-content:center;padding-top:14px;z-index:20;}
+.saf div{height:46px;padding:0 22px;border-radius:14px;background:#e9e9e6;display:flex;align-items:center;gap:10px;font-size:20px;color:#333;}
+.saf svg{width:20px;height:20px;}
+#tK{left:250px;top:1180px;width:580px;}
+#tK .ic{background:#0b0b0b;}
+#f53{position:absolute;left:0;right:0;top:590px;text-align:center;font-family:'Unbounded';font-weight:900;font-size:300px;line-height:1;letter-spacing:-.04em;color:var(--lime);z-index:20;}
+#f53 small{font-size:140px;margin-left:10px;}
+#ftx{position:absolute;left:0;right:0;top:935px;text-align:center;font-family:'Unbounded';font-weight:700;font-size:50px;line-height:1.18;z-index:20;}
+#ftx .m{display:block;}
+#ftx .hl::before{z-index:-1;}
+#fsrc{position:absolute;left:0;right:0;top:1185px;text-align:center;font-size:24px;color:rgba(255,255,255,.5);z-index:20;}
+#offer{top:1360px;font-size:50px;}
+<!--BODY-->
+<div class="dkbg"><div class="g"></div><div class="gl"></div></div>
+{{LOGO}}
+<div class="kick" id="kk">DEINE KUNDEN WARTEN …</div>
+<div id="tm"><span id="tmv">0,0</span><small>s</small></div>
+<div class="phone" id="ph"><div class="scr"><div class="isl"></div><div class="sb"><span>9:41</span><span>●●● ▮</span></div>
+ <div id="pg"></div>
+ <div class="sk" style="top:110px;height:54px;width:180px"></div>
+ <div class="sk" style="top:190px;height:250px"></div>
+ <div class="sk" style="top:620px;height:34px"></div>
+ <div class="sk" style="top:672px;height:34px;right:120px"></div>
+ <svg id="spin" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="#e1e1de" stroke-width="5"/><circle cx="25" cy="25" r="20" fill="none" stroke="#0a84ff" stroke-width="5" stroke-linecap="round" stroke-dasharray="40 200"/></svg>
+ <div id="ld">Wird geladen …</div>
+ <div class="saf"><div><svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.4" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4h-4"/></svg>deine-website.de</div></div>
+</div></div>
+<div class="fng" id="fg" style="left:270px;top:1050px"></div>
+<div class="tst" id="tK"><div class="ic emo">👋</div><div><b>Kunde weg.</b><span>…zur Konkurrenz</span></div></div>
+<div id="f53"><span id="pct">0</span><small>%</small></div>
+<div id="ftx"><span class="m"><span class="mi">verlassen eine Seite,</span></span><span class="m"><span class="mi">die länger als</span></span><span class="m"><span class="mi"><span class="hl" id="hl3"><span style="color:#0b0b0b">3 Sek. lädt.</span></span></span></span></div>
+<div id="fsrc">Quelle: Google (2016), mobile Websites</div>
+<div id="offer"><span class="m"><span class="mi">Schnelle Websites <span class="hl" id="hlo"><span style="color:#0b0b0b">ab 299 €</span></span></span></span></div>
+<!--JS-->
+const OUT = 3.05, FACT = 3.45;
+const P = { pct: 0 };
+function build() {
+  gsap.set(['#tK', '#f53', '#fsrc'], { autoAlpha: 0 });
+  gsap.set(['#ftx .mi', '#offer .mi'], { yPercent: 115 });
+  logoIn(0);
+  tl.fromTo('#kk', { letterSpacing: '0.8em', autoAlpha: 0 }, { letterSpacing: '0.38em', autoAlpha: 1, duration: 0.7, ease: 'expo.out', ...FT }, 0.05);
+  tl.fromTo('#tm', { scale: 0.6, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.45, ease: 'back.out(2)', ...FT }, 0.0);
+  tl.fromTo('#ph', { y: 340, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, ease: 'expo.out', ...FT }, 0.1);
+  // impatience: the timer pulses on every second, turns red at 3 s
+  [1, 2, 3].forEach((s) => tl.fromTo('#tm', { scale: 1.12 }, { scale: 1, duration: 0.3, ease: 'power2.out', immediateRender: false }, s / 1.1));
+  tl.to('#tm', { color: '#ff4d4d', duration: 0.15 }, 3 / 1.1);
+  tl.to('#tm', { keyframes: [{ x: -14 }, { x: 12 }, { x: -8 }, { x: 5 }, { x: 0 }], duration: 0.3, ease: 'none' }, 3 / 1.1);
+  // swipe away
+  tl.fromTo('#fg', { x: 0, y: 0, opacity: 0 }, { opacity: 1, duration: 0.12, immediateRender: false }, OUT - 0.25);
+  tl.to('#fg', { x: 560, y: -40, duration: 0.35, ease: 'power2.in' }, OUT - 0.1);
+  tl.to('#fg', { opacity: 0, duration: 0.1 }, OUT + 0.25);
+  tl.to('#ph', { x: 1100, rotation: 14, duration: 0.45, ease: 'power3.in' }, OUT);
+  tl.fromTo('#tK', { y: 60, scale: 0.8, autoAlpha: 0 }, { y: 0, scale: 1, autoAlpha: 1, duration: 0.4, ease: 'back.out(2)', ...FT }, OUT + 0.2);
+  tl.to(['#tK', '#kk', '#tm'], { autoAlpha: 0, y: -40, duration: 0.25, ease: 'power2.in' }, FACT - 0.15);
+  // fact
+  camPunch(FACT, 1.06);
+  tl.fromTo('#f53', { scale: 1.4, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.5, ease: 'expo.out', ...FT }, FACT);
+  tl.fromTo(P, { pct: 0 }, { pct: 53, duration: 0.6, ease: 'power2.out', ...FT }, FACT);
+  rise('#ftx .mi', FACT + 0.2, { s: 0.08 });
+  marker('#hl3', FACT + 0.6);
+  tl.fromTo('#fsrc', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3, ...FT }, FACT + 0.7);
+  cta(4.55, 4.15);
+}
+function after(t) {
+  const s = Math.min(t, OUT) * 1.1;
+  $('#tmv').textContent = s.toFixed(1).replace('.', ',');
+  $('#pct').textContent = Math.round(P.pct);
+  $('#pg').style.transform = `scaleX(${(0.08 + 0.62 * (1 - Math.exp(-t * 1.4))).toFixed(4)})`;
+  $('#spin').style.transform = `rotate(${(t * 400) % 360}deg)`;
+  $$('.sk').forEach((e) => e.style.setProperty('--sh', `${(((t * 0.9) % 1) * 160 - 60).toFixed(1)}%`));
+  const d = Math.floor(t * 3) % 4;
+  $('#ld').textContent = 'Wird geladen' + ' .'.repeat(d);
+}
+start(build, after);

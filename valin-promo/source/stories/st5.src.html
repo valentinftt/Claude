@@ -1,0 +1,80 @@
+/* title:VALÍN Story 5;cls: */
+#hd{top:370px;font-size:80px;}
+#pr{position:absolute;left:0;right:0;top:720px;height:300px;z-index:12;}
+.pp{position:absolute;left:0;right:0;top:0;text-align:center;font-family:'Unbounded';font-weight:900;font-size:168px;line-height:300px;letter-spacing:-.04em;white-space:nowrap;}
+.pp small{font-size:100px;}
+.pp .q{color:var(--lime);-webkit-text-stroke:6px #0b0b0b;}
+.str{position:absolute;left:50%;top:136px;height:26px;margin-left:-420px;width:840px;border-radius:13px;background:#e53935;transform-origin:0 50%;transform:rotate(-7deg) scaleX(0);}
+#plate{position:absolute;left:200px;top:735px;width:680px;height:270px;border-radius:40px;background:var(--lime);z-index:11;box-shadow:0 30px 80px rgba(199,244,49,.55);}
+#ab{position:absolute;left:175px;top:682px;height:84px;padding:0 30px;border-radius:42px;background:#0b0b0b;color:#fff;font-family:'Unbounded';font-weight:800;font-size:40px;display:flex;align-items:center;z-index:14;}
+#rays{position:absolute;left:540px;top:870px;width:0;height:0;z-index:10;}
+.ray{position:absolute;left:0;top:0;width:0;height:0;}
+.ray i{position:absolute;left:-9px;top:-60px;width:18px;height:70px;border-radius:9px;background:#0b0b0b;display:block;}
+.ray:nth-child(odd) i{background:var(--lime);height:52px;}
+#chips{position:absolute;left:60px;right:60px;top:1150px;display:flex;flex-wrap:wrap;justify-content:center;gap:18px;z-index:12;}
+.ck{height:76px;padding:0 30px;border-radius:38px;border:2.5px solid #0b0b0b;background:#fff;display:flex;align-items:center;gap:12px;font-weight:700;font-size:30px;}
+.ck b{width:40px;height:40px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;}
+.ck svg{width:24px;height:24px;}
+#sub{position:absolute;left:0;right:0;top:1048px;text-align:center;font-size:30px;font-weight:600;color:var(--mute);z-index:12;}
+<!--BODY-->
+{{LOGO}}
+<div class="H" id="hd"><span class="m"><span class="mi">Was kostet eine</span></span><span class="m"><span class="mi" data-fit="990"><span class="hl" id="hl1">moderne Website?</span></span></span></div>
+<div id="rays"></div>
+<div id="plate"></div>
+<div id="ab">ab</div>
+<div id="pr">
+ <div class="pp" id="p1">2.000 €<span class="q">?</span><div class="str" id="s1"></div></div>
+ <div class="pp" id="p2">1.000 €<span class="q">?</span><div class="str" id="s2"></div></div>
+ <div class="pp" id="p3"><span id="spn">0</span> €</div>
+ <div class="pp" id="p4">299 €</div>
+</div>
+<div id="sub">Deine neue Website bei VALÍN Studio.</div>
+<div id="chips">
+ <div class="ck"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b>Modernes Design</div>
+ <div class="ck"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b>Mobil optimiert</div>
+ <div class="ck"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b>Kostenloses Erstgespräch</div>
+</div>
+<!--JS-->
+const SP = 2.3, LAND = 2.9;
+function build() {
+  for (let i = 0; i < 14; i++) $('#rays').insertAdjacentHTML('beforeend', `<div class="ray" style="transform:rotate(${i * 360 / 14}deg)"><i></i></div>`);
+  gsap.set(['#p2', '#p3', '#p4', '#plate', '#ab', '#sub'], { autoAlpha: 0 });
+  gsap.set('.ray i', { autoAlpha: 0 });
+  logoIn(0);
+  rise('#hd .mi', 0.05, { s: 0.1 });
+  marker('#hl1', 0.55);
+  // 2.000 €?
+  tl.fromTo('#p1', { scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.4, ease: 'back.out(2.2)', ...FT }, 0.75);
+  tl.fromTo('#s1', { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: 'power2.out', ...FT }, 1.2);
+  tl.to('#p1', { color: '#c9c9c4', duration: 0.15 }, 1.32);
+  tl.to('#p1', { yPercent: 70, autoAlpha: 0, duration: 0.22, ease: 'power3.in' }, 1.5);
+  // 1.000 €?
+  tl.fromTo('#p2', { yPercent: -70, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 0.3, ease: 'back.out(1.8)', immediateRender: false }, 1.58);
+  tl.fromTo('#s2', { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: 'power2.out', ...FT }, 1.95);
+  tl.to('#p2', { color: '#c9c9c4', duration: 0.15 }, 2.07);
+  tl.to('#p2', { yPercent: 70, autoAlpha: 0, duration: 0.2, ease: 'power3.in' }, SP - 0.05);
+  // slot spin
+  tl.set('#p3', { autoAlpha: 1 }, SP); tl.set('#p3', { autoAlpha: 0 }, LAND);
+  // landing stamp
+  tl.set('#p4', { autoAlpha: 1 }, LAND);
+  tl.fromTo('#p4', { scale: 2.3 }, { scale: 1, duration: 0.32, ease: 'back.out(1.6)', immediateRender: false }, LAND);
+  tl.fromTo('#plate', { scale: 0.3, rotation: 8, autoAlpha: 0 }, { scale: 1, rotation: -3, autoAlpha: 1, duration: 0.45, ease: 'back.out(2)', immediateRender: false }, LAND + 0.05);
+  tl.fromTo('#ab', { scale: 0, rotation: -30, autoAlpha: 0 }, { scale: 1, rotation: -8, autoAlpha: 1, duration: 0.4, ease: 'back.out(3)', immediateRender: false }, LAND + 0.25);
+  tl.fromTo('.ray i', { y: -120, scaleY: 1.4, autoAlpha: 1 }, { y: -330, scaleY: 0.2, autoAlpha: 0, duration: 0.6, ease: 'expo.out', immediateRender: false }, LAND + 0.02);
+  shake(LAND + 0.02, 14, 0.3);
+  tl.fromTo('#flash', { opacity: 0.6 }, { opacity: 0, duration: 0.3, ease: 'power2.out', immediateRender: false }, LAND);
+  tl.fromTo('#p4', { scale: 1.06 }, { scale: 1, duration: 0.3, ease: 'power2.out', immediateRender: false }, LAND + 0.9);
+  slideUp('#sub', LAND + 0.45, { y: 30 });
+  slideUp('.ck', 3.6, { s: 0.12 });
+  cta(4.15);
+}
+function after(t) {
+  if (t >= SP && t < LAND) {
+    const k = Math.floor(t * 30);
+    const v = 150 + ((k * 7919) % 1700);
+    $('#spn').textContent = v >= 1000 ? `${Math.floor(v / 1000)}.${String(v % 1000).padStart(3, '0')}` : String(v);
+    $('#p3').style.transform = `translateY(${((k % 2) ? -14 : 14)}px)`;
+    $('#p3').style.filter = 'blur(2px)';
+  }
+}
+start(build, after);

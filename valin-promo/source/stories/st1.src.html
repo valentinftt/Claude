@@ -1,0 +1,96 @@
+/* title:VALÍN Story 1;cls:dk */
+#wall{position:absolute;inset:0;background:radial-gradient(120% 70% at 20% 10%,#2b3a12 0%,#11140c 45%,#070707 75%),#070707;}
+#wall .b1{position:absolute;left:-300px;top:900px;width:1400px;height:1400px;border-radius:50%;background:radial-gradient(circle,rgba(199,244,49,.22),rgba(199,244,49,.05) 45%,transparent 68%);}
+#wall .b2{position:absolute;left:500px;top:-300px;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,rgba(120,200,255,.12),transparent 65%);}
+#lock{position:absolute;left:0;right:0;top:300px;text-align:center;color:#fff;z-index:2;}
+#lock .d{font-size:38px;font-weight:600;opacity:.85;}
+#lock .tm{font-family:'Unbounded';font-weight:600;font-size:230px;line-height:1;letter-spacing:-.03em;margin-top:6px;}
+#lock .lk{display:block;margin:0 auto 26px;width:34px;height:44px;}
+#nl{position:absolute;left:44px;right:44px;top:745px;height:1200px;z-index:5;}
+.nt{position:absolute;left:0;right:0;top:0;height:156px;border-radius:44px;background:rgba(246,246,242,.94);display:flex;align-items:center;gap:24px;padding:0 30px;box-shadow:0 18px 40px rgba(0,0,0,.35);transform-origin:50% 0;opacity:0;}
+.nt .ic{width:92px;height:92px;border-radius:24px;flex:none;display:flex;align-items:center;justify-content:center;}
+.nt .ic.ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);}
+.nt .ic.sh{background:var(--lime);}
+.nt .ic svg{width:52px;height:52px;}
+.nt .tx{flex:1;min-width:0;color:#0b0b0b;}
+.nt .tx b{display:flex;justify-content:space-between;font-size:31px;font-weight:700;}
+.nt .tx b i{font-style:normal;font-weight:500;font-size:24px;color:#8a8a85;}
+.nt .tx span{display:block;margin-top:4px;font-size:28px;color:#3a3a36;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#dim{position:absolute;inset:0;background:#070707;opacity:0;z-index:10;}
+#cnt{position:absolute;left:0;right:0;top:668px;text-align:center;z-index:6;}
+#cnt span{display:inline-block;height:52px;padding:0 24px;border-radius:26px;background:rgba(255,255,255,.16);color:#fff;font-weight:700;font-size:24px;line-height:52px;}
+#hd{top:690px;}
+#offer{top:1205px;}
+#hd .hl::before{z-index:-1;}
+#hlt,#hlot{color:#0b0b0b;}
+<!--BODY-->
+<div id="wall"><div class="b1"></div><div class="b2"></div></div>
+<div id="lock"><svg class="lk" viewBox="0 0 34 44"><rect x="3" y="18" width="28" height="24" rx="5" fill="#fff"/><path d="M9 18v-6a8 8 0 0 1 16 0v6" fill="none" stroke="#fff" stroke-width="4"/></svg><div class="d">Freitag, 2. Oktober</div><div class="tm">9:41</div></div>
+<div id="cnt"><span id="cntT">1 Mitteilung</span></div>
+<div id="nl"></div>
+<div id="dim"></div>
+{{LOGO}}
+<div class="H" id="hd"><span class="m"><span class="mi">Das passiert</span></span><span class="m"><span class="mi">nach dem</span></span><span class="m"><span class="mi" data-fit="980"><span class="hl" id="hl1"><span class="dkt" id="hlt">richtigen Reel.</span></span></span></span></div>
+<div id="offer"><span class="m"><span class="mi">Reel-Abos</span></span><span class="m"><span class="mi"><span class="hl" id="hlo"><span id="hlot">ab 99 €/Monat</span></span></span></span></div>
+<!--JS-->
+const IG = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#fff" stroke="none"/></svg>';
+const SH = '<svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>';
+const N = [
+  ['ig', 'Instagram', 'Dein Reel geht viral 🔥 10.000 Aufrufe'],
+  ['sh', 'Neue Bestellung', 'Gold Armband · 89,00 €'],
+  ['ig', 'anna.m', 'Ist das noch verfügbar? 😍'],
+  ['ig', 'Instagram', '+124 neue Follower'],
+  ['sh', 'Neue Bestellung', 'Kette Luna · 129,00 €'],
+  ['ig', 'lisa.k', 'Wo kann man das kaufen?'],
+  ['sh', 'Neue Bestellung', '2 Artikel · 178,00 €'],
+  ['ig', 'Instagram', 'Dein Reel wurde 312× geteilt'],
+  ['sh', 'Neue Bestellung', 'Ring Aura · 59,00 €'],
+  ['ig', 'marie.s', 'Brauche ich sofort!! 😭'],
+  ['sh', 'Neue Bestellung', 'Ohrringe Sol · 49,00 €'],
+  ['ig', 'Instagram', '50.000 Aufrufe 🚀'],
+  ['sh', 'Neue Bestellung', '3 Artikel · 247,00 €'],
+  ['ig', 'jana.w', 'Link bitte!! 🙏'],
+];
+// arrival times: gaps shrink -> the phone "explodes"
+const TA = N.map((_, k) => 0.12 + 2.55 * (1 - Math.pow(1 - k / (N.length - 1), 2)));
+const SLOT = 172, HEAD = 2.85;
+let cards = [];
+function build() {
+  const nl = $('#nl');
+  N.forEach(([k, t, s]) => {
+    nl.insertAdjacentHTML('beforeend', `<div class="nt"><div class="ic ${k}">${k === 'ig' ? IG : SH}</div><div class="tx"><b>${t}<i>jetzt</i></b><span>${s.replace(/([\u{1F300}-\u{1FAFF}☀-➿])/gu, '<span class="emo" style="display:inline;font-size:inherit">$1</span>')}</span></div></div>`);
+  });
+  cards = $$('.nt');
+  gsap.set(['#hd .mi', '#offer .mi'], { yPercent: 115 });
+  // haptic buzz on every arrival
+  TA.forEach((t, i) => tl.to('#cam', { keyframes: [{ x: -6 }, { x: 5 }, { x: -3 }, { x: 0 }], duration: 0.12, ease: 'none' }, t));
+  tl.to('#lock', { y: -40, scale: 0.92, opacity: 0.55, duration: 2.4, ease: 'power1.in' }, 0.4);
+  tl.fromTo('#wall .b1', { x: 0, y: 0 }, { x: 260, y: -360, duration: DUR, ease: 'sine.inOut', ...FT }, 0);
+  // reveal
+  tl.to('#dim', { opacity: 0.88, duration: 0.35, ease: 'power2.out' }, HEAD);
+  tl.to(['#nl', '#cnt'], { scale: 0.92, y: 40, opacity: 0.3, duration: 0.6, ease: 'expo.out' }, HEAD);
+  camPunch(HEAD, 1.06);
+  logoIn(HEAD + 0.05);
+  rise('#hd .mi', HEAD + 0.05, { s: 0.1 });
+  marker('#hl1', HEAD + 0.55);
+  cta(4.05, 3.55);
+}
+function after(t) {
+  let n = 0;
+  cards.forEach((c, i) => {
+    const p = (t - TA[i]) / 0.3;
+    if (p < 0) { c.style.opacity = 0; return; }
+    n++;
+    let pos = 0;
+    for (let j = i + 1; j < cards.length; j++) pos += ease((t - TA[j]) / 0.26);
+    const enter = ease(p);
+    const over = Math.max(0, pos - 3.2);            // older cards tuck into a stack
+    const y = Math.min(pos, 3.2) * SLOT + Math.min(over, 2) * 26 - (1 - enter) * 90;
+    const s = (0.86 + 0.14 * enter) * (1 - Math.min(over, 2) * 0.05);
+    c.style.transform = `translateY(${y.toFixed(1)}px) scale(${s.toFixed(4)})`;
+    c.style.opacity = (Math.min(1, enter * 1.4) * (1 - clamp(over - 1.2) * 1)).toFixed(3);
+    c.style.zIndex = 100 + i;
+  });
+  $('#cntT').textContent = n <= 1 ? '1 Mitteilung' : `${n * 3 + (n > 6 ? 17 : 0)} Mitteilungen`;
+}
+start(build, after);
