@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>VALÍN Studio Promo</title>
+<style>
+@font-face{font-family:'Unbounded';src:url('node_modules/@fontsource-variable/unbounded/files/unbounded-latin-wght-normal.woff2') format('woff2');font-weight:200 900;}
+@font-face{font-family:'Unbounded';src:url('node_modules/@fontsource-variable/unbounded/files/unbounded-latin-ext-wght-normal.woff2') format('woff2');font-weight:200 900;unicode-range:U+0100-02AF,U+1E00-1EFF,U+20AC;}
+@font-face{font-family:'Michroma';src:url('node_modules/@fontsource/michroma/files/michroma-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2') format('woff2');font-weight:400;}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2');font-weight:500;}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2');font-weight:600;}
+@font-face{font-family:'Inter';src:url('node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2') format('woff2');font-weight:700;}
+
+:root{--bg:#0b0b0b;--ink:#f3f3ee;--lime:#c7f431;--mute:#8a8a85;--line:rgba(255,255,255,.09);--card:#151515;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000;}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--bg);font-family:'Inter',sans-serif;color:var(--ink);}
+#cam{position:absolute;inset:0;transform-origin:50% 45%;}
+.abs{position:absolute}
+.scene{position:absolute;inset:0;visibility:hidden;}
+.inner{position:absolute;inset:0;transform-origin:50% 50%;}
+
+/* background */
+#grid{position:absolute;inset:-200px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:120px 120px;opacity:0;}
+.glow{position:absolute;border-radius:50%;}
+#glowA{width:1400px;height:1400px;left:-550px;top:-50px;background:radial-gradient(circle,rgba(199,244,49,.13),rgba(199,244,49,.05) 35%,transparent 65%);}
+#glowB{width:1300px;height:1300px;right:-550px;top:850px;background:radial-gradient(circle,rgba(199,244,49,.09),rgba(199,244,49,.035) 35%,transparent 65%);}
+
+/* type */
+.U{font-family:'Unbounded',sans-serif;}
+.M{font-family:'Michroma',sans-serif;}
+.m{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em;}
+.mi{display:inline-block;white-space:nowrap;will-change:transform;}
+.lime{color:var(--lime);}
+em{font-style:normal;color:var(--lime);}
+
+.label{position:absolute;left:80px;top:250px;display:flex;align-items:center;gap:22px;font-family:'Michroma';font-size:26px;letter-spacing:.32em;}
+.label .n{color:var(--lime);}
+.label .bar{width:70px;height:2px;background:var(--ink);opacity:.5;}
+.head{position:absolute;left:80px;top:310px;font-family:'Unbounded';font-weight:700;font-size:78px;line-height:1.08;letter-spacing:-.01em;}
+
+.chips{position:absolute;left:0;right:0;top:1455px;display:flex;justify-content:center;gap:18px;}
+.chip{height:66px;padding:0 30px;border:1.5px solid rgba(255,255,255,.2);border-radius:33px;display:flex;align-items:center;gap:14px;font-weight:600;font-size:27px;background:rgba(20,20,20,.7);}
+.chip i{width:11px;height:11px;border-radius:50%;background:var(--lime);display:block;}
+
+#wipe{position:absolute;left:0;top:-140px;width:3200px;height:2200px;background:var(--lime);transform:translateX(-3800px) skewX(-32deg);z-index:50;}
+#slash1{position:absolute;left:0;top:-140px;width:70px;height:2200px;background:var(--lime);z-index:5;}
+#flash{position:absolute;inset:0;background:var(--ink);z-index:60;opacity:0;visibility:hidden;}
+#grain{position:absolute;inset:0;width:1080px;height:1920px;z-index:80;opacity:.045;pointer-events:none;}
+#vig{position:absolute;inset:0;z-index:79;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%);pointer-events:none;}
+
+/* S1 */
+#s1 .words{position:absolute;left:80px;top:520px;font-family:'Unbounded';font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-.02em;}
+/* S2 */
+#s2tag{position:absolute;left:80px;top:470px;font-family:'Michroma';font-size:26px;letter-spacing:.32em;color:var(--mute);}
+#s2 .mehr{position:absolute;left:72px;top:520px;font-family:'Unbounded';font-weight:900;font-size:250px;line-height:1;letter-spacing:-.03em;}
+#s2 .swap{position:absolute;left:80px;top:800px;width:950px;height:170px;}
+#s2 .swap .m{position:absolute;left:0;top:0;}
+#s2 .swap .mi{font-family:'Unbounded';font-weight:800;font-size:120px;letter-spacing:-.02em;}
+#chart{position:absolute;left:0;top:1020px;width:1080px;height:520px;}
+
+/* bottle */
+.bottle{position:absolute;width:110px;height:290px;}
+.bottle .cap{position:absolute;left:30px;top:0;width:50px;height:62px;background:linear-gradient(90deg,#000,#2a2a2a 40%,#0a0a0a);border-radius:10px 10px 5px 5px;}
+.bottle .neck{position:absolute;left:38px;top:60px;width:34px;height:14px;background:#1d1d1d;}
+.bottle .body{position:absolute;left:0;top:72px;width:110px;height:218px;border-radius:30px;overflow:hidden;
+  background:linear-gradient(90deg,#d9d9d2 0%,#ffffff 20%,#e4e4dd 48%,#f7f7f1 74%,#c9c9c2 100%);box-shadow:inset 0 -14px 24px rgba(0,0,0,.12);}
+.bottle .lbl{position:absolute;left:0;right:0;top:66px;height:76px;background:#0b0b0b;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+.bottle .lbl b{font-family:'Unbounded';font-weight:800;font-size:19px;color:#f3f3ee;letter-spacing:.12em;}
+.bottle .lbl s{text-decoration:none;font-family:'Michroma';font-size:8px;color:var(--lime);letter-spacing:.3em;}
+.bottle .shine{position:absolute;top:-40px;left:-60px;width:34px;height:320px;background:rgba(255,255,255,.85);transform:skewX(-20deg);filter:blur(4px);}
+.bottle .shadow{position:absolute;left:-10px;top:280px;width:130px;height:22px;border-radius:50%;background:rgba(0,0,0,.35);filter:blur(8px);}
+
+/* S3 browser */
+#browser{position:absolute;left:80px;top:565px;width:920px;height:820px;border-radius:28px;background:#171717;border:1.5px solid rgba(255,255,255,.12);overflow:hidden;box-shadow:0 60px 120px rgba(0,0,0,.6);}
+#browser .chrome{height:66px;display:flex;align-items:center;padding:0 24px;gap:10px;border-bottom:1px solid rgba(255,255,255,.07);}
+#browser .dot{width:14px;height:14px;border-radius:50%;background:#3a3a3a;}
+#browser .url{margin-left:18px;flex:1;height:40px;border-radius:20px;background:#232323;display:flex;align-items:center;padding:0 20px;gap:10px;font-size:20px;color:#c9c9c4;}
+#browser .url svg{width:16px;height:16px;}
+#caret{display:inline-block;width:2px;height:22px;background:var(--lime);margin-left:2px;}
+#browser .vp{position:absolute;left:0;right:0;top:66px;bottom:0;overflow:hidden;background:#f3f3ee;color:#0b0b0b;}
+.page{position:absolute;left:0;top:0;width:100%;}
+.site-nav{height:82px;display:flex;align-items:center;padding:0 36px;gap:28px;border-bottom:1px solid rgba(0,0,0,.07);}
+.site-nav .brand{font-family:'Unbounded';font-weight:800;font-size:26px;letter-spacing:.06em;margin-right:auto;}
+.site-nav .lnk{font-size:18px;font-weight:500;color:#555;}
+.site-nav .cart{height:42px;padding:0 20px;border-radius:21px;background:#0b0b0b;color:#f3f3ee;font-size:17px;font-weight:600;display:flex;align-items:center;}
+.hero{display:flex;padding:40px 36px 0;gap:30px;height:520px;}
+.hero .l{width:480px;padding-top:24px;}
+.hero h1{font-family:'Unbounded';font-weight:800;font-size:46px;line-height:1.08;letter-spacing:-.01em;}
+.hero h1 mark{background:var(--lime);padding:0 8px;color:#0b0b0b;}
+.hero p{margin-top:22px;font-size:20px;line-height:1.45;color:#5a5a55;width:420px;}
+.hero .btns{margin-top:28px;display:flex;gap:14px;}
+.btn{height:60px;padding:0 30px;border-radius:30px;display:flex;align-items:center;font-weight:600;font-size:20px;}
+.btn.dark{background:#0b0b0b;color:#f3f3ee;}
+.btn.ghost{border:1.5px solid #0b0b0b;}
+.hero .img{position:relative;width:340px;height:440px;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,#dbff57,#a9d81b);}
+.hero .img .ring{position:absolute;left:50px;top:90px;width:240px;height:240px;border-radius:50%;border:2px solid rgba(0,0,0,.15);}
+.sec{padding:20px 36px;}
+.sec h2{font-family:'Unbounded';font-weight:700;font-size:32px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:baseline;}
+.sec h2 span{font-family:'Inter';font-weight:600;font-size:18px;color:#555;}
+.cards{display:flex;gap:20px;}
+.card{width:270px;}
+.card .ci{position:relative;height:250px;border-radius:20px;overflow:hidden;}
+.card .cn{margin-top:14px;font-weight:600;font-size:20px;display:flex;justify-content:space-between;}
+.card .cp{margin-top:4px;font-size:18px;color:#666;}
+#mob{position:absolute;left:800px;top:920px;width:250px;height:510px;border-radius:42px;background:#000;border:9px solid #0a0a0a;box-shadow:0 0 0 2px #2b2b2b,0 40px 80px rgba(0,0,0,.7);overflow:hidden;}
+#mob .scr{position:absolute;inset:0;background:#f3f3ee;color:#0b0b0b;overflow:hidden;border-radius:33px;}
+#mob .mnav{height:56px;display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;}
+#mob .mnav b{font-family:'Unbounded';font-weight:800;font-size:15px;letter-spacing:.06em;}
+#mob .mnav i{display:block;width:22px;height:2px;background:#0b0b0b;box-shadow:0 7px 0 #0b0b0b;}
+#mob h3{font-family:'Unbounded';font-weight:800;font-size:22px;line-height:1.1;padding:10px 18px 0;}
+#mob h3 mark{background:var(--lime);padding:0 4px;}
+#mob .mimg{position:relative;margin:16px 18px 0;height:210px;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#dbff57,#a9d81b);}
+#mob .mbtn{margin:16px 18px 0;height:44px;border-radius:22px;background:#0b0b0b;color:#f3f3ee;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+#mobTag{position:absolute;left:740px;top:880px;height:46px;padding:0 18px;border-radius:23px;background:var(--lime);color:#0b0b0b;font-weight:700;font-size:20px;display:flex;align-items:center;z-index:3;}
+#cursor{position:absolute;left:0;top:0;width:44px;height:58px;z-index:20;}
+#ripple{position:absolute;width:60px;height:60px;border-radius:50%;border:3px solid var(--lime);z-index:19;opacity:0;}
+
+/* S4 reel */
+#phone{position:absolute;left:320px;top:550px;width:440px;height:880px;border-radius:66px;background:#000;border:12px solid #050505;box-shadow:0 0 0 2px #2c2c2c,0 60px 140px rgba(0,0,0,.8),0 0 160px rgba(199,244,49,.12);}
+#phone .scr{position:absolute;inset:0;border-radius:54px;overflow:hidden;background:radial-gradient(circle at 50% 42%,#2b2b2b,#0c0c0c 72%);}
+.shot{position:absolute;inset:0;}
+#shot1 .disc{position:absolute;left:58px;top:200px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#dcff5c,#a6d41a 70%);}
+#shot1 .floor{position:absolute;left:0;right:0;top:560px;height:300px;background:linear-gradient(#141414,#0a0a0a);}
+#shot2{visibility:hidden;background:linear-gradient(165deg,#d9ff52,#a3d116);}
+#shot2 .big{position:absolute;left:0;right:0;top:120px;text-align:center;font-family:'Unbounded';font-weight:900;font-size:96px;line-height:.9;color:rgba(11,11,11,.09);letter-spacing:-.03em;}
+#sticker{position:absolute;left:236px;top:150px;width:150px;height:150px;border-radius:50%;background:#0b0b0b;color:#f3f3ee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;z-index:3;}
+#sticker b{font-family:'Unbounded';font-weight:800;font-size:28px;}
+#sticker s{text-decoration:none;font-family:'Michroma';font-size:13px;color:var(--lime);letter-spacing:.2em;}
+#shopBtn{position:absolute;left:60px;right:60px;top:640px;height:70px;border-radius:35px;background:#0b0b0b;color:#f3f3ee;font-family:'Unbounded';font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center;gap:12px;z-index:3;}
+.rc{position:absolute;left:0;right:0;text-align:center;z-index:4;}
+.rc span{display:inline-block;background:#f3f3ee;color:#0b0b0b;font-family:'Unbounded';font-weight:800;font-size:52px;padding:6px 20px;border-radius:12px;}
+.rc.l span{background:var(--lime);}
+#prog{position:absolute;left:24px;right:24px;top:30px;display:flex;gap:8px;z-index:6;}
+#prog div{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden;}
+#prog div i{display:block;height:100%;background:#fff;transform-origin:0 50%;transform:scaleX(0);}
+#rail{position:absolute;right:18px;top:430px;display:flex;flex-direction:column;align-items:center;gap:22px;z-index:6;font-size:17px;font-weight:600;}
+#rail .it{display:flex;flex-direction:column;align-items:center;gap:4px;}
+#rail svg{width:46px;height:46px;}
+#user{position:absolute;left:22px;bottom:34px;right:90px;z-index:6;}
+#user .row{display:flex;align-items:center;gap:12px;font-weight:600;font-size:19px;}
+#user .av{width:44px;height:44px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;font-family:'Unbounded';font-weight:800;font-size:16px;color:#0b0b0b;}
+#user .fol{border:1.5px solid rgba(255,255,255,.7);border-radius:10px;padding:4px 12px;font-size:16px;}
+#user p{margin-top:10px;font-size:17px;color:rgba(255,255,255,.85);}
+#scrFlash{position:absolute;inset:0;background:#fff;opacity:0;z-index:7;}
+.fh{position:absolute;width:44px;height:44px;z-index:8;opacity:0;}
+.toast{position:absolute;width:430px;height:104px;border-radius:26px;background:rgba(28,28,28,.92);border:1.5px solid rgba(255,255,255,.12);box-shadow:0 30px 60px rgba(0,0,0,.6);display:flex;align-items:center;gap:20px;padding:0 24px;z-index:10;}
+.toast .ic{width:58px;height:58px;border-radius:18px;background:var(--lime);display:flex;align-items:center;justify-content:center;flex:none;}
+.toast .ic svg{width:30px;height:30px;}
+.toast b{display:block;font-size:25px;font-weight:700;}
+.toast span{display:block;margin-top:4px;font-size:19px;color:#a3a39e;}
+
+/* S5 bento */
+.tile{position:absolute;border-radius:30px;background:var(--card);border:1.5px solid rgba(255,255,255,.08);overflow:hidden;}
+.tl{position:absolute;left:28px;top:24px;font-family:'Michroma';font-size:15px;letter-spacing:.3em;color:var(--mute);}
+#tType{left:80px;top:560px;width:920px;height:250px;}
+#aa{position:absolute;left:40px;top:44px;font-family:'Unbounded';font-size:170px;line-height:1;font-weight:200;}
+#tType .abc{position:absolute;left:470px;top:70px;font-family:'Unbounded';font-weight:400;font-size:24px;line-height:1.5;color:#bdbdb8;letter-spacing:.06em;}
+#tType .abc b{display:block;font-weight:800;color:var(--ink);font-size:30px;margin-bottom:6px;letter-spacing:0;}
+#tColor{left:80px;top:830px;width:450px;height:290px;padding:70px 24px 24px;}
+#tColor .sw{display:flex;gap:10px;height:100%;}
+#tColor .sw div{flex:1;border-radius:16px;position:relative;transform-origin:50% 100%;}
+#tColor .sw span{position:absolute;left:12px;bottom:12px;font-family:'Michroma';font-size:11px;letter-spacing:.05em;writing-mode:vertical-rl;transform:rotate(180deg);}
+#tLogo{left:550px;top:830px;width:450px;height:290px;background:var(--lime);border:none;color:#0b0b0b;}
+#tLogo .tl{color:rgba(0,0,0,.5);}
+#mark{position:absolute;left:62px;top:100px;width:110px;height:110px;}
+#tLogo .wm{position:absolute;left:190px;top:122px;font-family:'Unbounded';font-weight:900;font-size:58px;letter-spacing:.04em;}
+#sel{position:absolute;left:46px;top:84px;width:362px;height:142px;border:2px solid #0b0b0b;}
+#sel i{position:absolute;width:14px;height:14px;background:#fff;border:2px solid #0b0b0b;}
+#sel .dim{position:absolute;left:50%;bottom:-44px;transform:translateX(-50%);background:#0b0b0b;color:#f3f3ee;font-size:15px;font-weight:600;padding:5px 12px;border-radius:8px;white-space:nowrap;}
+#tSocial{left:80px;top:1140px;width:920px;height:270px;}
+#tSocial .posts{position:absolute;left:262px;top:20px;display:flex;gap:14px;}
+#tSocial .tl{top:28px;}
+#tSocial .t2{position:absolute;left:28px;top:70px;width:210px;font-family:'Unbounded';font-weight:700;font-size:30px;line-height:1.15;}
+#tSocial .t3{position:absolute;left:28px;bottom:26px;font-size:18px;color:var(--mute);}
+.post{position:relative;width:202px;height:230px;border-radius:20px;overflow:hidden;}
+.post.a{background:var(--lime);color:#0b0b0b;}
+.post.a b{position:absolute;left:18px;top:22px;font-family:'Unbounded';font-weight:900;font-size:44px;line-height:1;}
+.post.a s{position:absolute;left:18px;bottom:18px;text-decoration:none;font-family:'Unbounded';font-weight:900;font-size:50px;line-height:1;}
+.post.b{background:radial-gradient(circle at 50% 40%,#2e2e2e,#0e0e0e);}
+.post.b b{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-family:'Unbounded';font-weight:800;font-size:22px;letter-spacing:.06em;}
+.post.c{background:#f3f3ee;color:#0b0b0b;padding:22px;}
+.post.c b{font-family:'Unbounded';font-weight:600;font-size:23px;line-height:1.25;display:block;}
+.post.c s{position:absolute;left:22px;bottom:20px;text-decoration:none;font-family:'Michroma';font-size:11px;letter-spacing:.2em;}
+
+/* S6 */
+#s6 .rows{position:absolute;left:150px;top:640px;}
+#s6 .row{display:flex;align-items:center;gap:34px;height:150px;font-family:'Unbounded';font-weight:700;font-size:72px;}
+#s6 .row svg{width:96px;height:96px;flex:none;}
+#s6 .big{position:absolute;left:0;right:0;top:720px;text-align:center;font-family:'Unbounded';font-weight:900;font-size:112px;line-height:1.05;letter-spacing:-.02em;}
+#s6 .big .m{display:block;}
+#ul{position:absolute;left:190px;top:1000px;width:700px;height:16px;background:var(--lime);transform-origin:0 50%;transform:scaleX(0);}
+
+/* S7 */
+#s7 .lw{position:absolute;left:60px;top:600px;width:960px;}
+#logo{width:960px;height:auto;display:block;overflow:visible;}
+#lglow{position:absolute;left:140px;top:380px;width:800px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(199,244,49,.22),transparent 65%);}
+#ringA{position:absolute;width:120px;height:120px;border-radius:50%;border:4px solid var(--lime);opacity:0;}
+#tag7{position:absolute;left:0;right:0;top:820px;text-align:center;font-family:'Michroma';font-size:24px;letter-spacing:.34em;color:#b4b4ae;white-space:nowrap;}
+#tag7 .d{color:var(--lime);}
+#q7{position:absolute;left:0;right:0;top:1020px;text-align:center;font-family:'Unbounded';font-weight:700;font-size:62px;}
+#q7 .m{display:inline-block;}
+#cta{position:absolute;left:150px;top:1150px;width:780px;height:132px;border-radius:66px;background:var(--lime);color:#0b0b0b;display:flex;align-items:center;justify-content:center;gap:22px;font-family:'Unbounded';font-weight:700;font-size:36px;letter-spacing:.02em;box-shadow:0 0 80px rgba(199,244,49,.35);}
+#cta svg{width:42px;height:42px;}
+.pr{position:absolute;left:150px;top:1150px;width:780px;height:132px;border-radius:66px;border:3px solid var(--lime);opacity:0;}
+#bio{position:absolute;left:0;right:0;top:1325px;text-align:center;font-size:28px;color:#a3a39e;font-weight:500;}
+#bio b{color:var(--ink);font-weight:700;}
+</style>
+</head>
+<body>
+<div id="stage">
+ <div id="cam">
+  <div id="grid"></div>
+  <div class="glow" id="glowA"></div>
+  <div class="glow" id="glowB"></div>
+
+  <!-- S1 HOOK -->
+  <section class="scene" id="s1"><div class="inner">
+   <div id="slash1"></div>
+   <div class="words">
+    <span class="m"><span class="mi" data-fit="920">DEIN</span></span>
+    <span class="m"><span class="mi" data-fit="920">BUSINESS</span></span>
+    <span class="m"><span class="mi" data-fit="920">VERDIENT</span></span>
+    <span class="m"><span class="mi lime" id="mehr1" data-fit="920">MEHR.</span></span>
+   </div>
+  </div></section>
+
+  <!-- S2 MEHR -->
+  <section class="scene" id="s2"><div class="inner">
+   <div id="s2tag">MIT VALÍN STUDIO</div>
+   <div class="mehr"><span class="m"><span class="mi">MEHR</span></span></div>
+   <div class="swap">
+    <span class="m" id="sw1"><span class="mi" data-fit="930">SICHTBARKEIT.</span></span>
+    <span class="m" id="sw2"><span class="mi" data-fit="930">ANFRAGEN.</span></span>
+    <span class="m" id="sw3"><span class="mi lime" data-fit="930">UMSATZ.</span></span>
+   </div>
+   <svg id="chart" viewBox="0 0 1080 520">
+    <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7f431" stop-opacity=".35"/><stop offset="1" stop-color="#c7f431" stop-opacity="0"/></linearGradient>
+    <clipPath id="areaClip"><rect id="areaRect" x="0" y="0" width="0" height="520"/></clipPath></defs>
+    <g stroke="rgba(255,255,255,.07)" stroke-width="2"><line x1="80" y1="120" x2="1000" y2="120"/><line x1="80" y1="250" x2="1000" y2="250"/><line x1="80" y1="380" x2="1000" y2="380"/><line x1="80" y1="500" x2="1000" y2="500"/></g>
+    <path clip-path="url(#areaClip)" fill="url(#ag)" d="M80 470 C200 460 260 430 330 420 S460 400 520 340 S640 330 700 260 S820 210 880 120 L960 60 L960 500 L80 500Z"/>
+    <path id="cline" fill="none" stroke="#c7f431" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M80 470 C200 460 260 430 330 420 S460 400 520 340 S640 330 700 260 S820 210 880 120 L960 60"/>
+    <circle id="cdotR" cx="960" cy="60" r="18" fill="none" stroke="#c7f431" stroke-width="3"/>
+    <circle id="cdot" cx="960" cy="60" r="14" fill="#c7f431"/>
+   </svg>
+  </div></section>
+
+  <!-- S3 WEBSITES -->
+  <section class="scene" id="s3"><div class="inner">
+   <div class="label"><span class="n">01</span><span class="bar"></span><span>WEBSITES</span></div>
+   <div class="head">
+    <span class="m"><span class="mi">Websites,</span></span>
+    <span class="m"><span class="mi" data-fit="900">die <em>verkaufen.</em></span></span>
+   </div>
+   <div id="browser">
+    <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+     <div class="url"><svg viewBox="0 0 24 24" fill="none" stroke="#c7f431" stroke-width="2.4"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="urlText"></span><span id="caret"></span></div>
+    </div>
+    <div class="vp"><div class="page" id="page">
+     <div class="site-nav"><span class="brand">NOVA</span><span class="lnk">Shop</span><span class="lnk">Über uns</span><span class="lnk">Kontakt</span><span class="cart">Warenkorb (0)</span></div>
+     <div class="hero">
+      <div class="l">
+       <h1><span class="m"><span class="mi">Dein Produkt.</span></span><span class="m"><span class="mi">Perfekt in</span></span><span class="m"><span class="mi"><mark>Szene.</mark></span></span></h1>
+       <p id="heroP">Premium-Qualität, nachhaltig hergestellt und in 24 h bei dir.</p>
+       <div class="btns"><span class="btn dark" id="buyBtn">Jetzt kaufen</span><span class="btn ghost">Mehr erfahren</span></div>
+      </div>
+      <div class="img" id="heroImg"><div class="ring"></div>
+       <div class="bottle" id="heroBottle" style="left:115px;top:70px;transform:scale(1.0)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="lbl"><b>NOVA</b><s>SERUM</s></div><div class="shine"></div></div></div>
+      </div>
+     </div>
+     <div class="sec">
+      <h2>Bestseller <span>Alle ansehen →</span></h2>
+      <div class="cards">
+       <div class="card"><div class="ci" style="background:linear-gradient(160deg,#e6e6df,#cfcfc8)"><div class="bottle" style="left:80px;top:-10px;transform:scale(.78)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="lbl"><b>NOVA</b><s>SERUM</s></div></div></div></div><div class="cn">NOVA Serum <span>+</span></div><div class="cp">29,90 €</div></div>
+       <div class="card"><div class="ci" style="background:linear-gradient(160deg,#dbff57,#a9d81b)"><div class="bottle" style="left:80px;top:-10px;transform:scale(.78)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body" style="background:linear-gradient(90deg,#1a1a1a,#3a3a3a 25%,#151515 60%,#2c2c2c)"><div class="lbl" style="background:#c7f431"><b style="color:#0b0b0b">NOVA</b><s style="color:#0b0b0b">GLOW</s></div></div></div></div><div class="cn">NOVA Glow <span>+</span></div><div class="cp">34,90 €</div></div>
+       <div class="card"><div class="ci" style="background:linear-gradient(160deg,#2a2a2a,#111)"><div class="bottle" style="left:80px;top:-10px;transform:scale(.78)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="lbl"><b>NOVA</b><s>NIGHT</s></div></div></div></div><div class="cn">NOVA Night <span>+</span></div><div class="cp">32,90 €</div></div>
+      </div>
+     </div>
+    </div></div>
+   </div>
+   <div id="mob"><div class="scr">
+    <div class="mnav"><b>NOVA</b><i></i></div>
+    <h3>Dein Produkt. Perfekt in <mark>Szene.</mark></h3>
+    <div class="mimg"><div class="bottle" style="left:52px;top:-20px;transform:scale(.62)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="lbl"><b>NOVA</b><s>SERUM</s></div></div></div></div>
+    <div class="mbtn">Jetzt kaufen</div>
+   </div></div>
+   <div id="mobTag">Mobil optimiert</div>
+   <div class="chips" id="c3"><div class="chip"><i></i>Responsive</div><div class="chip"><i></i>Schnell</div><div class="chip"><i></i>SEO-ready</div></div>
+   <div id="ripple"></div>
+   <svg id="cursor" viewBox="0 0 30 40"><path d="M3 2 L3 31 L10.5 24 L15.5 35 L20.5 33 L15.5 22.5 L25.5 22.5 Z" fill="#fff" stroke="#0b0b0b" stroke-width="2" stroke-linejoin="round"/></svg>
+  </div></section>
+
+  <!-- S4 SOCIAL VIDEOS -->
+  <section class="scene" id="s4"><div class="inner">
+   <div class="label"><span class="n">02</span><span class="bar"></span><span>SOCIAL VIDEOS</span></div>
+   <div class="head">
+    <span class="m"><span class="mi">Videos, die den</span></span>
+    <span class="m"><span class="mi" data-fit="900">Scroll <em>stoppen.</em></span></span>
+   </div>
+   <div id="phone"><div class="scr">
+    <div class="shot" id="shot1">
+     <div class="floor"></div>
+     <div class="disc" id="disc"></div>
+     <div class="bottle" id="reelBottle" style="left:153px;top:250px;transform:scale(1.4)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="lbl"><b>NOVA</b><s>SERUM</s></div><div class="shine" id="shine1"></div></div></div>
+     <div class="rc" style="top:150px"><span id="cw1">DAS</span></div>
+     <div class="rc" style="top:232px"><span id="cw2">MUSS</span></div>
+     <div class="rc l" style="top:560px"><span id="cw3">ICH</span></div>
+     <div class="rc l" style="top:642px"><span id="cw4">HABEN.</span></div>
+    </div>
+    <div class="shot" id="shot2">
+     <div class="big">NOVA<br>NOVA<br>NOVA<br>NOVA<br>NOVA<br>NOVA</div>
+     <div class="bottle" id="reelBottle2" style="left:140px;top:250px;transform:scale(1.75) rotate(-10deg)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="lbl"><b>NOVA</b><s>SERUM</s></div><div class="shine" id="shine2"></div></div></div>
+     <div id="sticker"><s>NEU</s><b>29,90 €</b></div>
+     <div id="shopBtn">Jetzt shoppen <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#c7f431" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </div>
+    <div id="prog"><div><i id="pg1"></i></div><div><i id="pg2"></i></div><div><i></i></div></div>
+    <div id="rail">
+     <div class="it"><svg viewBox="0 0 24 24" id="heart"><path id="heartP" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.6 4.5c2.1 0 3.6 1.2 5.4 3.2 1.8-2 3.3-3.2 5.4-3.2 3.6 0 5.7 3.8 4.2 7.3C19.5 16.4 12 21 12 21z" fill="none" stroke="#fff" stroke-width="1.8"/></svg><span id="likes">1,2K</span></div>
+     <div class="it"><svg viewBox="0 0 24 24"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.7L3.5 20.5l1.4-4.6A8.5 8.5 0 1 1 20.5 11.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg><span id="comms">86</span></div>
+     <div class="it"><svg viewBox="0 0 24 24"><path d="M21.5 3.5L10.5 13.5M21.5 3.5l-6.5 18-4.5-8-8-4.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg><span id="shares">40</span></div>
+    </div>
+    <div id="user"><div class="row"><span class="av">N</span>nova.skincare<span class="fol">Folgen</span></div><p>Das neue Serum ist da. Link in Bio.</p></div>
+    <div id="scrFlash"></div>
+   </div></div>
+   <div id="hearts"></div>
+   <div class="toast" id="toast1" style="left:40px;top:760px"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></div><div><b>Neue Bestellung</b><span>NOVA Serum · gerade eben</span></div></div>
+   <div class="toast" id="toast2" style="left:610px;top:1110px"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.2 7.7L3.5 20.5l1.4-4.6A8.5 8.5 0 1 1 20.5 11.5z"/></svg></div><div><b>Neue Nachricht</b><span>„Ist das noch verfügbar?“</span></div></div>
+   <div class="chips" id="c4"><div class="chip"><i></i>Reels</div><div class="chip"><i></i>TikTok</div><div class="chip"><i></i>Ads</div></div>
+  </div></section>
+
+  <!-- S5 DESIGN -->
+  <section class="scene" id="s5"><div class="inner">
+   <div class="label"><span class="n">03</span><span class="bar"></span><span>DESIGN</span></div>
+   <div class="head">
+    <span class="m"><span class="mi">Designs, die</span></span>
+    <span class="m"><span class="mi" data-fit="900"><em>hängen bleiben.</em></span></span>
+   </div>
+   <div class="tile" id="tType"><div class="tl">TYPOGRAFIE</div><div id="aa">Aa</div>
+    <div class="abc"><b>Unbounded</b>ABCDEFGHIJKLM<br>NOPQRSTUVWXYZ<br>0123456789 &amp;?!</div></div>
+   <div class="tile" id="tColor"><div class="tl">FARBEN</div><div class="sw">
+    <div id="swL" style="background:#c7f431;color:#0b0b0b"><span>#C7F431</span></div>
+    <div style="background:#0b0b0b;border:1.5px solid #333"><span>#0B0B0B</span></div>
+    <div style="background:#f3f3ee;color:#0b0b0b"><span>#F3F3EE</span></div>
+    <div style="background:#8a8a85;color:#0b0b0b"><span>#8A8A85</span></div></div></div>
+   <div class="tile" id="tLogo"><div class="tl">LOGO</div>
+    <svg id="mark" viewBox="0 0 110 110"><circle id="markC" cx="55" cy="55" r="50" fill="none" stroke="#0b0b0b" stroke-width="7"/><path id="markN" d="M35 78V32l40 46V32" fill="none" stroke="#0b0b0b" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="wm"><span class="m"><span class="mi">NOVA</span></span></div>
+    <div id="sel"><i style="left:-8px;top:-8px"></i><i style="right:-8px;top:-8px"></i><i style="left:-8px;bottom:-8px"></i><i style="right:-8px;bottom:-8px"></i><span class="dim">362 × 142</span></div>
+   </div>
+   <div class="tile" id="tSocial"><div class="tl">POSTS</div>
+    <div class="t2">Feed, der verkauft.</div><div class="t3">Instagram · TikTok</div>
+    <div class="posts">
+     <div class="post a"><b>SALE</b><s>-30%</s></div>
+     <div class="post b"><div class="bottle" style="left:46px;top:-40px;transform:scale(.5)"><div class="shadow"></div><div class="cap"></div><div class="neck"></div><div class="body"><div class="lbl"><b>NOVA</b><s>SERUM</s></div></div></div><b>NEW DROP</b></div>
+     <div class="post c"><b>Hautpflege, neu gedacht.</b><s>NOVA</s></div>
+    </div>
+   </div>
+   <div class="chips" id="c5"><div class="chip"><i></i>Branding</div><div class="chip"><i></i>Social Posts</div><div class="chip"><i></i>Print</div></div>
+  </div></section>
+
+  <!-- S6 ALLES AUS EINER HAND -->
+  <section class="scene" id="s6"><div class="inner">
+   <div class="rows">
+    <div class="row"><svg viewBox="0 0 96 96"><circle class="cc" cx="48" cy="48" r="46" fill="#c7f431"/><path class="ck" d="M27 49l14 14 28-29" fill="none" stroke="#0b0b0b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Website</span></div>
+    <div class="row"><svg viewBox="0 0 96 96"><circle class="cc" cx="48" cy="48" r="46" fill="#c7f431"/><path class="ck" d="M27 49l14 14 28-29" fill="none" stroke="#0b0b0b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Videos</span></div>
+    <div class="row"><svg viewBox="0 0 96 96"><circle class="cc" cx="48" cy="48" r="46" fill="#c7f431"/><path class="ck" d="M27 49l14 14 28-29" fill="none" stroke="#0b0b0b" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Design</span></div>
+   </div>
+   <div class="big"><span class="m"><span class="mi" data-fit="860">ALLES AUS</span></span><span class="m"><span class="mi lime" data-fit="860">EINER HAND.</span></span></div>
+   <div id="ul"></div>
+  </div></section>
+
+  <!-- S7 LOGO + CTA -->
+  <section class="scene" id="s7"><div class="inner">
+   <div id="lglow"></div>
+   <div class="lw" id="lw">{{LOGO}}</div>
+   <div id="ringA"></div>
+   <div id="tag7">WEBSITES <span class="d">·</span> VIDEOS <span class="d">·</span> DESIGN</div>
+   <div id="q7"><span class="m"><span class="mi">Bereit aufzufallen?</span></span></div>
+   <div class="pr" id="pr1"></div><div class="pr" id="pr2"></div><div class="pr" id="pr3"></div>
+   <div id="cta">PROJEKT ANFRAGEN <svg id="ctaArrow" viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+   <div id="bio"><b>Link in Bio</b> · unverbindlich anfragen</div>
+  </div></section>
+
+  <div id="wipe"></div>
+ </div>
+ <div id="flash"></div>
+ <div id="vig"></div>
+ <canvas id="grain" width="540" height="960"></canvas>
+</div>
+
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="node_modules/gsap/dist/DrawSVGPlugin.min.js"></script>
+<script src="anim.js"></script>
+</body>
+</html>
