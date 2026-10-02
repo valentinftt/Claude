@@ -1,0 +1,147 @@
+---
+import Base from '../layouts/Base.astro';
+import Klassen from '../components/Klassen.astro';
+import Ablauf from '../components/Ablauf.astro';
+import Reviews from '../components/Reviews.astro';
+import { site } from '../data/site';
+import entries from '../data/gaestebuch.json';
+---
+<Base title="Home">
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div class="hero-txt">
+        <div class="eyebrow reveal" style="color:var(--yellow)">Fahrschule in Kulmbach</div>
+        <h1 class="reveal" style="--d:.08s">Dein Weg zum <span class="hl">Führerschein.</span></h1>
+        <p class="lead reveal" style="--d:.16s">Schnell, individuell und zuverlässig – mit einer soliden Ausbildung, die Dich zu einem sicheren Fahrer macht.</p>
+        <div class="hero-btns reveal" style="--d:.24s">
+          <a href="/kontakt/" class="btn">Jetzt anfragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/fe-klassen/" class="btn ghost" style="color:#fff">FE-Klassen</a>
+        </div>
+      </div>
+      <div class="hero-card reveal zoom" style="--d:.3s">
+        <div class="sign"><b>{site.hours.split(' von ')[0]}</b><span>{site.hours.split(' von ')[1]}</span></div>
+        <p>{site.street} · {site.city}</p>
+      </div>
+    </div>
+    <div class="hero-road" aria-hidden="true"><div class="hero-car"><img src="/img/klasse-b.png" alt="" /></div></div>
+  </section>
+
+  <section class="section">
+    <div class="wrap welcome">
+      <div class="reveal from-left">
+        <div class="eyebrow">Home</div>
+        <h2>Schön, dass Du da bist.</h2>
+      </div>
+      <div class="reveal from-right">
+        <p class="big">Herzlich Willkommen auf meiner Fahrschul-Seite. Schön, dass Du da bist. Mein Ziel ist es, Dich schnell, individuell und zuverlässig zum Führerschein zu begleiten. Dabei lege ich Wert auf eine solide Ausbildung, die Dich zu einem sicheren Fahrer macht. Du hast Fragen zum Ablauf, zur Anmeldung oder möchtest einfach mal vorbeikommen? Klick auf den &gt;Button&lt; und schick mir eine Anfrage. Ich freu mich auf Dich!</p>
+        <a href="/kontakt/" class="btn">Button <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="wrap photo reveal zoom">
+      <img src="/img/fahrschulauto.jpg" alt="Das Fahrschulauto von Sonny's Fahrschule" loading="lazy" />
+      <div class="photo-tag"><b>Unser Fahrschulauto</b><span>{site.street} · {site.city}</span></div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="reveal"><div class="eyebrow">FE-Klassen</div><h2>Welchen Führerschein<br />willst Du machen?</h2></div>
+        <a href="/fe-klassen/" class="btn ghost reveal">Alle Klassen</a>
+      </div>
+      <Klassen />
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:50px"><div class="eyebrow">Ablauf</div><h2>In 6 Etappen zum Führerschein</h2></div>
+      <Ablauf />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap head-row">
+      <div class="reveal"><div class="eyebrow">Gästebuch</div><h2>Das sagen meine Fahrschüler</h2></div>
+      <div class="count reveal"><b data-count={entries.length}>0</b><span>Einträge im Gästebuch</span></div>
+    </div>
+    <Reviews />
+    <div class="wrap" style="text-align:center;margin-top:40px"><a class="btn ghost reveal" href="/gaestebuch/">Zum Gästebuch</a></div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-in reveal zoom">
+      <div>
+        <div class="eyebrow" style="color:var(--ink)">News</div>
+        <h2>{site.hours}</h2>
+        <p>wieder wie gewohnt geöffnet</p>
+      </div>
+      <div class="cta-btns">
+        <a class="btn" href="/kontakt/">Anfrage senden</a>
+        <a class="btn ghost" href={site.phoneHref}>{site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('astro:page-load', () => {
+      const el = document.querySelector<HTMLElement>('[data-count]');
+      if (!el) return;
+      const io = new IntersectionObserver(([e]) => {
+        if (!e.isIntersecting) return;
+        io.disconnect();
+        const n = +el.dataset.count!; const t0 = performance.now();
+        const step = (t: number) => { const k = Math.min(1, (t - t0) / 1200); el.textContent = String(Math.round(n * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(step); };
+        requestAnimationFrame(step);
+      });
+      io.observe(el);
+      const bg = document.querySelector<HTMLElement>('.hero-bg');
+      addEventListener('scroll', () => { if (bg) bg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.08)`; }, { passive: true });
+    });
+  </script>
+
+  <style>
+    .hero { position: relative; min-height: 100svh; display: flex; align-items: center; color: #fff; overflow: hidden; background: #111; }
+    .hero-bg { position: absolute; inset: -40px; background: url('/img/fahrschulauto.jpg') center 65% / cover; transform: scale(1.08); animation: kb 18s ease-in-out infinite alternate; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(14,14,16,.94) 20%, rgba(14,14,16,.55) 60%, rgba(160,0,24,.35)); }
+    @keyframes kb { to { background-position: center 55%; filter: saturate(1.15); } }
+    .hero-in { position: relative; display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: end; padding: 140px 0 170px; }
+    .hero h1 .hl { color: var(--yellow); display: inline-block; }
+    .lead { font-size: 22px; max-width: 560px; color: rgba(255,255,255,.85); margin-top: 18px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+    .hero-card { justify-self: end; padding: 22px; border-radius: 24px; background: rgba(255,255,255,.08); backdrop-filter: blur(10px); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); max-width: 360px; }
+    .hero-card p { margin: 14px 0 0; color: rgba(255,255,255,.8); font-weight: 600; }
+    .sign { background: var(--yellow); color: var(--ink); border-radius: 14px; padding: 18px 20px; box-shadow: inset 0 0 0 4px var(--ink), inset 0 0 0 7px var(--yellow); }
+    .sign b { display: block; font-family: var(--head); font-size: 34px; line-height: 1; text-transform: uppercase; }
+    .sign span { font-weight: 700; font-size: 20px; }
+    .hero-road { position: absolute; left: 0; right: 0; bottom: 0; height: 90px; background: #232326; }
+    .hero-road::before { content: ''; position: absolute; left: 0; right: 0; top: 42px; height: 6px; background: repeating-linear-gradient(90deg, #fff 0 60px, transparent 60px 110px); animation: road 0.9s linear infinite; }
+    .hero-car { position: absolute; bottom: 44px; left: 0; width: 140px; animation: drive 9s cubic-bezier(.5,0,.5,1) infinite; filter: drop-shadow(0 10px 12px rgba(0,0,0,.5)); }
+    .hero-car img { border-radius: 12px; }
+    @keyframes drive { 0% { transform: translateX(-200px); } 100% { transform: translateX(calc(100vw + 200px)); } }
+    @media (max-width: 900px) { .hero-in { grid-template-columns: 1fr; } .hero-card { justify-self: start; } }
+
+    .welcome { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: start; }
+    .big { font-size: 22px; line-height: 1.65; }
+    @media (max-width: 900px) { .welcome { grid-template-columns: 1fr; gap: 20px; } }
+    .photo { position: relative; margin-top: 70px; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow); }
+    .photo img { width: 100%; height: clamp(300px, 46vw, 560px); object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+    .photo:hover img { transform: scale(1.04); }
+    .photo-tag { position: absolute; left: 24px; bottom: 24px; padding: 16px 22px; border-radius: 18px; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); }
+    .photo-tag b { display: block; font-family: var(--head); font-size: 26px; text-transform: uppercase; color: var(--red); }
+    .photo-tag span { font-weight: 600; color: var(--grey); }
+
+    .head-row { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 44px; }
+    .count { text-align: right; }
+    .count b { display: block; font-family: var(--head); font-size: 96px; line-height: .9; color: var(--red); }
+    .count span { font-weight: 700; color: var(--grey); }
+
+    .cta { padding: 0 0 100px; }
+    .cta-in { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; padding: clamp(30px, 5vw, 60px); border-radius: 34px; background: var(--yellow); position: relative; overflow: hidden; }
+    .cta-in::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: repeating-linear-gradient(90deg, var(--ink) 0 30px, var(--yellow) 30px 60px); }
+    .cta-in h2 { font-size: clamp(30px, 4vw, 52px); max-width: 640px; }
+    .cta-in p { font-weight: 700; font-size: 22px; margin: 10px 0 0; }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  </style>
+</Base>

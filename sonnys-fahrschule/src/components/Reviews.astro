@@ -1,0 +1,35 @@
+---
+import entries from '../data/gaestebuch.json';
+const pick = entries.filter((e) => e.text.length > 60 && e.text.length < 420);
+const rowA = pick.filter((_, i) => i % 2 === 0);
+const rowB = pick.filter((_, i) => i % 2 === 1);
+---
+<div class="rv">
+  {[rowA, rowB].map((row, r) => (
+    <div class={`rv-row ${r ? 'rev' : ''}`}>
+      <div class="rv-track">
+        {[...row, ...row].map((e) => (
+          <figure class="rv-card">
+            <div class="rv-stars" aria-hidden="true">★★★★★</div>
+            <blockquote>„{e.text}“</blockquote>
+            <figcaption><b>{e.name}</b><span>{e.date.split(' ').slice(1, 4).join(' ')}</span></figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+<style>
+  .rv { display: flex; flex-direction: column; gap: 22px; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .rv-row { overflow: hidden; }
+  .rv-track { display: flex; gap: 22px; width: max-content; animation: mq 80s linear infinite; }
+  .rv-row.rev .rv-track { animation-direction: reverse; animation-duration: 95s; }
+  .rv:hover .rv-track { animation-play-state: paused; }
+  @keyframes mq { to { transform: translateX(-50%); } }
+  .rv-card { margin: 0; width: 420px; padding: 26px 28px; border-radius: 22px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 14px 34px rgba(0,0,0,.08); display: flex; flex-direction: column; }
+  .rv-stars { color: var(--yellow); letter-spacing: 3px; font-size: 20px; text-shadow: 0 0 1px #8a6b00; }
+  .rv-card blockquote { margin: 10px 0 16px; font-size: 17px; line-height: 1.55; flex: 1; }
+  .rv-card figcaption { display: flex; justify-content: space-between; gap: 10px; font-size: 15px; color: var(--grey); }
+  .rv-card figcaption b { color: var(--red); font-size: 17px; }
+  @media (max-width: 560px) { .rv-card { width: 300px; } }
+</style>

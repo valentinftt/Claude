@@ -1,0 +1,59 @@
+---
+const steps = [
+  { t: 'Anmelden', d: 'Komm vorbei oder schick mir eine Anfrage – wir besprechen alles in Ruhe.' },
+  { t: 'Sehtest & Erste Hilfe', d: 'Sehtest und Erste-Hilfe-Kurs erledigen und den Führerschein-Antrag stellen.' },
+  { t: 'Theorie', d: 'Grundstoff und klassenspezifischer Unterricht – verständlich erklärt.' },
+  { t: 'Praxis', d: 'Übungsstunden und Sonderfahrten: Überland, Autobahn und Nacht.' },
+  { t: 'Prüfungen', d: 'Theorieprüfung am PC und praktische Prüfung – top vorbereitet.' },
+  { t: 'Führerschein!', d: 'Geschafft – ab jetzt fährst Du sicher allein los.' },
+];
+---
+<div class="ab" data-ablauf>
+  <div class="ab-track"><div class="ab-fill"></div><div class="ab-car" aria-hidden="true"><img src="/img/klasse-b.png" alt="" /></div></div>
+  <ol>
+    {steps.map((s, i) => (
+      <li class="reveal" style={`--d:${i * 0.07}s`}>
+        <span class="ab-light"><i></i><i></i><i></i></span>
+        <span class="ab-n">{String(i + 1).padStart(2, '0')}</span>
+        <h3>{s.t}</h3>
+        <p>{s.d}</p>
+      </li>
+    ))}
+  </ol>
+</div>
+<script>
+  function abl() {
+    document.querySelectorAll<HTMLElement>('[data-ablauf]').forEach((el) => {
+      const upd = () => {
+        const r = el.getBoundingClientRect();
+        const p = Math.min(1, Math.max(0, (innerHeight * 0.75 - r.top) / r.height));
+        el.style.setProperty('--p', p.toFixed(3));
+        el.querySelectorAll('li').forEach((li, i, all) => li.classList.toggle('go', p >= (i + 0.5) / all.length));
+      };
+      upd();
+      addEventListener('scroll', upd, { passive: true });
+    });
+  }
+  document.addEventListener('astro:page-load', abl);
+</script>
+<style>
+  .ab { position: relative; --p: 0; }
+  .ab-track { position: absolute; left: 0; right: 0; top: 34px; height: 12px; border-radius: 6px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.25) 0 26px, transparent 26px 44px); }
+  .ab-fill { position: absolute; inset: 0; border-radius: 6px; background: var(--yellow); transform-origin: left; transform: scaleX(var(--p)); }
+  .ab-car { position: absolute; top: -40px; left: calc(var(--p) * 100%); width: 96px; transform: translateX(-80%); filter: drop-shadow(0 8px 10px rgba(0,0,0,.4)); }
+  .ab-car img { width: 100%; border-radius: 10px; }
+  .ab ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; padding-top: 90px; }
+  .ab li { position: relative; }
+  .ab-light { display: inline-flex; flex-direction: column; gap: 4px; padding: 6px; border-radius: 10px; background: #111; margin-bottom: 14px; }
+  .ab-light i { width: 14px; height: 14px; border-radius: 50%; background: #3a3a3a; transition: background .4s, box-shadow .4s; }
+  .ab li:not(.go) .ab-light i:nth-child(1) { background: #e0182f; box-shadow: 0 0 12px #e0182f; }
+  .ab li.go .ab-light i:nth-child(3) { background: #2bd96b; box-shadow: 0 0 12px #2bd96b; }
+  .ab-n { display: block; font-family: var(--head); font-weight: 800; font-size: 46px; line-height: 1; color: var(--yellow); }
+  .ab h3 { font-size: 26px; margin: 6px 0 8px; }
+  .ab p { font-size: 16px; color: rgba(255,255,255,.72); }
+  @media (max-width: 1000px) {
+    .ab ol { grid-template-columns: 1fr 1fr; padding-top: 30px; }
+    .ab-track { display: none; }
+  }
+  @media (max-width: 560px) { .ab ol { grid-template-columns: 1fr; } }
+</style>

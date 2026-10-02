@@ -1,0 +1,34 @@
+---
+import { site } from '../data/site';
+const src = `https://www.google.com/maps?q=${encodeURIComponent(site.mapsQuery)}&output=embed`;
+---
+<div class="map" data-map data-src={src}>
+  <div class="map-ph">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+    <b>{site.street}, {site.city}</b>
+    <p>Mit Klick auf „Karte laden“ wird Google Maps geladen. Dabei werden Daten an Google übertragen.</p>
+    <div class="map-btns">
+      <button class="btn" type="button" data-load>Karte laden</button>
+      <a class="btn ghost" href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(site.mapsQuery)}`} target="_blank" rel="noopener">Route planen</a>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll<HTMLElement>('[data-map]').forEach((m) => {
+      m.querySelector('[data-load]')?.addEventListener('click', () => {
+        m.innerHTML = `<iframe src="${m.dataset.src}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte"></iframe>`;
+      });
+    });
+  });
+</script>
+<style>
+  .map { position: relative; border-radius: var(--radius); overflow: hidden; min-height: 420px; background: repeating-linear-gradient(45deg, #ececea 0 14px, #f4f4f2 14px 28px); box-shadow: 0 0 0 1px var(--line); }
+  .map :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .map-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px; gap: 8px; }
+  .map-ph svg { width: 56px; height: 56px; color: var(--red); animation: bob 1.8s ease-in-out infinite; }
+  @keyframes bob { 50% { transform: translateY(-8px); } }
+  .map-ph b { font-family: var(--head); font-size: 28px; text-transform: uppercase; }
+  .map-ph p { max-width: 420px; color: var(--grey); font-size: 16px; }
+  .map-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+</style>

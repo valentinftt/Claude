@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+const kurse = [
+  { t: 'Ostern', e: '🐣' },
+  { t: 'Pfingsten', e: '🌿' },
+  { t: 'Sommerferien', e: '☀️' },
+  { t: 'Herbstferien', e: '🍂' },
+];
+---
+<Base title="Kurse">
+  <PageHead title="Kurse" eyebrow="Ferienkurse:" text="Theorie kompakt in den Ferien." crumbs={[{ href: '', label: 'Kurse' }]} />
+  <section class="section soft">
+    <div class="wrap">
+      <div class="ku">
+        {kurse.map((k, i) => (
+          <div class="ku-card card reveal" style={`--d:${i * 0.08}s`}>
+            <span class="ku-e">{k.e}</span>
+            <h3>{k.t}:</h3>
+            <p>Termine folgen – frag einfach nach.</p>
+            <a href="/kontakt/" class="ku-link">Platz anfragen →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <style>
+    .ku { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 1000px) { .ku { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .ku { grid-template-columns: 1fr; } }
+    .ku-card { padding: 30px; position: relative; overflow: hidden; }
+    .ku-card::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: repeating-linear-gradient(90deg, var(--red) 0 24px, var(--yellow) 24px 48px); }
+    .ku-e { font-size: 46px; display: inline-block; transition: transform .4s; }
+    .ku-card:hover .ku-e { transform: rotate(-12deg) scale(1.15); }
+    .ku-card h3 { font-size: 36px; margin: 10px 0 8px; }
+    .ku-card p { color: var(--grey); }
+    .ku-link { font-weight: 700; text-decoration: none; }
+  </style>
+</Base>

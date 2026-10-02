@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+---
+<Base title="Impressum">
+  <PageHead title="Impressum" crumbs={[{ href: '', label: 'Impressum' }]} />
+  <section class="section">
+    <div class="wrap text-page reveal">
+      <h3>Impressum:</h3>
+      <p>Sonny's Fahrschule<br />Fischergasse 16<br />95326 Kulmbach</p>
+      <p>Tel: <a href="tel:+491702138671">0170 - 2138671</a><br />eMail: <a href="mailto:42sonny@googlemail.com">42sonny@googlemail.com</a></p>
+      <p>USt-ID:<br />DE22926980134</p>
+      <p>Inhaber: Bernd Schneider</p>
+      <p>Zuständige Aufsichtsbehörde: Landratsamt Kulmbach</p>
+      <p>Inhaltlich Verantwortlicher gemäß § 10 Absatz 3 MDStV: Bernd Schneider<br />Am Brünnlein 1<br />95326 Kulmbach</p>
+    </div>
+  </section>
+</Base>

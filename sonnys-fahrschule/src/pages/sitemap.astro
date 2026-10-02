@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { nav } from '../data/site';
+const items = nav.filter((n) => n.href !== '/passwortbereich/');
+---
+<Base title="Sitemap">
+  <PageHead title="Sitemap" crumbs={[{ href: '', label: 'Sitemap' }]} />
+  <section class="section">
+    <div class="wrap text-page">
+      <ul class="sm">
+        {items.map((n, i) => (
+          <li class="reveal" style={`--d:${i * 0.04}s`}><a href={n.href}>{n.label}</a>
+            {n.children && <ul>{n.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}</ul>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <style>
+    .sm, .sm ul { list-style: none; padding: 0; }
+    .sm > li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .sm a { font-family: var(--head); font-size: 28px; font-weight: 700; text-transform: uppercase; text-decoration: none; }
+    .sm ul { display: flex; gap: 18px; margin: 6px 0 0 20px; }
+    .sm ul a { font-size: 20px; color: var(--grey); }
+  </style>
+</Base>

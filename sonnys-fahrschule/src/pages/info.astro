@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+---
+<Base title="INFO">
+  <PageHead title="INFO" eyebrow="Prüftermin kann nicht wahrgenommen werden!" text="Verhinderung durch Krankheit" crumbs={[{ href: '', label: 'INFO' }]} />
+  <section class="section">
+    <div class="wrap text-page prose">
+      <h2 class="reveal">Was muss ich tun, wenn ich zur Fahrerlaubnisprüfung erkrankt bin?</h2>
+      <div class="note reveal">
+        <p>Geben Sie diese Information unverzüglich per E-Mail an <b>TÜV Kundenservicecenter</b> <a href="mailto:ksc-fe@tuvsud.com">ksc-fe@tuvsud.com</a>. In dieser E-Mail geben Sie bitte Ihren vollständigen Vor-/Nachnamen, Ihr Geburtsdatum sowie Ihren Prüfungstermin an. Zusätzlich informieren Sie bitte auch Ihre Fahrschule.</p>
+      </div>
+      <p class="reveal">Die Gebühr zu dieser Fahrerlaubnisprüfung fällt nicht an, sobald Sie sich unverzüglich abgemeldet haben <b>und</b> bis spätestens 7 Tage nach Ihrem Prüfungstermin ein ärztliches Attest per E-Mail an <a href="mailto:ksc-fe@tuvsud.com">ksc-fe@tuvsud.com</a> (Dateiformat PDF, JPG oder PNG; Dateigröße: Max 5 MB) gesendet haben.</p>
+      <p class="reveal">Aus diesem Attest muss hervorgehen, dass Sie im Zeitraum von XX.XX.XXXX bis XX.XX.XXXX krankheitsbedingt an Ihrer jeweiligen Fahrerlaubnisprüfung (Theorie oder Praxis) nicht teilnehmen konnten.</p>
+      <h3 class="reveal">Das Attest muss somit folgendes enthalten:</h3>
+      <div class="att">
+        {['Titel des Dokumentes: Attest', 'Vor-/Nachname', 'Anschrift', 'Geburtsdatum', 'Art der Prüfung (Theoretische oder praktische Fahrerlaubnisprüfung)', 'Unterschrift des Arztes', 'Praxisstempel', 'Ausstellungsdatum'].map((t, i) => (
+          <div class="att-i reveal" style={`--d:${i * 0.05}s`}><span>✓</span>{t}</div>
+        ))}
+      </div>
+      <p class="reveal">Sollte ein Verwendungszweck vorhanden sein, muss dieser zur Vorlage bei TÜV SÜD oder der Technischen Prüfstelle lauten. Ein Attest mit dem Verwendungszweck z.B. zur Vorlage bei der Fahrschule, dem Arbeitgeber oder der Schule kann in Bezug auf die amtliche Fahrerlaubnisgebühr nicht berücksichtigt werden.</p>
+      <p class="reveal">Können Sie an Ihrer Fahrerlaubnisprüfung nicht teilnehmen, liegt die Verantwortung bei Ihnen als Bewerber / Bewerberin, dies der prüfenden Stelle TÜV SÜD mitzuteilen. Der folgende Ablauf stellt dar, welche Voraussetzungen erfüllt sein müssen, damit die Gebühr für Ihre amtliche Fahrerlaubnisprüfung nicht anfällt.</p>
+    </div>
+  </section>
+  <style>
+    .text-page h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 20px; }
+    .att { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+    @media (max-width: 640px) { .att { grid-template-columns: 1fr; } }
+    .att-i { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 14px; background: var(--soft); font-weight: 600; }
+    .att-i span { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--red); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+  </style>
+</Base>

@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+---
+<Base title="Blog">
+  <PageHead title="Blog" eyebrow="Dies ist ein Blog" crumbs={[{ href: '', label: 'Blog' }]} />
+  <section class="section"><div class="wrap empty reveal zoom">
+    <div class="empty-ic">📝</div>
+    <p>Noch wurden keine Artikel veröffentlicht. Sobald ein Artikel verfügbar ist, wird er hier angezeigt.</p>
+    <a class="btn" href="/">Zur Startseite</a>
+  </div></section>
+  <style>.empty{ text-align:center; max-width:640px; padding:60px 30px; border-radius:30px; background:var(--soft);} .empty-ic{font-size:64px;margin-bottom:10px;animation:bob 2s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px)}}</style>
+</Base>

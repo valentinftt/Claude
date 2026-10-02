@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+---
+<Base title="News">
+  <PageHead title="News" eyebrow="Aktuelles" crumbs={[{ href: '', label: 'News' }]} />
+  <section class="section">
+    <div class="wrap">
+      <div class="nw card reveal zoom">
+        <div class="nw-sign"><span class="nw-dot"></span>Geöffnet</div>
+        <h2>Montag und Mittwoch von 18°° Uhr - 20°° Uhr</h2>
+        <p>wieder wie gewohnt geöffnet</p>
+      </div>
+    </div>
+  </section>
+  <style>
+    .nw { padding: clamp(30px, 6vw, 70px); max-width: 900px; position: relative; overflow: hidden; }
+    .nw::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: repeating-linear-gradient(90deg, var(--ink) 0 30px, var(--yellow) 30px 60px); }
+    .nw-sign { display: inline-flex; align-items: center; gap: 10px; padding: 8px 18px; border-radius: 999px; background: #e9faef; color: #138a3e; font-weight: 700; margin-bottom: 20px; }
+    .nw-dot { width: 12px; height: 12px; border-radius: 50%; background: #1fbf5a; box-shadow: 0 0 0 0 rgba(31,191,90,.6); animation: pl 1.8s infinite; }
+    @keyframes pl { 70% { box-shadow: 0 0 0 12px rgba(31,191,90,0); } }
+    .nw p { font-size: 26px; font-weight: 700; color: var(--red); margin-top: 14px; }
+  </style>
+</Base>

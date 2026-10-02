@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+---
+<Base title="B + BF17">
+  <PageHead title="Klasse B + BF17" eyebrow="FE-Klassen" crumbs={[{ href: '/fe-klassen/', label: 'FE-Klassen' }, { href: '', label: 'B + BF17' }]} />
+  <section class="section">
+    <div class="wrap detail">
+      <div class="prose">
+        <p class="reveal">Kraftfahrzeuge mit einer zulässigen Gesamtmasse von nicht mehr als 3.500 kg, die zur Beförderung von nicht mehr als acht Personen außer dem Fahrzeugführer ausgelegt und gebaut sind (auch mit Anhänger mit einer zulässigen Gesamtmasse von nicht mehr als 750 kg oder mit Anhänger über 750 kg zulässiger Gesamtmasse, sofern 3.500 kg zulässige Gesamtmasse der Kombination nicht überschritten wird).</p>
+        <p class="reveal"><b>Einschluss AM und L</b></p>
+        <p class="reveal">Die Fahrerlaubnis der Klasse B wird auch erteilt zum Führen von dreirädrigen Kraftfahrzeugen im Inland, im Falle eines Kraftfahrzeugs mit einer Motorleistung von mehr als 15 kW jedoch nur, soweit der Inhaber der Fahrerlaubnis mindestens 21 Jahre alt ist.</p>
+        <div class="facts">
+          <div class="fact reveal"><b>18</b><span>Mindestalter (17 Jahre bei Begleitetem Fahren)</span></div>
+          <div class="fact reveal" style="--d:.08s"><b>3.500 kg</b><span>zulässige Gesamtmasse</span></div>
+          <div class="fact reveal" style="--d:.16s"><b>30</b><span>Fragen in der Theorieprüfung am PC</span></div>
+        </div>
+        <h3 class="reveal">Ausbildung Theorie:</h3>
+        <ul class="reveal"><li>Grundstoff: 12 Doppelstunden (6 Doppelstunden bei Vorbesitz einer Fahrerlaubnis)</li><li>Klassenspezifischer Unterricht: 2 Doppelstunden</li></ul>
+        <h3 class="reveal">Ausbildung Praxis:</h3>
+        <ul class="reveal"><li>Grundausbildung: Übungsstunden</li><li>Sonderfahrten:</li></ul>
+        <div class="sf">
+          <div class="sf-i reveal"><span class="sf-ic">🛣️</span><b>Überlandfahrt</b><span>5 Std. à 45 Minuten</span><i style="--w:100%"></i></div>
+          <div class="sf-i reveal" style="--d:.08s"><span class="sf-ic">🚀</span><b>Autobahnfahrt</b><span>4 Std. à 45 Minuten</span><i style="--w:80%"></i></div>
+          <div class="sf-i reveal" style="--d:.16s"><span class="sf-ic">🌙</span><b>Nachtfahrt</b><span>3 Std. à 45 Minuten</span><i style="--w:60%"></i></div>
+        </div>
+        <h3 class="reveal">Prüfung Theorie:</h3>
+        <ul class="reveal"><li>30 Fragen (20 Fragen bei Vorbesitz einer Fahrerlaubnis) am PC</li></ul>
+        <a href="/fe-klassen/" class="btn ghost reveal">Zurück</a>
+      </div>
+      <aside class="side reveal from-right"><img src="/img/klasse-b.png" alt="Klasse B" /><a class="btn" href="/kontakt/">Jetzt anmelden</a></aside>
+    </div>
+  </section>
+</Base>

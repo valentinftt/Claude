@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+---
+<Base title="BE">
+  <PageHead title="Klasse BE" eyebrow="FE-Klassen" crumbs={[{ href: '/fe-klassen/', label: 'FE-Klassen' }, { href: '', label: 'BE' }]} />
+  <section class="section">
+    <div class="wrap detail">
+      <div class="prose">
+        <p class="reveal">Fahrzeugkombinationen, die aus einem Zugfahrzeug der Klasse B und einem Anhänger oder Sattelanhänger bestehen, sofern die zulässige Gesamtmasse des Anhängers oder Sattelanhängers 3.500 kg nicht übersteigt.</p>
+        <div class="facts">
+          <div class="fact reveal"><b>18</b><span>Mindestalter (17 Jahre bei Begleitetem Fahren)</span></div>
+          <div class="fact reveal" style="--d:.08s"><b>0</b><span>Keine Theorie-Prüfung notwendig.</span></div>
+          <div class="fact reveal" style="--d:.16s"><b>55 Min.</b><span>Praktische Prüfung</span></div>
+        </div>
+        <h3 class="reveal">Ausbildung Praxis:</h3>
+        <ul class="reveal"><li>Grundausbildung: Übungsstunden</li><li>Sonderfahrten:</li></ul>
+        <div class="sf">
+          <div class="sf-i reveal"><span class="sf-ic">🛣️</span><b>Überlandfahrt</b><span>3 Std. à 45 Minuten</span><i style="--w:100%"></i></div>
+          <div class="sf-i reveal" style="--d:.08s"><span class="sf-ic">🚀</span><b>Autobahnfahrt</b><span>1 Std. à 45 Minuten</span><i style="--w:34%"></i></div>
+          <div class="sf-i reveal" style="--d:.16s"><span class="sf-ic">🌙</span><b>Nachtfahrt</b><span>1 Std. à 45 Minuten</span><i style="--w:34%"></i></div>
+        </div>
+        <h3 class="reveal">Praktische Prüfung:</h3>
+        <ul class="reveal"><li>55 Minuten, ca. die Hälfte außerorts (einschließlich Verbinden und Trennen).</li></ul>
+        <a href="/fe-klassen/" class="btn ghost reveal">zurück</a>
+      </div>
+      <aside class="side reveal from-right"><img src="/img/klasse-be.png" alt="Klasse BE" /><a class="btn" href="/kontakt/">Jetzt anmelden</a></aside>
+    </div>
+  </section>
+</Base>

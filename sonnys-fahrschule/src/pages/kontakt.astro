@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ContactForm from '../components/ContactForm.astro';
+import MapConsent from '../components/MapConsent.astro';
+import Ablauf from '../components/Ablauf.astro';
+import { site } from '../data/site';
+---
+<Base title="Kontakt">
+  <PageHead title="Kontakt" eyebrow="Anmeldung & Fragen" text="Du hast Fragen zum Ablauf, zur Anmeldung oder möchtest einfach mal vorbeikommen? Schick mir eine Anfrage – ich freu mich auf Dich!" crumbs={[{ href: '', label: 'Kontakt' }]} />
+  <section class="section">
+    <div class="wrap kt">
+      <div class="kt-info reveal from-left">
+        <h2>SONNY'S FAHRSCHULE</h2>
+        <p class="kt-addr">{site.contactName}<br />{site.street}<br />{site.city}</p>
+        <a class="kt-line" href={site.phoneHref}><span>📞</span>Tel.: {site.phone}</a>
+        <a class="kt-line" href={`mailto:${site.email}`}><span>✉️</span>Mail: {site.email}</a>
+        <a class="kt-line" href={site.whatsapp} target="_blank" rel="noopener"><span>💬</span>WhatsApp</a>
+        <div class="kt-hours"><b>Bürozeiten</b>{site.hours}</div>
+      </div>
+      <div class="reveal from-right"><ContactForm /></div>
+    </div>
+  </section>
+  <section class="section soft"><div class="wrap"><div class="reveal" style="margin-bottom:30px"><div class="eyebrow">Anfahrt</div><h2>So findest Du mich</h2></div><div class="reveal zoom"><MapConsent /></div></div></section>
+  <section class="section dark"><div class="wrap"><div class="reveal" style="margin-bottom:50px"><div class="eyebrow">Ablauf</div><h2>So geht's nach der Anmeldung weiter</h2></div><Ablauf /></div></section>
+  <style>
+    .kt { display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; align-items: start; }
+    @media (max-width: 900px) { .kt { grid-template-columns: 1fr; } }
+    .kt-info h2 { color: var(--red); font-size: clamp(36px, 4vw, 54px); }
+    .kt-addr { font-size: 22px; font-weight: 600; margin: 18px 0 22px; }
+    .kt-line { display: flex; align-items: center; gap: 14px; padding: 14px 18px; margin-bottom: 10px; border-radius: 16px; background: var(--soft); color: var(--ink); text-decoration: none; font-weight: 700; transition: transform .25s, background .25s; }
+    .kt-line:hover { transform: translateX(6px); background: #fff3b8; }
+    .kt-line span { font-size: 22px; }
+    .kt-hours { margin-top: 20px; padding: 18px 20px; border-radius: 16px; background: var(--yellow); font-weight: 700; box-shadow: inset 0 0 0 3px var(--ink); }
+    .kt-hours b { display: block; font-family: var(--head); font-size: 24px; text-transform: uppercase; }
+  </style>
+</Base>

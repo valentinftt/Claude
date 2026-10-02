@@ -1,0 +1,60 @@
+---
+import { site } from '../data/site';
+---
+<form class="cf card" data-cf>
+  <div class="cf-tabs" role="tablist">
+    <label><input type="radio" name="art" value="Anmeldung" checked /> <span>Anmeldung</span></label>
+    <label><input type="radio" name="art" value="Frage" /> <span>Frage</span></label>
+    <label><input type="radio" name="art" value="Ferienkurs" /> <span>Ferienkurs</span></label>
+  </div>
+  <div class="cf-grid">
+    <label class="fl"><input name="name" required placeholder=" " /><span>Name *</span></label>
+    <label class="fl"><input name="email" type="email" required placeholder=" " /><span>E-Mail *</span></label>
+    <label class="fl"><input name="tel" type="tel" placeholder=" " /><span>Telefon</span></label>
+    <label class="fl"><select name="klasse"><option>B</option><option>BF17</option><option>BE</option><option>B96</option><option>Noch unsicher</option></select><span>Klasse</span></label>
+    <label class="fl full"><textarea name="nachricht" rows="5" required placeholder=" "></textarea><span>Nachricht *</span></label>
+  </div>
+  <label class="cf-ok"><input type="checkbox" required /> <span>Es gilt unsere <a href="/datenschutz/">Datenschutzerklärung</a>. *</span></label>
+  <p class="cf-hint">Hinweis: Bitte die mit * gekennzeichneten Felder ausfüllen.</p>
+  <div class="cf-btns">
+    <button class="btn" type="submit" data-via="mail">Per E-Mail senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <button class="btn wa" type="submit" data-via="wa">Per WhatsApp senden</button>
+  </div>
+</form>
+<script define:vars={{ email: site.email, wa: site.whatsapp }}>
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('[data-cf]').forEach((f) => {
+      let via = 'mail';
+      f.querySelectorAll('[data-via]').forEach((b) => b.addEventListener('click', () => (via = b.dataset.via)));
+      f.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const d = new FormData(f);
+        const subj = `${d.get('art')} – ${d.get('name')} (Klasse ${d.get('klasse')})`;
+        const body = `Anliegen: ${d.get('art')}\nKlasse: ${d.get('klasse')}\nName: ${d.get('name')}\nE-Mail: ${d.get('email')}\nTelefon: ${d.get('tel') || '-'}\n\n${d.get('nachricht')}`;
+        if (via === 'wa') window.open(`${wa}?text=${encodeURIComponent(subj + '\n\n' + body)}`, '_blank');
+        else location.href = `mailto:${email}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+      });
+    });
+  });
+</script>
+<style>
+  .cf { padding: clamp(24px, 4vw, 40px); }
+  .cf-tabs { display: flex; gap: 8px; padding: 6px; border-radius: 999px; background: var(--soft); margin-bottom: 26px; width: fit-content; flex-wrap: wrap; }
+  .cf-tabs input { position: absolute; opacity: 0; }
+  .cf-tabs span { display: block; padding: 10px 20px; border-radius: 999px; font-family: var(--head); font-weight: 700; font-size: 19px; text-transform: uppercase; letter-spacing: .05em; cursor: pointer; transition: .25s; }
+  .cf-tabs input:checked + span { background: var(--red); color: #fff; box-shadow: 0 8px 20px rgba(160,0,24,.3); }
+  .cf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .fl { position: relative; display: block; }
+  .fl.full { grid-column: 1 / -1; }
+  .fl input, .fl textarea, .fl select { width: 100%; padding: 26px 18px 10px; border-radius: 14px; border: 2px solid #e4e4e0; background: #fff; font: inherit; transition: border-color .25s, box-shadow .25s; }
+  .fl select { appearance: none; }
+  .fl input:focus, .fl textarea:focus, .fl select:focus { outline: 0; border-color: var(--red); box-shadow: 0 0 0 5px rgba(160,0,24,.1); }
+  .fl span { position: absolute; left: 20px; top: 18px; color: var(--grey); pointer-events: none; transition: .2s; }
+  .fl input:focus + span, .fl input:not(:placeholder-shown) + span, .fl textarea:focus + span, .fl textarea:not(:placeholder-shown) + span, .fl select + span { top: 6px; font-size: 13px; font-weight: 700; color: var(--red); }
+  .cf-ok { display: flex; gap: 10px; align-items: flex-start; margin: 20px 0 6px; font-size: 16px; }
+  .cf-ok input { width: 20px; height: 20px; accent-color: var(--red); margin-top: 3px; }
+  .cf-hint { font-size: 14px; color: var(--grey); }
+  .cf-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn.wa { --bg: #25d366; box-shadow: 0 12px 30px rgba(37,211,102,.3); }
+  @media (max-width: 640px) { .cf-grid { grid-template-columns: 1fr; } }
+</style>
