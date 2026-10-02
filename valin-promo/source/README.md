@@ -29,3 +29,8 @@ node render.mjs && bash finish.sh
 - `base.css` / `reel.css` – gemeinsame Styles aus Video 2, `build3.py` setzt alles zu `index3.html` zusammen
 - `sfxlib.py` – gemeinsame Sound-Bausteine, `sfx3.py` – Effekte für Video 3
 - Fakten: Lindgaard et al., Carleton University (2006) – 50 ms Ersteindruck; Stanford Web Credibility Research – 75 % beurteilen Glaubwürdigkeit am Website-Design
+
+## Video 4 „Produktvideos & Reels“ (28,6 s, Tech-House-Song + Soundeffekte)
+
+- `template4.html` + `anim4.js` – Handyfoto → Profi-Reel (Drop) → Fakt (85 %, Wyzowl 2025) → Branchen-Montage → 3 Schritte (Material, 3D-Produktion, Wachstum) → Inklusive → Vergleich + Abo ab 99 € → CTA
+- `music4.py` – selbst komponierter Tech-House-Track (126 BPM), alle Schnitte auf dem Beat; schreibt `music4.wav` (Song + Effekte) und `sfx4.wav` (nur Effekte)
