@@ -21,6 +21,11 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
   </head>
   <body>
+    <div class="loader" id="loader" aria-hidden="true" transition:persist>
+      <div class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+      <img src="/img/logo.png" alt="" />
+    </div>
+    <div class="progress" id="progress" aria-hidden="true"><i></i></div>
     <header class="hdr" id="hdr">
       <div class="wrap hdr-in">
         <a href="/" class="brand" aria-label="Startseite"><img src="/img/logo.png" alt="Sonny's Fahrschule" width="587" height="305" /></a>
@@ -83,7 +88,12 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     <script>
       function init() {
         const hdr = document.getElementById('hdr');
-        const onScroll = () => hdr?.classList.toggle('small', window.scrollY > 40);
+        const prog = document.getElementById('progress');
+        const onScroll = () => {
+          hdr?.classList.toggle('small', window.scrollY > 40);
+          const max = document.documentElement.scrollHeight - innerHeight;
+          prog?.style.setProperty('--p', String(max > 0 ? scrollY / max : 0));
+        };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -98,11 +108,50 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
           entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
         }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+        // 3D-Tilt für Karten
+        if (matchMedia('(hover: hover)').matches) {
+          document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((el) => {
+            el.addEventListener('mousemove', (e) => {
+              const r = el.getBoundingClientRect();
+              const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+              el.style.transform = `perspective(900px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-8px)`;
+              el.style.setProperty('--mx', `${(x + 0.5) * 100}%`); el.style.setProperty('--my', `${(y + 0.5) * 100}%`);
+            });
+            el.addEventListener('mouseleave', () => (el.style.transform = ''));
+          });
+          // magnetische Buttons
+          document.querySelectorAll<HTMLElement>('.btn').forEach((b) => {
+            b.addEventListener('mousemove', (e) => {
+              const r = b.getBoundingClientRect();
+              b.style.translate = `${(e.clientX - r.left - r.width / 2) * 0.15}px ${(e.clientY - r.top - r.height / 2) * 0.25}px`;
+            });
+            b.addEventListener('mouseleave', () => (b.style.translate = ''));
+          });
+        }
+
+        // Ampel-Loader nur beim ersten Besuch
+        const ld = document.getElementById('loader');
+        if (ld && !ld.dataset.done) {
+          ld.dataset.done = '1';
+          setTimeout(() => ld.classList.add('go'), 350);
+          setTimeout(() => ld.classList.add('hide'), 1150);
+        }
       }
       document.addEventListener('astro:page-load', init);
     </script>
 
     <style>
+      .loader { position: fixed; inset: 0; z-index: 100; background: #18181a; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; transition: clip-path .8s cubic-bezier(.7,0,.2,1); clip-path: inset(0 0 0 0); }
+      .loader.hide { clip-path: inset(0 0 100% 0); pointer-events: none; }
+      .loader img { width: 200px; background: #fff; border-radius: 14px; padding: 8px; }
+      .tl { display: flex; gap: 12px; padding: 12px 16px; border-radius: 20px; background: #000; box-shadow: inset 0 0 0 2px #333; }
+      .tl i { width: 34px; height: 34px; border-radius: 50%; background: #2c2c2c; transition: .25s; }
+      .tl .r { background: #e0182f; box-shadow: 0 0 22px #e0182f; }
+      .loader.go .tl .r { background: #2c2c2c; box-shadow: none; }
+      .loader.go .tl .g { background: #2bd96b; box-shadow: 0 0 22px #2bd96b; }
+      .progress { position: fixed; left: 0; right: 0; top: 0; height: 5px; z-index: 70; pointer-events: none; }
+      .progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--red), var(--yellow)); transform-origin: left; transform: scaleX(var(--p, 0)); }
       .hdr { position: fixed; inset: 0 0 auto; z-index: 50; transition: background 0.35s, box-shadow 0.35s, padding 0.35s; padding: 18px 0; }
       .hdr.small, :global(body.light-head) .hdr { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(14px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); padding: 8px 0; }
       .hdr-in { display: flex; align-items: center; gap: 24px; }

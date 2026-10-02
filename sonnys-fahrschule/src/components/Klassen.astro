@@ -3,7 +3,7 @@ import { klassen } from '../data/site';
 ---
 <div class="kl">
   {klassen.map((k, i) => (
-    <a href={k.href} class="kl-card card reveal" style={`--d:${i * 0.08}s`}>
+    <a href={k.href} class="kl-card card reveal" data-tilt style={`--d:${i * 0.08}s`}>
       <div class="kl-img"><img src={k.img} alt={`Klasse ${k.code}`} loading="lazy" /></div>
       <div class="kl-body">
         <h3>{k.code}</h3>
@@ -17,7 +17,9 @@ import { klassen } from '../data/site';
   .kl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
   @media (max-width: 1000px) { .kl { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .kl { grid-template-columns: 1fr; } }
-  .kl-card { display: block; overflow: hidden; color: inherit; text-decoration: none; }
+  .kl-card { display: block; overflow: hidden; color: inherit; text-decoration: none; position: relative; transform-style: preserve-3d; transition: transform .2s ease-out, box-shadow .35s, opacity .8s, translate .8s; }
+  .kl-card::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.45), transparent 45%); opacity: 0; transition: opacity .3s; }
+  .kl-card:hover::after { opacity: 1; }
   .kl-img { position: relative; background: var(--yellow); aspect-ratio: 370 / 217; overflow: hidden; }
   .kl-img::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: repeating-linear-gradient(90deg, var(--ink) 0 22px, var(--yellow) 22px 44px); opacity: .85; }
   .kl-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(.2,.7,.2,1); }
