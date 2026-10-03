@@ -1,0 +1,340 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Valín Vorstellung</title><style>
+@font-face{font-family:'Syncopate';src:url('fonts/syncopate-700.woff2') format('woff2');font-weight:700;}
+@font-face{font-family:'Syncopate';src:url('fonts/syncopate-400.woff2') format('woff2');font-weight:400;}
+@font-face{font-family:'Manrope';src:url('fonts/manrope.woff2') format('woff2');font-weight:200 800;}
+@font-face{font-family:'Manrope';src:url('fonts/manrope-ext.woff2') format('woff2');font-weight:200 800;unicode-range:U+0100-02AF,U+20AC;}
+@font-face{font-family:'Cormorant';src:url('node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff2') format('woff2');font-style:italic;font-weight:500;}
+:root{--schwarz:#0c0c0c;--kohle:#1a1a1a;--linie:#2e2e2e;--grau:#8c8c8c;--stein:#5e5e5e;--nebel:#e6e6e1;--papier:#f4f4ef;--lime:#c6f432;--rot:#d23a1f;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000;}
+#c{position:relative;width:7560px;height:1350px;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;}
+.s{position:absolute;top:0;width:1080px;height:1350px;overflow:hidden;color:#fff;background:var(--schwarz);}
+.s.lt{background:var(--papier);color:var(--schwarz);}
+.s.lm{background:var(--lime);color:var(--schwarz);}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:90px 90px;background-position:-1px -1px;}
+.lt .grid,.lm .grid{background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px);}
+.logo{display:block;width:100%;height:auto;}
+.logo .lw{fill:#fff}.logo .la{fill:var(--lime)}
+.lt .logo .lw,.lm .logo .lw{fill:var(--schwarz)}
+.lm .logo .la{fill:var(--schwarz)}
+/* header / footer */
+.hd{position:absolute;left:80px;right:80px;top:70px;height:50px;display:flex;align-items:center;justify-content:space-between;z-index:20;}
+.kick{font-family:'Syncopate';font-weight:700;font-size:21px;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:14px;}
+.sl{display:inline-block;width:14px;height:30px;background:var(--lime);transform:skewX(-22deg);}
+.lt .sl{background:var(--schwarz);box-shadow:4px 0 0 var(--lime);}
+.lm .sl{background:var(--schwarz);}
+.pg{font-weight:700;font-size:24px;color:var(--grau);letter-spacing:.06em;}
+.lt .pg{color:var(--stein)} .lm .pg{color:rgba(12,12,12,.6)}
+.ft{position:absolute;left:80px;right:80px;bottom:62px;height:64px;display:flex;align-items:center;justify-content:space-between;z-index:20;}
+.prog{display:flex;gap:8px;}
+.prog i{display:block;width:34px;height:6px;border-radius:3px;background:rgba(255,255,255,.18);}
+.prog i.on{background:var(--lime);}
+.lt .prog i{background:rgba(0,0,0,.12)} .lt .prog i.on{background:var(--schwarz)}
+.lm .prog i{background:rgba(0,0,0,.18)} .lm .prog i.on{background:var(--schwarz)}
+.nx{display:flex;align-items:center;gap:16px;font-weight:700;font-size:26px;}
+.nx b{width:64px;height:64px;border-radius:50%;background:var(--lime);color:var(--schwarz);display:flex;align-items:center;justify-content:center;}
+.lt .nx b,.lm .nx b{background:var(--schwarz);color:var(--lime);}
+.nx b svg{width:30px;height:30px;}
+/* type */
+.h{font-family:'Syncopate';font-weight:700;text-transform:uppercase;line-height:1.08;letter-spacing:.005em;}
+.mk{display:inline-block;background:var(--lime);color:var(--schwarz);padding:.02em .2em .06em;margin-left:-.06em;border-radius:.12em;}
+.lm .mk,.lt .mk.dk{background:var(--schwarz);color:var(--lime);}
+.sub{font-weight:500;font-size:31px;line-height:1.42;color:#a6a6a6;}
+.lt .sub{color:var(--stein)} .lm .sub{color:rgba(12,12,12,.72)}
+.sub b{font-weight:800;color:#fff;} .lt .sub b,.lm .sub b{color:var(--schwarz)}
+.ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.badge{position:absolute;display:flex;align-items:center;gap:14px;height:76px;padding:0 26px 0 14px;border-radius:38px;background:rgba(20,20,20,.86);border:2px solid var(--linie);color:#fff;font-weight:700;font-size:27px;box-shadow:0 20px 50px rgba(0,0,0,.45);backdrop-filter:blur(8px);z-index:12;white-space:nowrap;}
+.badge .ic{width:48px;height:48px;border-radius:50%;background:var(--lime);color:var(--schwarz);padding:11px;}
+.badge .st{color:var(--lime);letter-spacing:.06em;font-size:24px;}
+
+/* ---------- S1 ---------- */
+#s1 .glow{position:absolute;left:300px;top:250px;width:1100px;height:1100px;border-radius:50%;background:radial-gradient(circle,rgba(198,244,50,.16),rgba(198,244,50,.04) 45%,transparent 68%);}
+#s1 .hd .lg{width:270px;}
+#hi{position:absolute;left:80px;top:178px;font-weight:700;font-size:40px;color:#fff;display:flex;align-items:center;gap:16px;}
+#name{position:absolute;left:76px;top:232px;white-space:nowrap;font-size:120px;z-index:3;}
+#slash{position:absolute;left:640px;top:420px;width:250px;height:1150px;background:linear-gradient(180deg,#d4ff4a,var(--lime) 40%,#b4e02a);transform:skewX(-20deg);border-radius:6px;z-index:2;}
+#me{position:absolute;z-index:5;height:1010px;left:560px;top:372px;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5));}
+#s1 .fade{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(0deg,rgba(12,12,12,.97) 18%,rgba(12,12,12,.75) 48%,transparent);z-index:6;}
+#who{position:absolute;left:80px;top:455px;display:flex;align-items:center;gap:12px;height:62px;padding:0 24px 0 16px;border:2px solid var(--linie);border-radius:31px;font-weight:700;font-size:26px;color:#e8e8e8;background:rgba(12,12,12,.6);z-index:7;}
+#who .ic{width:30px;height:30px;color:var(--lime);}
+#claim{position:absolute;left:80px;top:560px;width:520px;font-weight:800;font-size:58px;line-height:1.14;letter-spacing:-.01em;z-index:7;}
+#claim em{font-style:normal;color:var(--lime);}
+#claim2{position:absolute;left:80px;top:850px;width:470px;z-index:7;}
+#b1{left:80px;top:1030px;}
+#b2{left:590px;top:1118px;}
+
+/* ---------- S2 ---------- */
+.ttl{position:absolute;left:80px;top:180px;font-size:62px;}
+.ttl .ln{display:block;margin-bottom:10px;}
+#s2 .sub{position:absolute;left:80px;top:385px;width:900px;}
+.card{position:absolute;left:80px;width:920px;height:224px;border-radius:34px;background:#141414;border:2px solid var(--linie);display:flex;align-items:center;padding:0 34px;gap:30px;}
+.card .ti{width:104px;height:104px;border-radius:28px;background:var(--lime);color:var(--schwarz);padding:26px;flex:none;}
+.card .tx{flex:1;min-width:0;}
+.card .lb{font-family:'Syncopate';font-weight:700;font-size:16px;letter-spacing:.2em;color:var(--lime);text-transform:uppercase;}
+.card h3{font-weight:800;font-size:44px;margin-top:6px;letter-spacing:-.01em;}
+.card p{font-weight:500;font-size:25px;line-height:1.38;color:#9a9a9a;margin-top:6px;}
+.card .vis{width:200px;height:156px;flex:none;position:relative;}
+.gsr{position:absolute;inset:0;border-radius:20px;background:#0c0c0c;border:2px solid var(--linie);padding:14px;}
+.gsr .q{height:30px;border-radius:15px;background:#fff;color:#555;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;padding:0 10px;}
+.gsr .q .ic{width:15px;height:15px;color:#777;}
+.gsr .r{margin-top:12px;font-size:17px;font-weight:800;}
+.gsr .r span{display:block;font-size:14px;color:var(--lime);font-weight:700;margin-top:2px;}
+.gsr .bt{display:flex;gap:6px;margin-top:10px;}
+.gsr .bt i{display:block;height:22px;border-radius:11px;font-style:normal;font-size:12px;font-weight:700;padding:0 9px;line-height:22px;background:#1f1f1f;color:#ddd;}
+.gsr .bt i:first-child{background:var(--lime);color:#0c0c0c;}
+.phs{position:absolute;inset:0;}
+.phs i{position:absolute;top:18px;width:62px;height:120px;border-radius:12px;background:#2a2a2a;}
+.phs i:nth-child(1){left:12px;transform:rotate(-8deg);} .phs i:nth-child(3){left:126px;transform:rotate(8deg);}
+.phs i:nth-child(2){left:62px;top:4px;width:76px;height:148px;background:var(--lime);z-index:2;display:flex;align-items:center;justify-content:center;}
+.phs i:nth-child(2) .ic{width:30px;height:30px;color:#0c0c0c;}
+.phs i:nth-child(2) .ic svg{fill:#0c0c0c;}
+.kts img{position:absolute;width:180px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.5);}
+.kts img:nth-child(1){left:20px;top:46px;transform:rotate(9deg);}
+.kts img:nth-child(2){left:0;top:20px;transform:rotate(-7deg);}
+
+/* ---------- S3 ---------- */
+#s3 .sub{position:absolute;left:80px;top:385px;width:900px;}
+.tb{position:absolute;left:80px;top:505px;width:920px;}
+.tb .hdr,.tb .row{display:grid;grid-template-columns:230px 310px 380px;align-items:center;}
+.tb .hdr{height:84px;}
+.tb .hdr div{font-weight:800;font-size:25px;padding-left:24px;}
+.tb .hdr .a{color:var(--rot);}
+.tb .hdr .v{font-family:'Syncopate';font-size:19px;letter-spacing:.14em;color:var(--lime);text-transform:uppercase;}
+.tb .row{height:108px;}
+.tb .row .k{font-weight:800;font-size:27px;line-height:1.2;padding-right:10px;}
+.tb .row .a,.tb .row .v{display:flex;align-items:center;gap:14px;padding-left:24px;height:100%;font-size:25px;line-height:1.25;}
+.tb .row .a{color:#8f6a62;font-weight:600;}
+.tb .row .v{color:#fff;font-weight:800;}
+.tb .row .a .ic{width:42px;height:42px;border-radius:50%;background:rgba(210,58,31,.12);color:var(--rot);padding:10px;flex:none;}
+.tb .row .v .ic{width:44px;height:44px;border-radius:50%;background:var(--lime);color:var(--schwarz);padding:10px;flex:none;}
+.tb .row+.row .k,.tb .row+.row .a{border-top:2px solid rgba(0,0,0,.06);}
+.colA{position:absolute;left:230px;top:0;width:310px;height:100%;background:#f7e5e0;border-radius:28px;}
+.colV{position:absolute;left:540px;top:0;width:380px;height:100%;background:var(--schwarz);border-radius:28px;box-shadow:0 30px 60px rgba(0,0,0,.18);}
+.tb .row+.row .v{border-top:2px solid rgba(255,255,255,.07);}
+.tb .rel{position:relative;z-index:2;}
+#fn{position:absolute;left:80px;top:1150px;font-size:22px;color:var(--stein);font-weight:500;}
+
+/* ---------- S4 ---------- */
+#s4 .meta{position:absolute;left:80px;top:180px;font-weight:700;font-size:28px;color:var(--grau);}
+#s4 .ttl{top:228px;font-size:58px;}
+.lap{position:absolute;left:80px;top:500px;width:820px;}
+.lap .scr{height:486px;border-radius:24px 24px 0 0;background:#151515;border:2px solid var(--linie);border-bottom:none;padding:16px;}
+.lap .scr div{width:100%;height:100%;border-radius:10px;overflow:hidden;background:#000;}
+.lap .scr img{width:100%;height:auto;display:block;}
+.lap .base{height:30px;margin:0 -50px;background:linear-gradient(180deg,#2c2c2c,#161616);border-radius:0 0 26px 26px;position:relative;}
+.lap .base:after{content:'';position:absolute;left:50%;top:0;width:150px;height:10px;margin-left:-75px;background:#0c0c0c;border-radius:0 0 10px 10px;}
+.ph{position:absolute;border-radius:46px;background:#060606;padding:11px;box-shadow:0 0 0 2px #333,0 40px 80px rgba(0,0,0,.6);}
+.ph .in{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#000;}
+.ph .in img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.ph .isl{position:absolute;left:50%;top:12px;width:84px;height:24px;margin-left:-42px;border-radius:12px;background:#000;z-index:3;}
+#ph4{left:770px;top:610px;width:250px;height:540px;}
+.bul{position:absolute;left:80px;top:1060px;display:flex;flex-direction:column;gap:20px;}
+.bul div{display:flex;align-items:center;gap:16px;font-weight:700;font-size:29px;}
+.bul .ic{width:36px;height:36px;color:var(--lime);}
+#gtag{position:absolute;left:470px;top:410px;z-index:8;}
+#gtag .st{font-size:22px;}
+
+/* ---------- S5 ---------- */
+#s5 .ttl{font-size:58px;}
+#s5 .sub{position:absolute;left:80px;top:385px;width:900px;}
+.steps{position:absolute;left:80px;top:520px;width:440px;display:flex;flex-direction:column;gap:46px;}
+.step{display:flex;gap:22px;}
+.step .n{width:66px;height:66px;border-radius:50%;background:var(--schwarz);color:var(--lime);font-family:'Syncopate';font-weight:700;font-size:22px;display:flex;align-items:center;justify-content:center;flex:none;}
+.step h4{font-weight:800;font-size:33px;line-height:1.15;margin-top:2px;}
+.step p{font-weight:500;font-size:25px;line-height:1.4;color:rgba(12,12,12,.74);margin-top:8px;}
+#ph5b{left:735px;top:470px;width:290px;height:610px;transform:rotate(9deg);opacity:.96;}
+#ph5a{left:585px;top:525px;width:320px;height:670px;transform:rotate(-5deg);z-index:3;}
+.ru{position:absolute;inset:0;z-index:2;color:#fff;}
+.ru .sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 22%,transparent 62%,rgba(0,0,0,.6));}
+.ru .gt{position:absolute;left:0;right:0;top:120px;text-align:center;}
+.ru .gt small{text-transform:uppercase;display:block;font-family:'Syncopate';font-size:10px;letter-spacing:.35em;color:#f3dfa8;}
+.ru .gt b{display:block;font-family:'Cormorant';font-style:italic;font-weight:500;font-size:50px;line-height:1.05;margin-top:6px;background:linear-gradient(100deg,#e2b35a,#fbecc0 35%,#fff 50%,#ecc169 70%,#fbe7b0);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.ru .rl{position:absolute;right:12px;bottom:110px;display:flex;flex-direction:column;gap:16px;}
+.ru .rl .ic{width:28px;height:28px;}
+.ru .ac{position:absolute;left:16px;right:60px;bottom:26px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;}
+.ru .ac i{width:26px;height:26px;border-radius:50%;background:#b8913f;border:2px solid #fff;display:block;}
+.ru .ac s{text-decoration:none;border:1.5px solid rgba(255,255,255,.8);border-radius:6px;padding:1px 7px;font-size:11px;}
+.ru .tg{text-transform:uppercase;position:absolute;left:14px;top:44px;height:30px;padding:0 12px;border-radius:15px;background:var(--lime);color:#0c0c0c;font-family:'Syncopate';font-weight:700;font-size:10px;letter-spacing:.16em;display:flex;align-items:center;}
+.chips{position:absolute;left:80px;top:1150px;display:flex;gap:12px;}
+.chips span{height:52px;padding:0 20px;border-radius:26px;background:rgba(12,12,12,.08);font-weight:800;font-size:22px;display:flex;align-items:center;}
+
+/* ---------- S6 ---------- */
+#s6 .sub{position:absolute;left:80px;top:300px;width:900px;}
+.tl{position:absolute;left:80px;top:420px;width:920px;}
+.tl .ln{position:absolute;left:36px;top:40px;bottom:120px;width:4px;background:var(--schwarz);border-radius:2px;}
+.tl .ln i{position:absolute;left:0;top:0;width:100%;height:42%;background:var(--lime);border-radius:2px;}
+.tl .it{position:relative;display:flex;gap:34px;height:192px;}
+.tl .n{width:76px;height:76px;border-radius:50%;background:var(--schwarz);color:var(--lime);font-family:'Syncopate';font-weight:700;font-size:24px;display:flex;align-items:center;justify-content:center;flex:none;position:relative;z-index:2;box-shadow:0 0 0 8px var(--papier);}
+.tl h4{font-weight:800;font-size:40px;letter-spacing:-.01em;margin-top:8px;}
+.tl p{font-weight:500;font-size:27px;line-height:1.42;color:var(--stein);margin-top:8px;max-width:780px;}
+.tl p b{color:var(--schwarz);font-weight:800;}
+
+/* ---------- S7 ---------- */
+.photo{position:absolute;left:80px;top:150px;width:920px;height:530px;border-radius:36px;overflow:hidden;border:2px solid var(--linie);}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block;}
+.photo .lab{position:absolute;left:24px;bottom:24px;height:56px;padding:0 22px;border-radius:28px;background:rgba(12,12,12,.72);backdrop-filter:blur(8px);font-weight:700;font-size:23px;display:flex;align-items:center;gap:10px;}
+.photo .lab i{width:12px;height:12px;border-radius:50%;background:var(--lime);display:block;box-shadow:0 0 0 5px rgba(198,244,50,.25);}
+#s7 .ttl{top:728px;font-size:64px;}
+#s7 .ttl .ln{display:inline-block;margin:0 14px 0 0;}
+#s7 .sub{position:absolute;left:80px;top:838px;width:920px;}
+.ct{position:absolute;left:80px;top:970px;width:920px;display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;}
+.ct div{display:flex;align-items:center;gap:16px;height:84px;padding:0 22px;border-radius:24px;background:#141414;border:2px solid var(--linie);font-weight:700;font-size:26px;white-space:nowrap;}
+.ct .ic{width:48px;height:48px;border-radius:50%;background:var(--lime);color:var(--schwarz);padding:11px;flex:none;}
+.ct div.wide{grid-column:1/3;}
+#cta{position:absolute;left:80px;right:80px;bottom:66px;height:96px;border-radius:48px;background:var(--lime);color:var(--schwarz);display:flex;align-items:center;justify-content:center;gap:18px;font-weight:800;font-size:32px;}
+#cta b{width:56px;height:56px;border-radius:50%;background:var(--schwarz);color:var(--lime);display:flex;align-items:center;justify-content:center;}
+#cta b svg{width:28px;height:28px;}
+</style></head><body>
+<div id="c">
+
+<!-- 1: Hallo -->
+<section class="s" id="s1" style="left:0">
+ <div class="grid"></div><div class="glow"></div>
+ <div class="hd"><div class="lg">{{LOGO}}</div><div class="pg">01 / 07</div></div>
+ <div id="hi"><span class="sl"></span>Hallo, ich bin</div>
+ <div id="name" class="h">Valentin.</div>
+ <div id="slash"></div>
+ <img id="me" src="img/valentin_cut.png">
+ <div class="fade"></div>
+ <div id="who"><span class="ic" data-i="pin"></span>18, aus der Nähe von Weiden</div>
+ <div id="claim">Ich mache kleine Unternehmen <em>online sichtbar.</em></div>
+ <div id="claim2" class="sub">Mit Websites, Videos und Design, die dir <b>neue Kunden</b> bringen.</div>
+ <div class="badge" id="b1"><span class="ic" data-i="check"></span>Festpreis vorab</div>
+ <div class="badge" id="b2"><span class="ic" data-i="clock"></span>In wenigen Tagen online</div>
+ <div class="ft"><div class="prog" data-p="1"></div><div class="nx">Wisch mal <b data-i="arrow"></b></div></div>
+</section>
+
+<!-- 2: Leistungen -->
+<section class="s" id="s2" style="left:1080px">
+ <div class="grid"></div>
+ <div class="hd"><div class="kick"><span class="sl"></span>Was ich mache</div><div class="pg">02 / 07</div></div>
+ <div class="ttl h"><span class="ln">Sichtbar werden.</span><span class="ln"><span class="mk">Kunden gewinnen.</span></span></div>
+ <div class="sub">Alles aus einer Hand, damit Kunden dich <b>finden</b>, <b>sehen</b> und sich an dich <b>erinnern</b>.</div>
+ <div class="card" style="top:505px"><div class="ti ic" data-i="monitor"></div><div class="tx"><div class="lb">Gefunden werden</div><h3>Websites</h3><p>One-Pager, neue oder modernisierte Websites und dein Google-Profil.</p></div>
+  <div class="vis"><div class="gsr"><div class="q"><span class="ic" data-i="search"></span>Friseur in der Nähe</div><div class="r">Dein Betrieb<span>★★★★★ 4,9</span></div><div class="bt"><i>Website</i><i>Route</i></div></div></div></div>
+ <div class="card" style="top:751px"><div class="ti ic" data-i="video"></div><div class="tx"><div class="lb">Gesehen werden</div><h3>Videos</h3><p>Werbevideos für Reels, TikTok und Shorts. Schnitt, Untertitel, Musik.</p></div>
+  <div class="vis"><div class="phs"><i></i><i><span class="ic" data-i="play"></span></i><i></i></div></div></div>
+ <div class="card" style="top:997px"><div class="ti ic" data-i="pen"></div><div class="tx"><div class="lb">Im Kopf bleiben</div><h3>Design</h3><p>Logo, Visitenkarten, Flyer, Banner und Social-Media-Design.</p></div>
+  <div class="vis kts"><img src="img/karte-hinten.webp"><img src="img/karte-vorne.webp"></div></div>
+ <div class="ft"><div class="prog" data-p="2"></div><div class="nx">Weiter <b data-i="arrow"></b></div></div>
+</section>
+
+<!-- 3: Warum ich -->
+<section class="s lt" id="s3" style="left:2160px">
+ <div class="grid"></div>
+ <div class="hd"><div class="kick"><span class="sl"></span>Warum ich</div><div class="pg">03 / 07</div></div>
+ <div class="ttl h"><span class="ln">Anders als</span><span class="ln"><span class="mk dk">die Agentur.</span></span></div>
+ <div class="sub">Schneller, moderner und planbarer als der klassische Weg. <b>Du sparst beim Preis, nicht bei der Qualität.</b></div>
+ <div class="tb">
+  <div class="colA"></div><div class="colV"></div>
+  <div class="rel">
+   <div class="hdr"><div></div><div class="a">Klassische Agentur</div><div class="v">Valín Studio</div></div>
+   <div class="row"><div class="k">Dauer</div><div class="a"><span class="ic" data-i="x"></span>oft mehrere Wochen</div><div class="v"><span class="ic" data-i="clock"></span>1 bis 3 Tage*</div></div>
+   <div class="row"><div class="k">Preis</div><div class="a"><span class="ic" data-i="x"></span>Endpreis oft offen</div><div class="v"><span class="ic" data-i="euro"></span>Festpreis vorab</div></div>
+   <div class="row"><div class="k">Ansprech&shy;partner</div><div class="a"><span class="ic" data-i="x"></span>häufig wechselnd</div><div class="v"><span class="ic" data-i="user"></span>immer derselbe: ich</div></div>
+   <div class="row"><div class="k">Website, Video, Design</div><div class="a"><span class="ic" data-i="x"></span>viele Anbieter</div><div class="v"><span class="ic" data-i="layers"></span>alles aus einer Hand</div></div>
+   <div class="row"><div class="k">Domain &amp; Hosting</div><div class="a"><span class="ic" data-i="x"></span>an die Agentur gebunden</div><div class="v"><span class="ic" data-i="key"></span>auf deinen Namen</div></div>
+  </div>
+ </div>
+ <div id="fn">*für einen One-Pager, sobald Texte und Fotos da sind</div>
+ <div class="ft"><div class="prog" data-p="3"></div><div class="nx">Weiter <b data-i="arrow"></b></div></div>
+</section>
+
+<!-- 4: Referenz -->
+<section class="s" id="s4" style="left:3240px">
+ <div class="grid"></div>
+ <div class="hd"><div class="kick"><span class="sl"></span>Referenz</div><div class="pg">04 / 07</div></div>
+ <div class="meta">Website für ein Autohaus in Pfreimd</div>
+ <div class="ttl h"><span class="ln">Autohaus</span><span class="ln"><span class="mk">M. Fütterer</span></span></div>
+ <div class="lap"><div class="scr"><div><img src="img/autohaus-pc.webp"></div></div><div class="base"></div></div>
+ <div class="ph" id="ph4"><div class="in"><div class="isl"></div><img src="img/autohaus-handy.webp"></div></div>
+ <div class="bul"><div><span class="ic" data-i="check"></span>Fahrzeugbestand auf einen Blick</div><div><span class="ic" data-i="check"></span>Anfrage direkt aus der Übersicht</div><div><span class="ic" data-i="check"></span>fürs Handy gebaut</div></div>
+ <div class="ft"><div class="prog" data-p="4"></div><div class="nx">Weiter <b data-i="arrow"></b></div></div>
+</section>
+
+<!-- 5: Videos -->
+<section class="s lm" id="s5" style="left:4320px">
+ <div class="grid"></div>
+ <div class="hd"><div class="kick"><span class="sl"></span>Videos</div><div class="pg">05 / 07</div></div>
+ <div class="ttl h"><span class="ln">Videos,</span><span class="ln"><span class="mk">die auffallen.</span></span></div>
+ <div class="sub">Für Instagram Reels, TikTok und YouTube Shorts. <b>Dein Handy reicht als Kamera.</b></div>
+ <div class="steps">
+  <div class="step"><div class="n">01</div><div><h4>Du schickst Material</h4><p>Fotos und kurze Clips vom Handy.</p></div></div>
+  <div class="step"><div class="n">02</div><div><h4>Ich mach das Video</h4><p>Schnitt, Texte, Untertitel und Musik.</p></div></div>
+  <div class="step"><div class="n">03</div><div><h4>Du postest</h4><p>Auf Wunsch gibt's jeden Monat neue.</p></div></div>
+ </div>
+ <div class="ph" id="ph5b"><div class="in"><div class="isl"></div><img src="img/r_ring.jpg" style="object-position:30% 50%"><div class="ru"><div class="sh"></div></div></div></div>
+ <div class="ph" id="ph5a"><div class="in"><div class="isl"></div><img src="img/r_box.jpg"><div class="ru"><div class="sh"></div><div class="tg">Beispiel</div><div class="gt"><small>DIE NEUE KOLLEKTION</small><b>Gold Edition</b></div>
+  <div class="rl"><span class="ic" data-i="heart"></span><span class="ic" data-i="msg"></span><span class="ic" data-i="send"></span></div>
+  <div class="ac"><i></i>lumiere.jewelry<s>Folgen</s></div></div></div></div>
+ <div class="ft"><div class="prog" data-p="5"></div><div class="nx">Weiter <b data-i="arrow"></b></div></div>
+</section>
+
+<!-- 6: Ablauf -->
+<section class="s lt" id="s6" style="left:5400px">
+ <div class="grid"></div>
+ <div class="hd"><div class="kick"><span class="sl"></span>Ablauf</div><div class="pg">06 / 07</div></div>
+ <div class="ttl h"><span class="ln"><span class="mk dk">So läuft's.</span></span></div>
+ <div class="sub">In vier Schritten zu deinem neuen Auftritt.</div>
+ <div class="tl"><div class="ln"><i></i></div>
+  <div class="it"><div class="n">1</div><div><h4>Kennenlernen</h4><p>Kurzes Gespräch am Telefon, per Video oder bei dir vor Ort. <b>Kostenlos.</b></p></div></div>
+  <div class="it"><div class="n">2</div><div><h4>Festpreis-Angebot</h4><p>Du bekommst ein schriftliches Angebot. <b>Der Preis steht, bevor ich anfange.</b></p></div></div>
+  <div class="it"><div class="n">3</div><div><h4>Entwurf &amp; Feinschliff</h4><p>Du siehst einen ersten Entwurf und sagst mir, was du denkst. <b>Zwei Korrekturrunden inklusive.</b></p></div></div>
+  <div class="it"><div class="n">4</div><div><h4>Übergabe</h4><p>Deine Website geht online, auf deinen Namen. Oder du bekommst alle Dateien.</p></div></div>
+ </div>
+ <div class="ft"><div class="prog" data-p="6"></div><div class="nx">Weiter <b data-i="arrow"></b></div></div>
+</section>
+
+<!-- 7: Kontakt -->
+<section class="s" id="s7" style="left:6480px">
+ <div class="grid"></div>
+ <div class="hd"><div class="kick"><span class="sl"></span>Kontakt</div><div class="pg">07 / 07</div></div>
+ <div class="photo"><img src="img/valentin_sezi.jpg"><div class="lab"><i></i>Valentin Fütterer, Valín Studio</div></div>
+ <div class="ttl h"><span class="ln">Lass uns</span><span class="ln"><span class="mk">reden.</span></span></div>
+ <div class="sub">Das Erstgespräch ist <b>kostenlos und unverbindlich</b>. Danach bekommst du einen festen Preis.</div>
+ <div class="ct">
+  <div><span class="ic" data-i="msg"></span>Schreib mir eine DM</div>
+  <div><span class="ic" data-i="globe"></span>valinstudio.de</div>
+  <div><span class="ic" data-i="phone"></span>0179 730 27 14</div>
+  <div><span class="ic" data-i="mail"></span>kontakt@valinstudio.de</div>
+ </div>
+ <div id="cta">Kostenloses Erstgespräch <b data-i="arrow"></b></div>
+</section>
+</div>
+<script>
+const I = {
+ check:'<path d="M20 6 9 17l-5-5"/>',
+ arrow:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+ pin:'<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+ monitor:'<rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>',
+ video:'<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+ pen:'<path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/>',
+ search:'<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+ play:'<polygon points="6 3 20 12 6 21 6 3"/>',
+ x:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+ clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+ euro:'<path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/>',
+ user:'<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+ layers:'<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>',
+ key:'<circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>',
+ heart:'<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+ msg:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+ send:'<path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/>',
+ globe:'<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+ phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+ mail:'<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>'
+};
+document.querySelectorAll('[data-i]').forEach(e => { e.classList.add('ic'); e.innerHTML = `<svg viewBox="0 0 24 24">${I[e.dataset.i]}</svg>`; });
+document.querySelectorAll('.prog').forEach(p => { const k = +p.dataset.p; p.innerHTML = [1,2,3,4,5,6,7].map(i => `<i class="${i === k ? 'on' : ''}"></i>`).join(''); });
+window.__ready = (async () => {
+  await Promise.all(['700 50px Syncopate', '400 50px Syncopate', '800 50px Manrope', '500 50px Manrope', 'italic 500 50px Cormorant'].map(f => document.fonts.load(f, 'ÄÖÜäöüß€Valín')));
+  await document.fonts.ready;
+  await Promise.all([...document.images].map(i => i.decode().catch(() => {})));
+  // fit the name to the content width
+  const n = document.getElementById('name'); let fs = 120;
+  while (n.scrollWidth < 924 && fs < 300) { fs += 1; n.style.fontSize = fs + 'px'; }
+  while (n.scrollWidth > 924) { fs -= 1; n.style.fontSize = fs + 'px'; }
+  return fs;
+})();
+</script>
+</body></html>
