@@ -1,0 +1,42 @@
+{
+ "desk": {
+  "anlaesse": 973,
+  "ueber": 2139,
+  "anfrage": 3345,
+  "besuch": 4749,
+  "reviews": 2957,
+  "total": 6457
+ },
+ "deskHead": 70,
+ "mob": {
+  "anlaesse": 1398,
+  "ueber": 3909,
+  "anfrage": 6475,
+  "besuch": 9028,
+  "reviews": 5413,
+  "total": 11547
+ },
+ "mobHead": 70,
+ "mobBar": {
+  "x": 12,
+  "y": 766,
+  "w": 366,
+  "h": 66
+ },
+ "tapHochzeit": {
+  "x": 92,
+  "y": 184
+ },
+ "tapFarbe": {
+  "x": 122,
+  "y": 416
+ },
+ "tapName": {
+  "x": 195,
+  "y": 356
+ },
+ "tapSend": {
+  "x": 143,
+  "y": 627
+ }
+}

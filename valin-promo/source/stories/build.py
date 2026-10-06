@@ -1,5 +1,5 @@
 """Assembles st1..st5.html from the story templates (shared CSS, logo, CTA)."""
-import sys
+import json, os, sys
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 HEAD = '''<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><title>{title}</title>
@@ -17,13 +17,15 @@ TAIL = '''
 </body></html>'''
 LOGO = open('logo.svg.part').read()
 
-for n in sys.argv[1:] or ['1', '2', '3', '4', '5', '6']:
+for n in sys.argv[1:] or ['1', '2', '3', '4', '5', '6', '7']:
     src = open(f'st{n}.src.html').read()
     css, rest = src.split('<!--BODY-->')
     body, js = rest.split('<!--JS-->')
     meta = dict(l.split(':', 1) for l in css.splitlines()[0].strip('/* ').rstrip(' */').split(';') if ':' in l)
     out = HEAD.format(title=meta.get('title', f'Story {n}'), css=css.replace('{{OLDCSS}}', open('old.css').read()), cls=meta.get('cls', '').strip(), dur=meta.get('dur', '6').strip())
     out += body.replace('{{LOGO}}', f'<div id="logoTop">{LOGO}</div>')
+    if '{{WEBJSON}}' in js:   # positions recorded by the website capture (story 7)
+        js = js.replace('{{WEBJSON}}', json.dumps(json.load(open(os.path.join('img', 'web', 'web.json')))))
     out += TAIL.format(arrow=ARROW, js=js, dm=meta.get('dm', 'SCHREIB UNS EINE DM').strip())
     open(f'st{n}.html', 'w').write(out)
     print('built', n)

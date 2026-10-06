@@ -3,7 +3,8 @@
 Test-Website zum Zeigen im Kundengespräch mit Veronika Auer. One-Pager, Look „natürlich & warm“.
 
 - **`Auers_Blumenparadies_Demo.html`**: fertige Datei, einfach im Browser öffnen. Bilder und Schriften sind eingebettet, läuft auch offline (nur die Karte braucht Internet).
-- `src.html` + `img/` + `fonts/`: Quelle; `python3 build.py` baut daraus die Demo-Datei neu.
+- **`Beispiel_Floristik_Demo.html`**: neutrale Version „Wildblüte Floristik“ (Musterstraße 12, Musterstadt) ohne Daten von Frau Auer, zum Zeigen bei anderen Interessenten und als Grundlage für das Vorschauvideo (`valin-promo/source/stories/st7.src.html`).
+- `src.html` + `img/` + `fonts/`: Quelle; `python3 build.py` baut beide Dateien neu und bricht ab, falls in der neutralen Version noch Kundendaten stehen.
 
 ## Inhalt
 Hero mit Live-Status „Jetzt geöffnet“ · Anlässe (Hochzeit, Sträuße & Geschenke, Trauer) · Über Veronika + Google-Bewertung 5,0 (14) · Strauß-Anfrage mit Live-Zusammenfassung · Besuch mit Öffnungszeiten und Google-Karte · mobile Aktionsleiste „Anrufen / Strauß anfragen“.
