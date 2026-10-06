@@ -1,6 +1,7 @@
 """Story 6 (Empfehlung): short tech-house beat (120 BPM) + sound effects.
 
-One-beat pickup, so the bars start at 0.5 / 2.5 / 4.5 s and the drop lands on the "20 %" at 2.5 s.
+Three-beat pickup, so the bars start at 1.5 / 3.5 / 5.5 / 7.5 s: a muffled groove under the hook (0-3 s),
+the filter opens while the business gets recommended (3-5.5 s) and the drop lands on the "20 %" at 5.5 s.
 Writes music6.wav (song + effects) and sfx6.wav (effects only).
 """
 from sfxlib import *
@@ -8,10 +9,10 @@ from sfxlib import *
 BPM = 120
 B = 60 / BPM
 S16 = B / 4
-DUR = 6.0
+DUR = 9.0
 N = int(SR * DUR)
 r = np.random.default_rng(6)
-DROP, SWAP, CTA = 2.5, 1.5, 4.0
+DROP, SWAP, CTA = 5.5, 3.0, 7.0
 
 def buf(): return np.zeros(N)
 def put(b, x, at, g=1.0):
@@ -97,13 +98,12 @@ def duck(at, depth=0.7, rel=0.22):
     i = int(at * SR); t = t_(rel); c = 1 - depth * np.exp(-t * 16)
     j = min(N, i + len(c)); side[i:j] = np.minimum(side[i:j], c[: j - i])
 
-AM, F, G, C = [57, 60, 64, 67], [53, 57, 60, 64], [55, 59, 62, 65], [60, 64, 67, 71]
-# (start, end, chord, bass root): build on Am, drop F -> G7 -> C (resolves on the call to action)
-HARM = [(0.0, DROP, AM, 33), (DROP, 3.5, F, 29), (3.5, 4.5, G, 31), (4.5, DUR, C, 36)]
+AM, DM, F, G, C = [57, 60, 64, 67], [50, 53, 57, 60], [53, 57, 60, 64], [55, 59, 62, 65], [60, 64, 67, 71]
+# (start, end, chord, bass root): Am under the hook, Dm while recommending, drop F -> G7 -> C (resolves on the call to action)
+HARM = [(0.0, 3.5, AM, 33), (3.5, DROP, DM, 38), (DROP, 6.5, F, 29), (6.5, 7.5, G, 31), (7.5, DUR, C, 36)]
 for a, z, ch, root in HARM:
     drop = a >= DROP
-    pad_d = z - a
-    put(pads, pad(ch, pad_d), a, 0.8 if drop else 0.55)
+    put(pads, pad(ch, z - a), a, 0.8 if drop else 0.55)
     for k in range(int(round((z - a) / S16))):
         ts = a + k * S16
         if ts >= DROP - 0.12 and not drop: break          # breath before the drop
@@ -115,7 +115,7 @@ for k in range(int(DUR / B)):
     tb = k * B
     drop = tb >= DROP
     put(drums, KICK, tb, 0.9 if drop else 0.7); duck(tb)
-    if k % 2 == 0 and tb > 0: put(drums, CLAP, tb, 0.8 if drop else 0.35)   # beats 2 and 4 of each bar
+    if k % 2 == 0 and k: put(drums, CLAP, tb, 0.8 if drop else 0.35)            # beats 2 and 4 of each bar
     put(drums, OHAT, tb + B / 2, 0.55 if drop else 0.3)
     for s in range(4):
         ts = tb + s * S16
@@ -124,14 +124,15 @@ for k in range(int(DUR / B)):
         if drop: put(drums, SHAK, ts, 0.8 if s == 2 else 0.4)
 
 # snare roll into the drop, 8ths then 16ths
-t = SWAP; step = B / 2
+t = DROP - 1.0; step = B / 2
 while t < DROP - 0.11:
-    put(drums, CLAP, t, 0.2 + 0.55 * (t - SWAP) / (DROP - SWAP)); t += step
-    if t >= 2.0: step = S16
-put(fxm, riser(DROP - 0.6 - 0.05), 0.6, 0.6)
+    put(drums, CLAP, t, 0.2 + 0.55 * (t - DROP + 1.0)); t += step
+    if t >= DROP - 0.5: step = S16
+put(fxm, riser(DROP - 0.1 - (SWAP + 0.4)), SWAP + 0.4, 0.6)
 
 music = drums + (bassb + stabs + pads) * side
-music = lowpass_sweep(music, 600, 9000, 0.0, DROP)
+music = lowpass_sweep(music, 1100, 1100, 0.0, SWAP)
+music = lowpass_sweep(music, 1100, 9000, SWAP, DROP)
 music = lowpass_sweep(music, 12000, 1500, DUR - 0.8, DUR)
 
 # ---------- sound effects (times match st6.src.html) ----------
@@ -140,17 +141,19 @@ M = Mix(DUR); add = M.add
 add(swish(0.28, 0.25), 0.0)
 for i, at in enumerate((0.04, 0.12, 0.2)): add(pop(1000 + 120 * i, 0.2), at)
 add(pop(1300, 0.18), 0.38)                                              # logo accent
-add(whoosh(0.15, 0.3, 300, 5000, 0.38), 0.07)                           # profile card slides in
-add(bonk(0.2), 0.78, pan=-0.2); add(bonk(0.17), 0.92, pan=0.2)          # "Keine Website" / "Keine Reels"
-add(pop(600, 0.22), 0.78); add(pop(520, 0.2), 0.92)
-add(swish(0.22, 0.2), 1.0)                                              # marker "Reichweite"
-# B: recommend via DM
+add(whoosh(0.15, 0.3, 300, 5000, 0.38), 0.1)                            # profile card slides in
+add(bonk(0.2), 0.85, pan=-0.2); add(bonk(0.17), 1.0, pan=0.2)           # "Keine Website" / "Keine Reels"
+add(pop(600, 0.22), 0.85); add(pop(520, 0.2), 1.0)
+add(swish(0.22, 0.2), 1.15)                                             # marker "Reichweite"
+# B: recommend VALÍN Studio to the business
 add(whoosh(0.14, 0.2, 400, 6000, 0.35), SWAP - 0.16)
-add(pop(700, 0.28), SWAP - 0.02); add(pop(1100, 0.25), SWAP + 0.02); add(pop(1250, 0.25), SWAP + 0.11)
-add(swish(0.3, 0.4), SWAP + 0.04)                                       # profile flies into the chat
-add(swish(0.2, 0.2), SWAP + 0.32)                                       # marker "Empfiehl"
-add(pop(1200, 0.35), SWAP + 0.45); add(tick(3200, 0.15), SWAP + 0.47)   # text bubble
-add(whoop(0.3), SWAP + 0.6); add(tick(4200, 0.18), SWAP + 0.66)         # sent
+add(pop(700, 0.28), SWAP - 0.04); add(pop(1100, 0.25), SWAP + 0.02); add(pop(1250, 0.25), SWAP + 0.11)
+add(whoosh(0.12, 0.2, 500, 6000, 0.3), SWAP + 0.15, pan=0.3); add(pop(1000, 0.3), SWAP + 0.3)   # shared profile
+add(swish(0.2, 0.2), SWAP + 0.35)                                       # marker "Empfiehl mich"
+add(pop(1200, 0.35), SWAP + 0.6); add(tick(3200, 0.15), SWAP + 0.62)   # text bubble
+add(whoop(0.3), SWAP + 0.75); add(tick(4200, 0.18), SWAP + 0.81)       # sent
+add(pop(650, 0.2), SWAP + 0.9, pan=-0.3)                               # typing ...
+add(ding(0.26), SWAP + 1.2, pan=-0.3, rv=0.3); add(pop(1100, 0.3), SWAP + 1.22, pan=-0.3)   # "Hab direkt gebucht"
 # C: drop -> 20 %
 add(whoosh(0.2, 0.2, 300, 7000, 0.5), DROP - 0.22)
 add(swish(0.2, 0.2), DROP - 0.1)
@@ -165,7 +168,8 @@ add(kaching(0.32), DROP + 1.32, rv=0.25); add(pop(1300, 0.3), DROP + 1.32)
 # D: call to action
 add(whoosh(0.18, 0.25, 400, 5000, 0.3), CTA - 0.05); add(pop(800, 0.4), CTA + 0.05)
 add(ding(0.22), CTA + 0.15, rv=0.3)
-for i in range(4): add(pop(900 + i * 120, 0.22), CTA + 0.3 + 0.08 * i)
+add(pop(1000, 0.22), CTA + 0.3)
+for i in range(4): add(pop(900 + i * 120, 0.2), CTA + 0.45 + 0.08 * i)
 add(tick(3000, 0.12), CTA + 0.9)
 
 # ---------- final mix ----------
@@ -175,7 +179,8 @@ wet = signal.fftconvolve(stabs * side + fxm, ir)[:N] * 0.035
 d = int(0.014 * SR)
 mL = music + wet + fxm
 mR = drums + bassb * side + pads * side + np.concatenate([np.zeros(d), (stabs * side)[:-d]])
-mR = lowpass_sweep(mR, 600, 9000, 0.0, DROP)
+mR = lowpass_sweep(mR, 1100, 1100, 0.0, SWAP)
+mR = lowpass_sweep(mR, 1100, 9000, SWAP, DROP)
 mR = lowpass_sweep(mR, 12000, 1500, DUR - 0.8, DUR) + np.concatenate([np.zeros(d), wet[:-d]]) + fxm
 music_st = np.stack([mL, mR], 1)
 music_st = music_st / np.abs(music_st).max()

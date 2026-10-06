@@ -1,7 +1,7 @@
 // Shared helpers for the 6-second story videos (1080x1920, seeked frame by frame).
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => Array.from(document.querySelectorAll(s));
-const DUR = 6.0;
+const DUR = +($('#stage').dataset.dur || 6);   // template header can set dur:… (default 6 s)
 const tl = gsap.timeline({ paused: true });
 const FT = { immediateRender: true };
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));

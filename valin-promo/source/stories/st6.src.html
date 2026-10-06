@@ -1,15 +1,15 @@
-/* title:VALÍN Story 6 Empfehlung;cls:dk;dm:SCHICK MIR DEN NAMEN PER DM */
+/* title:VALÍN Story 6 Empfehlung;cls:dk;dur:9;dm:EMPFIEHL MICH WEITER */
 .dkbg .gl{left:-210px;top:300px;}
 .hl::before{z-index:-1;}
 #hA{top:390px;font-size:78px;}
-#hB{top:380px;font-size:112px;}
+#hB{top:380px;font-size:100px;}
 
-/* scene A/B: Instagram profile of the business, later shared via DM */
-#wr{position:absolute;inset:0;z-index:12;transform-origin:50% 60%;}
-#pc{position:absolute;left:120px;top:780px;width:840px;padding:46px 50px 50px;border-radius:54px;background:linear-gradient(180deg,#202020,#171717);border:2px solid rgba(255,255,255,.12);box-shadow:0 40px 90px rgba(0,0,0,.5);z-index:3;transform-origin:100% 0;}
+/* scene A: the business that needs reach */
+#pc{position:absolute;left:120px;top:780px;width:840px;padding:46px 50px 50px;border-radius:54px;background:linear-gradient(180deg,#202020,#171717);border:2px solid rgba(255,255,255,.12);box-shadow:0 40px 90px rgba(0,0,0,.5);z-index:12;transform-origin:50% 0;}
 #pc .top{display:flex;align-items:center;gap:30px;}
-#pc .av{width:150px;height:150px;border-radius:50%;flex:none;background:linear-gradient(135deg,#d9a066,#7a4a22);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.18);}
-#pc .av svg{width:80px;height:80px;}
+.cav{border-radius:50%;flex:none;background:linear-gradient(135deg,#d9a066,#7a4a22);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.18);}
+.cav svg{width:54%;height:54%;}
+#pc .cav{width:150px;height:150px;}
 #pc .nm{font-weight:700;font-size:46px;}
 #pc .ds{font-size:29px;color:var(--mute);margin-top:6px;}
 #pc .st{display:flex;justify-content:space-between;margin:38px 14px 0;text-align:center;}
@@ -18,27 +18,40 @@
 #pc .tg{display:flex;gap:18px;margin-top:40px;}
 .tag{height:68px;padding:0 28px;border-radius:34px;background:rgba(255,77,77,.13);border:2px solid rgba(255,77,77,.45);color:#ff6b6b;display:flex;align-items:center;gap:12px;font-weight:700;font-size:29px;}
 .tag svg{width:24px;height:24px;}
-#chat{position:absolute;left:110px;top:700px;width:860px;height:590px;border-radius:52px;background:#141414;border:2px solid rgba(255,255,255,.1);box-shadow:0 40px 100px rgba(0,0,0,.55);z-index:1;}
+
+/* scene B: the viewer shares VALÍN Studio with the business, the business books */
+#wr{position:absolute;inset:0;z-index:12;transform-origin:50% 60%;}
+#chat{position:absolute;left:110px;top:700px;width:860px;height:580px;border-radius:52px;background:#141414;border:2px solid rgba(255,255,255,.1);box-shadow:0 40px 100px rgba(0,0,0,.55);}
 #chat .hd{height:122px;display:flex;align-items:center;gap:22px;padding:0 36px;border-bottom:2px solid rgba(255,255,255,.07);}
-#chat .va{width:74px;height:74px;border-radius:50%;background:var(--lime);color:#0b0b0b;display:flex;align-items:center;justify-content:center;font-family:'Unbounded';font-weight:800;font-size:34px;}
+#chat .hd .cav{width:74px;height:74px;}
 #chat .hn b{display:block;font-weight:700;font-size:32px;}
 #chat .hn span{display:flex;align-items:center;gap:8px;font-size:23px;color:var(--mute);margin-top:4px;}
 #chat .hn span i{width:12px;height:12px;border-radius:50%;background:#3ddc68;}
-#bub{position:absolute;right:144px;top:1124px;height:74px;padding:0 32px;border-radius:37px 37px 10px 37px;background:var(--lime);color:#0b0b0b;display:flex;align-items:center;gap:10px;font-weight:700;font-size:30px;z-index:4;transform-origin:100% 100%;}
-#snt{position:absolute;right:150px;top:1214px;font-size:23px;font-weight:500;color:var(--mute);z-index:4;display:flex;align-items:center;gap:8px;}
+#vc{position:absolute;right:144px;top:850px;width:500px;padding:26px 28px;border-radius:32px 32px 10px 32px;background:#222;border:2px solid rgba(255,255,255,.12);display:flex;align-items:center;gap:22px;z-index:3;transform-origin:100% 100%;}
+#vc .va{width:96px;height:96px;border-radius:50%;background:var(--lime);color:#0b0b0b;font-family:'Unbounded';font-weight:800;font-size:44px;display:flex;align-items:center;justify-content:center;flex:none;}
+#vc b{display:block;font-size:32px;font-weight:700;}
+#vc span{display:block;font-size:22px;color:var(--mute);margin-top:4px;}
+#vc .pf{display:inline-flex;margin-top:12px;height:42px;padding:0 18px;border-radius:12px;background:var(--lime);color:#0b0b0b;font-weight:700;font-size:20px;align-items:center;}
+.bb{position:absolute;height:74px;padding:0 32px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:30px;z-index:4;white-space:nowrap;}
+#bub{right:144px;top:1040px;border-radius:37px 37px 10px 37px;background:var(--lime);color:#0b0b0b;transform-origin:100% 100%;}
+#snt{position:absolute;right:150px;top:1126px;font-size:23px;font-weight:500;color:var(--mute);z-index:4;display:flex;align-items:center;gap:8px;}
 #snt svg{width:24px;height:24px;}
+#rav{position:absolute;left:146px;top:1176px;width:56px;height:56px;z-index:4;}
+#typ{left:218px;top:1166px;width:130px;justify-content:center;gap:12px;padding:0;border-radius:37px 37px 37px 10px;background:#2a2a2a;}
+#typ i{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.6);}
+#rep{left:218px;top:1166px;border-radius:37px 37px 37px 10px;background:#2a2a2a;color:#fff;transform-origin:0 100%;}
 
 /* scene C/D: the reward */
-#kk{position:absolute;left:0;right:0;top:440px;text-align:center;font-family:'Unbounded';font-weight:700;font-size:46px;z-index:20;}
-#rays{position:absolute;left:540px;top:665px;width:1600px;height:1600px;margin:-800px 0 0 -800px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(199,244,49,.15) 0deg 6deg,transparent 6deg 22.5deg);-webkit-mask:radial-gradient(circle,#000 0,#000 16%,transparent 60%);mask:radial-gradient(circle,#000 0,#000 16%,transparent 60%);z-index:5;}
-#big{position:absolute;left:0;right:0;top:500px;text-align:center;font-family:'Unbounded';font-weight:900;font-size:340px;line-height:1;letter-spacing:-.04em;color:var(--lime);z-index:20;text-shadow:0 0 90px rgba(199,244,49,.45);white-space:nowrap;}
+#kk{position:absolute;left:0;right:0;top:396px;text-align:center;font-family:'Unbounded';font-weight:700;font-size:46px;line-height:1.15;z-index:20;}
+#rays{position:absolute;left:540px;top:690px;width:1600px;height:1600px;margin:-800px 0 0 -800px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(199,244,49,.15) 0deg 6deg,transparent 6deg 22.5deg);-webkit-mask:radial-gradient(circle,#000 0,#000 16%,transparent 60%);mask:radial-gradient(circle,#000 0,#000 16%,transparent 60%);z-index:5;}
+#big{position:absolute;left:0;right:0;top:525px;text-align:center;font-family:'Unbounded';font-weight:900;font-size:340px;line-height:1;letter-spacing:-.04em;color:var(--lime);z-index:20;text-shadow:0 0 90px rgba(199,244,49,.45);white-space:nowrap;}
 #big small{font-size:200px;margin-left:18px;letter-spacing:0;}
 #pts{position:absolute;inset:0;z-index:8;pointer-events:none;}
 .pt{position:absolute;left:0;top:0;border-radius:50%;background:var(--lime);}
 .pt.w{background:#fff;}
 .pt.e{background:none;border-radius:0;color:var(--lime);font-family:'Unbounded';font-weight:800;font-size:54px;line-height:1;width:auto;height:auto;}
-#sub{position:absolute;left:0;right:0;top:868px;text-align:center;font-family:'Unbounded';font-weight:700;font-size:48px;z-index:20;}
-#ex{position:absolute;left:130px;top:990px;width:820px;height:210px;border-radius:44px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:2px solid rgba(199,244,49,.4);display:flex;align-items:center;justify-content:space-between;padding:0 46px;z-index:20;}
+#sub{position:absolute;left:0;right:0;top:886px;text-align:center;font-family:'Unbounded';font-weight:700;font-size:48px;z-index:20;}
+#ex{position:absolute;left:130px;top:1000px;width:820px;height:200px;border-radius:44px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:2px solid rgba(199,244,49,.4);display:flex;align-items:center;justify-content:space-between;padding:0 46px;z-index:20;}
 #ex .lb{font-family:'Michroma';font-size:18px;letter-spacing:.24em;color:var(--mute);}
 #ex .lb.g{color:var(--lime);}
 #ex .pr{font-family:'Unbounded';font-weight:700;font-size:56px;margin-top:12px;white-space:nowrap;}
@@ -46,9 +59,11 @@
 #ex .ar svg{width:30px;height:30px;}
 #ex .rt{text-align:right;}
 #cv{font-family:'Unbounded';font-weight:800;font-size:66px;color:var(--lime);margin-top:8px;white-space:nowrap;font-variant-numeric:tabular-nums;display:inline-block;transform-origin:100% 50%;}
-#dm,#dmPulse{top:1370px;}
+#dm,#dmPulse{top:1340px;}
 #flash{background:radial-gradient(circle at 50% 36%,rgba(214,255,90,.95),rgba(199,244,49,.35) 35%,rgba(199,244,49,0) 70%);}
-#gf{position:absolute;left:0;right:0;top:1534px;display:flex;justify-content:center;align-items:center;gap:14px;z-index:20;}
+#nt{position:absolute;left:0;right:0;top:1496px;text-align:center;font-size:30px;font-weight:600;color:rgba(255,255,255,.82);z-index:20;}
+#nt b{color:var(--lime);font-weight:700;}
+#gf{position:absolute;left:0;right:0;top:1566px;display:flex;justify-content:center;align-items:center;gap:14px;z-index:20;}
 #gf>span{font-size:26px;font-weight:600;color:var(--mute);margin-right:4px;}
 .gc{height:56px;padding:0 22px 0 14px;border-radius:28px;border:2px solid rgba(255,255,255,.18);display:flex;align-items:center;gap:10px;font-weight:700;font-size:25px;}
 .gc b{width:30px;height:30px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;}
@@ -57,21 +72,25 @@
 <div class="dkbg"><div class="g"></div><div class="gl"></div></div>
 {{LOGO}}
 <div class="H" id="hA"><span class="m"><span class="mi">Du kennst einen</span></span><span class="m"><span class="mi">Betrieb, der mehr</span></span><span class="m"><span class="mi" data-fit="990"><span class="hl" id="hlA"><span id="hlAt">Reichweite</span></span> braucht?</span></span></div>
-<div class="H" id="hB"><span class="m"><span class="mi"><span class="hl" id="hlB"><span id="hlBt">Empfiehl</span></span></span></span><span class="m"><span class="mi">ihn mir.</span></span></div>
+<div class="H" id="hB"><span class="m"><span class="mi" data-fit="990"><span class="hl" id="hlB"><span id="hlBt">Empfiehl mich</span></span></span></span><span class="m"><span class="mi">dem Betrieb.</span></span></div>
+<div id="pc">
+ <div class="top"><div class="cav"></div>
+  <div><div class="nm">dein.lieblingscafe</div><div class="ds">Café &amp; Bäckerei</div></div></div>
+ <div class="st"><div><b>6</b><span>Beiträge</span></div><div><b>87</b><span>Follower</span></div><div><b>112</b><span>Gefolgt</span></div></div>
+ <div class="tg"><div class="tag" id="t1">Keine Website</div><div class="tag" id="t2">Keine Reels</div></div>
+</div>
 <div id="wr">
- <div id="chat"><div class="hd"><div class="va">V</div><div class="hn"><b>VALÍN Studio</b><span><i></i>Aktiv</span></div></div></div>
- <div id="pc">
-  <div class="top"><div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5h11v4.5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M15.5 10.5h1.2a2.4 2.4 0 0 1 0 4.8h-1.5"/><path d="M8.5 3.5c-.8.9.8 1.6 0 2.6M12 3.5c-.8.9.8 1.6 0 2.6"/></svg></div>
-   <div><div class="nm">dein.lieblingscafe</div><div class="ds">Café &amp; Bäckerei</div></div></div>
-  <div class="st"><div><b>6</b><span>Beiträge</span></div><div><b>87</b><span>Follower</span></div><div><b>112</b><span>Gefolgt</span></div></div>
-  <div class="tg"><div class="tag" id="t1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Keine Website</div><div class="tag" id="t2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Keine Reels</div></div>
- </div>
- <div id="bub">Die brauchen dich! <span class="emo">🙌</span></div>
+ <div id="chat"><div class="hd"><div class="cav"></div><div class="hn"><b>dein.lieblingscafe</b><span><i></i>Aktiv</span></div></div></div>
+ <div id="vc"><div class="va">V</div><div><b>VALÍN Studio</b><span>Websites · Reels · Videos</span><div class="pf">Profil ansehen</div></div></div>
+ <div class="bb" id="bub">Die machen dir Website &amp; Reels! <span class="emo">🔥</span></div>
  <div id="snt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Gesendet</div>
+ <div class="cav" id="rav"></div>
+ <div class="bb" id="typ"><i></i><i></i><i></i></div>
+ <div class="bb" id="rep">Danke! Hab direkt gebucht <span class="emo">🙌</span></div>
 </div>
 <div id="rays"></div>
 <div id="pts"></div>
-<div id="kk"><span class="m"><span class="mi">Bucht der Betrieb, bekommst du</span></span></div>
+<div id="kk"><span class="m"><span class="mi">Bucht der Betrieb bei mir,</span></span><span class="m"><span class="mi">bekommst du</span></span></div>
 <div id="big">20<small>%</small></div>
 <div id="sub"><span class="m"><span class="mi">vom gesamten Auftragswert.</span></span></div>
 <div id="ex">
@@ -79,19 +98,22 @@
  <div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
  <div class="rt"><div class="lb g">DU BEKOMMST</div><div id="cv">0,00 €</div></div>
 </div>
-<div id="gf"><span>Gilt für</span>
- <div class="gc"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b>Websites</div>
- <div class="gc"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b>Reels</div>
- <div class="gc"><b><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></b>Videos</div>
-</div>
+<div id="nt">Und sag mir per DM, <b>wen</b> du empfohlen hast.</div>
+<div id="gf"><span>Gilt für</span><div class="gc"><b></b>Websites</div><div class="gc"><b></b>Reels</div><div class="gc"><b></b>Videos</div></div>
 <!--JS-->
-// beat grid: 120 BPM with a one-beat pickup -> bars start at 0.5, 2.5, 4.5
-const B = 0.5, SWAP = 1.5, DROP = 2.5, CTA = 4.0;
+// beat grid: 120 BPM with a three-beat pickup -> bars start at 1.5, 3.5, 5.5, 7.5 s
+const B = 0.5, SWAP = 3.0, DROP = 5.5, CTA = 7.0;
+const CUP = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5h11v4.5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M15.5 10.5h1.2a2.4 2.4 0 0 1 0 4.8h-1.5"/><path d="M8.5 3.5c-.8.9.8 1.6 0 2.6M12 3.5c-.8.9.8 1.6 0 2.6"/></svg>';
+const XX = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+const CHK = '<svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 const C = { v: 0 };
 let P = [];
 function build() {
+  $$('.cav').forEach((e) => (e.innerHTML = CUP));
+  $$('.tag').forEach((e) => e.insertAdjacentHTML('afterbegin', XX));
+  $$('.gc b').forEach((e) => (e.innerHTML = CHK));
   gsap.set(['#hB .mi', '#kk .mi', '#sub .mi'], { yPercent: 115 });
-  gsap.set(['#chat', '#bub', '#snt', '#big', '#rays', '#ex'], { autoAlpha: 0 });
+  gsap.set(['#wr', '#big', '#rays', '#ex'], { autoAlpha: 0 });
   // particles for the drop: lime dots, white sparks and euro signs
   let s = 7; const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647);
   for (let i = 0; i < 24; i++) {
@@ -102,58 +124,63 @@ function build() {
   }
   P.forEach((p, i) => (p.el = $$('.pt')[i]));
 
-  // ---- A: the business that needs reach (0 - 1.5)
+  // ---- A: the business that needs reach (0 - 3.0), long enough to read
   logoIn(0);
   rise('#hA .mi', 0.0, { s: 0.08 });
-  tl.fromTo('#pc', { y: 220, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, ease: 'expo.out', ...FT }, 0.22);
-  popIn(['#t1', '#t2'], 0.78, { s: 0.14 });
-  marker('#hlA', 1.0);
-  tl.fromTo('#hlAt', { color: '#fff' }, { color: '#0b0b0b', duration: 0.2, ...FT }, 1.05);
+  tl.fromTo('#pc', { y: 220, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, ease: 'expo.out', ...FT }, 0.25);
+  popIn(['#t1', '#t2'], 0.85, { s: 0.15 });
+  marker('#hlA', 1.15);
+  tl.fromTo('#hlAt', { color: '#fff' }, { color: '#0b0b0b', duration: 0.2, ...FT }, 1.2);
+  tl.fromTo('#cam', { scale: 1 }, { scale: 1.035, duration: SWAP - 1.2, ease: 'sine.inOut', immediateRender: false }, 1.2);
   tl.fromTo('.dkbg .gl', { x: 0, y: 0 }, { x: 120, y: -200, duration: DROP, ease: 'sine.inOut', ...FT }, 0);
 
-  // ---- B: recommend it via DM (1.5 - 2.5)
-  tl.to('#hA .mi', { yPercent: -115, duration: 0.2, ease: 'power3.in', stagger: 0.03 }, SWAP - 0.12);
+  // ---- B: the viewer recommends VALÍN Studio to the business, which books (3.0 - 5.5)
+  tl.to('#hA .mi', { yPercent: -115, duration: 0.2, ease: 'power3.in', stagger: 0.03 }, SWAP - 0.14);
+  tl.to('#pc', { y: -40, scale: 0.86, autoAlpha: 0, duration: 0.24, ease: 'power3.in' }, SWAP - 0.14);
+  tl.to('#cam', { scale: 1, duration: 0.3, ease: 'power2.out' }, SWAP - 0.05);
   rise('#hB .mi', SWAP, { s: 0.09 });
-  marker('#hlB', SWAP + 0.32);
-  tl.fromTo('#hlBt', { color: '#fff' }, { color: '#0b0b0b', duration: 0.2, ...FT }, SWAP + 0.37);
-  tl.fromTo('#chat', { y: 60, scale: 0.94, autoAlpha: 0 }, { y: 0, scale: 1, autoAlpha: 1, duration: 0.5, ease: 'expo.out', ...FT }, SWAP - 0.04);
-  // fit the shared profile into the chat, the text bubble goes right below it
-  const pc = $('#pc'), SC = 0.56, top = 848, bt = top + pc.offsetHeight * SC + 18;
-  $('#bub').style.top = bt + 'px'; $('#snt').style.top = bt + 88 + 'px'; $('#chat').style.height = bt + 150 - 700 + 'px';
-  tl.fromTo('#pc', { x: 0, y: 0, scale: 1 }, { x: 936 - pc.offsetLeft - pc.offsetWidth, y: top - pc.offsetTop, scale: SC, duration: 0.45, ease: 'power3.inOut', immediateRender: false }, SWAP + 0.02);
-  tl.fromTo('#bub', { scale: 0.3, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.35, ease: 'back.out(2.4)', ...FT }, SWAP + 0.45);
-  tl.fromTo('#snt', { x: 20, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.25, ease: 'power2.out', ...FT }, SWAP + 0.62);
+  marker('#hlB', SWAP + 0.35);
+  tl.fromTo('#hlBt', { color: '#fff' }, { color: '#0b0b0b', duration: 0.2, ...FT }, SWAP + 0.4);
+  tl.fromTo('#wr', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.01, ...FT }, SWAP - 0.05);
+  tl.fromTo('#chat', { y: 60, scale: 0.94, autoAlpha: 0 }, { y: 0, scale: 1, autoAlpha: 1, duration: 0.5, ease: 'expo.out', ...FT }, SWAP - 0.05);
+  tl.fromTo('#vc', { x: 160, y: 60, scale: 0.6, autoAlpha: 0 }, { x: 0, y: 0, scale: 1, autoAlpha: 1, duration: 0.45, ease: 'back.out(1.6)', ...FT }, SWAP + 0.25);
+  tl.fromTo('#bub', { scale: 0.3, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.35, ease: 'back.out(2.4)', ...FT }, SWAP + 0.6);
+  tl.fromTo('#snt', { x: 20, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.25, ease: 'power2.out', ...FT }, SWAP + 0.78);
+  popIn(['#rav', '#typ'], SWAP + 0.9, { s: 0.04, d: 0.3 });
+  tl.to('#typ', { autoAlpha: 0, duration: 0.05 }, SWAP + 1.2);
+  tl.fromTo('#rep', { scale: 0.3, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.4, ease: 'back.out(2.4)', ...FT }, SWAP + 1.2);
 
-  // ---- C: drop -> 20 % (2.5 - 4.0)
+  // ---- C: drop -> 20 % (5.5 - 7.0)
   tl.to('#hB .mi', { yPercent: -115, duration: 0.16, ease: 'power3.in', stagger: 0.03 }, DROP - 0.29);
   tl.to('#wr', { y: 180, scale: 0.92, autoAlpha: 0, duration: 0.18, ease: 'power3.in' }, DROP - 0.26);
-  rise('#kk .mi', DROP - 0.08, { d: 0.5 });
+  rise('#kk .mi', DROP - 0.08, { d: 0.5, s: 0.07 });
   tl.fromTo('#flash', { opacity: 0.5 }, { opacity: 0, duration: 0.28, ease: 'power2.out', immediateRender: false }, DROP);
   camPunch(DROP, 1.08, 0.45);
   shake(DROP, 12, 0.28);
   tl.fromTo('#big', { scale: 1.8, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.5, ease: 'expo.out', ...FT }, DROP);
-  for (let b = DROP + B; b < 6; b += B) tl.fromTo('#big', { scale: 1.035 }, { scale: 1, duration: 0.3, ease: 'power2.out', immediateRender: false }, b);
-  tl.fromTo('#rays', { scale: 0.3, autoAlpha: 0, rotation: 0 }, { scale: 1, autoAlpha: 1, duration: 0.7, ease: 'expo.out', ...FT }, DROP);
-  tl.fromTo('#rays', { rotation: 0 }, { rotation: 45, duration: 6 - DROP, ease: 'none', immediateRender: false }, DROP);
+  for (let b = DROP + B; b < DUR; b += B) tl.fromTo('#big', { scale: 1.035 }, { scale: 1, duration: 0.3, ease: 'power2.out', immediateRender: false }, b);
+  tl.fromTo('#rays', { scale: 0.3, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.7, ease: 'expo.out', ...FT }, DROP);
+  tl.fromTo('#rays', { rotation: 0 }, { rotation: 55, duration: DUR - DROP, ease: 'none', immediateRender: false }, DROP);
   tl.fromTo('.dkbg .gl', { scale: 1 }, { scale: 1.2, y: -380, duration: 0.6, ease: 'expo.out', immediateRender: false }, DROP);
   rise('#sub .mi', DROP + 0.28);
   tl.fromTo('#ex', { y: 60, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.5, ease: 'expo.out', ...FT }, DROP + 0.5);
   tl.fromTo(C, { v: 0 }, { v: 59.8, duration: 0.65, ease: 'power2.out', ...FT }, DROP + 0.65);
   tl.fromTo('#cv', { scale: 1.18 }, { scale: 1, duration: 0.35, ease: 'back.out(3)', immediateRender: false }, DROP + 1.32);
 
-  // ---- D: call to action (4.0 - 6.0)
+  // ---- D: call to action (7.0 - 9.0)
   cta(CTA);
-  slideUp(['#gf>span', '.gc'], CTA + 0.3, { y: 30, s: 0.08 });
+  slideUp('#nt', CTA + 0.3, { y: 30 });
+  slideUp(['#gf>span', '.gc'], CTA + 0.45, { y: 30, s: 0.08 });
 }
 function after(t) {
   $('#cv').textContent = C.v.toFixed(2).replace('.', ',') + ' €';
+  $$('#typ i').forEach((d, i) => (d.style.transform = `translateY(${(-7 * Math.max(0, Math.sin(t * 9 - i * 0.9))).toFixed(1)}px)`));
   P.forEach((p) => {
     const dt = t - DROP - p.d;
     if (dt <= 0 || dt > 0.95) { p.el.style.opacity = 0; return; }
     const k = 3.2, f = (1 - Math.exp(-k * dt)) / k;
-    const x = 540 + p.vx * f, y = 690 + p.vy * f + 900 * dt * dt;
-    const o = 1 - clamp((dt - 0.35) / 0.55);
-    p.el.style.opacity = o.toFixed(3);
+    const x = 540 + p.vx * f, y = 715 + p.vy * f + 900 * dt * dt;
+    p.el.style.opacity = (1 - clamp((dt - 0.35) / 0.55)).toFixed(3);
     p.el.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-50%) rotate(${(p.r * dt).toFixed(1)}deg) scale(${(0.4 + 0.6 * ease(dt / 0.15)).toFixed(3)})`;
   });
 }

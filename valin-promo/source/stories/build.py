@@ -5,7 +5,7 @@ HEAD = '''<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><title>{title}</title>
 <link rel="stylesheet" href="base.css"><link rel="stylesheet" href="stories.css">
 <style>{css}</style></head><body>
-<div id="stage" class="{cls}"><div id="cam">
+<div id="stage" class="{cls}" data-dur="{dur}"><div id="cam">
 '''
 TAIL = '''
 <div id="dmPulse"></div><div id="dm">{dm} <i>{arrow}</i></div>
@@ -22,7 +22,7 @@ for n in sys.argv[1:] or ['1', '2', '3', '4', '5', '6']:
     css, rest = src.split('<!--BODY-->')
     body, js = rest.split('<!--JS-->')
     meta = dict(l.split(':', 1) for l in css.splitlines()[0].strip('/* ').rstrip(' */').split(';') if ':' in l)
-    out = HEAD.format(title=meta.get('title', f'Story {n}'), css=css.replace('{{OLDCSS}}', open('old.css').read()), cls=meta.get('cls', '').strip())
+    out = HEAD.format(title=meta.get('title', f'Story {n}'), css=css.replace('{{OLDCSS}}', open('old.css').read()), cls=meta.get('cls', '').strip(), dur=meta.get('dur', '6').strip())
     out += body.replace('{{LOGO}}', f'<div id="logoTop">{LOGO}</div>')
     out += TAIL.format(arrow=ARROW, js=js, dm=meta.get('dm', 'SCHREIB UNS EINE DM').strip())
     open(f'st{n}.html', 'w').write(out)
