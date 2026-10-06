@@ -2,19 +2,19 @@
  "desk": {
   "anlaesse": 973,
   "ueber": 2139,
-  "anfrage": 3345,
-  "besuch": 4749,
+  "anfrage": 3389,
+  "besuch": 4832,
   "reviews": 2957,
-  "total": 6457
+  "total": 6539
  },
  "deskHead": 70,
  "mob": {
   "anlaesse": 1398,
-  "ueber": 3909,
-  "anfrage": 6475,
-  "besuch": 9028,
-  "reviews": 5413,
-  "total": 11547
+  "ueber": 3988,
+  "anfrage": 6640,
+  "besuch": 9361,
+  "reviews": 5493,
+  "total": 11880
  },
  "mobHead": 70,
  "mobBar": {
@@ -29,7 +29,7 @@
  },
  "tapFarbe": {
   "x": 122,
-  "y": 416
+  "y": 441
  },
  "tapName": {
   "x": 195,
@@ -37,6 +37,6 @@
  },
  "tapSend": {
   "x": 143,
-  "y": 627
+  "y": 626
  }
 }
