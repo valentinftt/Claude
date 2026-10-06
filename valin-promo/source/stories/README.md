@@ -1,4 +1,4 @@
-# Instagram-Stories (5 × 6 s, 1080×1920, nur Soundeffekte)
+# Instagram-Stories (6 × 6 s, 1080×1920; 1–5 nur Soundeffekte, 6 mit Beat)
 
 Jede Story gibt es als Video (`valin-promo/stories/Story_*.mp4`) und als Standbild (`*.png`).
 
