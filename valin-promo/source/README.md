@@ -42,8 +42,9 @@ node render.mjs && bash finish.sh
 - `build5.py` setzt alles zu `index5.html` zusammen (Beispiel-Marken: @lumiere.jewelry, @north.wear, @nova.skincare)
 - `music5.py` – Tech-House-Track (126 BPM), schreibt `music5.wav` (Song + Effekte) und `sfx5.wav` (nur Effekte); `render5.mjs` rendert die Frames
 
-## Story-Highlight-Cover „Ads“
+## Story-Highlight-Cover („Ads“, „Empfehlung“)
 
-- `highlights/ads.html` – Cover-Vorlage (Parameter: `v=dark|light|lime`, `m=icon|word`, `s=sq` für 1080×1080, sonst 1080×1920)
-- `highlights/shot.mjs` rendert per Playwright, z. B. `node highlights/shot.mjs ../highlights "Ads_Dark_Icon:v=dark&m=icon&s=sq"`
+- `highlights/cover.html` – Cover-Vorlage (Parameter: `c=ads|empf`, `v=dark|light|lime`, `m=icon|word`, `s=sq` für 1080×1080, sonst 1080×1920)
+  - `ads`: Megafon bzw. „Ads.“ · `empf`: Papierflieger (DM senden) bzw. „20%“ für die Empfehlungs-Story (Story 6)
+- `highlights/shot.mjs` rendert per Playwright, z. B. `node highlights/shot.mjs ../highlights "Empfehlung_Dark_20Prozent:c=empf&v=dark&m=word&s=sq"`
 - Ergebnisse liegen in `valin-promo/highlights/` (`*_Story.png` = Story-Format zum Hochladen)
