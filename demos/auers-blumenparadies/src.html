@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 48 48%27%3E%3Ccircle cx=%2724%27 cy=%2724%27 r=%2724%27 fill=%27%23F6F1E9%27/%3E%3Cg fill=%27none%27 stroke=%27%23B9694A%27 stroke-width=%272.6%27 stroke-linecap=%27round%27%3E%3Cpath d=%27M24 20c-3-6-1-12 0-14 1 2 3 8 0 14z%27/%3E%3Cpath d=%27M27.5 22.5c4.5-5 10.5-5.5 12.8-5.3-.9 2.1-4.6 7-12.8 5.3z%27/%3E%3Cpath d=%27M26.5 27c6 2.5 8.5 8 9 10.3-2.3-.3-8-2.6-9-10.3z%27/%3E%3Cpath d=%27M21.5 27c-1 7.7-6.7 10-9 10.3.5-2.3 3-7.8 9-10.3z%27/%3E%3Cpath d=%27M20.5 22.5c-8.2 1.7-11.9-3.2-12.8-5.3 2.3-.2 8.3.3 12.8 5.3z%27/%3E%3Ccircle cx=%2724%27 cy=%2724.5%27 r=%273.2%27/%3E%3C/g%3E%3C/svg%3E">
+<title>Auer's Blumenparadies – Blumenladen in Regensburg</title>
+<meta name="description" content="Handgebundene Sträuße, Hochzeitsfloristik und Trauerfloristik in Regensburg. Auer's Blumenparadies, Bischof-Konrad-Straße 4.">
+<style>
+{{FONTS}}
+:root{
+  --cream:#F6F1E9;--paper:#FBF8F2;--sand:#EFE6D8;--blush:#EBD3C6;--blush-l:#F4E6DD;
+  --sage:#7A8A6A;--sage-d:#4A5743;--moss:#2E3A2A;--terra:#B9694A;--terra-d:#9C5437;
+  --ink:#2C2824;--muted:#776D63;--line:rgba(44,40,36,.12);
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --script:'Great Vibes',cursive;
+  --radius:24px;--ease:cubic-bezier(.22,.8,.24,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 28px}
+em{font-style:italic;color:var(--terra)}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-d)}
+.kicker::before{content:'';width:28px;height:1.5px;background:var(--terra)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em;color:var(--moss)}
+h2{font-size:clamp(38px,5vw,62px)}
+h3{font-size:30px}
+.lead{font-size:19px;color:var(--muted);max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;transition:transform .3s var(--ease),background .3s,box-shadow .3s,color .3s;cursor:pointer;border:0;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--terra);color:#fff;box-shadow:0 10px 24px rgba(185,105,74,.28)}
+.btn-primary:hover{background:var(--terra-d);transform:translateY(-2px);box-shadow:0 14px 30px rgba(185,105,74,.34)}
+.btn-ghost{border:1.5px solid rgba(46,58,42,.25);color:var(--moss);background:transparent}
+.btn-ghost:hover{border-color:var(--moss);transform:translateY(-2px)}
+
+/* reveal on scroll */
+[data-reveal]{opacity:0;transform:translateY(28px);filter:blur(4px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);transition-delay:var(--d,0s)}
+[data-reveal].in{opacity:1;transform:none;filter:none}
+
+/* announcement + header */
+.notice{background:var(--moss);color:var(--cream);font-size:14px;text-align:center;padding:9px 16px;letter-spacing:.02em}
+.notice b{font-weight:600;color:#E8C9A9}
+header{position:sticky;top:0;z-index:50;transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+header.scrolled{background:rgba(251,248,242,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;transition:height .4s var(--ease)}
+header.scrolled .nav{height:70px}
+.logo{display:flex;align-items:center;gap:12px;line-height:1}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{display:block;font-family:var(--serif);font-style:italic;font-weight:600;font-size:30px;color:var(--moss)}
+.logo span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--sage-d);margin-top:3px}
+.menu{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:500}
+.menu a:not(.btn){position:relative;color:var(--ink)}
+.menu a:not(.btn)::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:1.5px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.menu a:not(.btn):hover::after{transform:scaleX(1)}
+.menu .btn{height:46px;padding:0 22px;font-size:15px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);align-items:center;justify-content:center;cursor:pointer}
+.burger svg{width:20px;height:20px}
+
+/* hero */
+.hero{position:relative;padding:36px 0 90px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(50px,6.4vw,88px);line-height:.98;margin:22px 0 26px}
+.hero h1 em{font-weight:500}
+.hero p.lead{margin-bottom:34px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:38px;font-size:15px;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:10px;height:40px;white-space:nowrap;padding:0 16px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink);font-weight:500}
+.status i{width:9px;height:9px;border-radius:50%;background:#5E9E5A;box-shadow:0 0 0 0 rgba(94,158,90,.5);animation:ping 2.2s infinite}
+.status.closed i{background:#C9895F;box-shadow:none;animation:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(94,158,90,.45)}70%{box-shadow:0 0 0 10px rgba(94,158,90,0)}100%{box-shadow:0 0 0 0 rgba(94,158,90,0)}}
+.stars{display:inline-flex;align-items:center;gap:8px}
+.stars span{color:#D99A3E;letter-spacing:2px;font-size:16px}
+.stars b{color:var(--ink);font-weight:600}
+.hero-art{position:relative;justify-self:center;width:100%;max-width:480px}
+.hero-art::before{content:'';position:absolute;right:-60px;top:40px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle at 40% 40%,var(--blush),rgba(235,211,198,0) 70%);z-index:0}
+.arch{position:relative;z-index:1;aspect-ratio:4/5.3;border-radius:999px 999px 30px 30px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(46,58,42,.45)}
+.arch img{width:100%;height:100%;object-fit:cover;animation:kb 22s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12) translate(-1.5%,1%)}}
+.round{position:absolute;z-index:2;left:-70px;bottom:46px;width:200px;height:200px;border-radius:50%;overflow:hidden;border:8px solid var(--cream);box-shadow:0 24px 50px -18px rgba(46,58,42,.45)}
+.round img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;z-index:3;right:-34px;top:-20px;width:150px;height:150px;border-radius:50%;background:var(--paper);box-shadow:0 18px 40px -16px rgba(46,58,42,.35);display:flex;align-items:center;justify-content:center}
+.badge svg.ring{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);animation:spin 28s linear infinite}
+.badge svg.ring text{font-family:var(--sans);font-size:10.6px;font-weight:600;letter-spacing:.24em;fill:var(--sage-d)}
+.badge svg.flower{width:46px;height:46px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.petal{position:absolute;top:-40px;z-index:0;pointer-events:none;opacity:.55;animation:fall linear infinite}
+.petal svg{width:100%;height:100%;animation:sway ease-in-out infinite alternate}
+@keyframes fall{from{transform:translateY(-60px) rotate(0)}to{transform:translateY(1100px) rotate(320deg)}}
+@keyframes sway{from{transform:translateX(-22px)}to{transform:translateX(22px)}}
+
+/* marquee */
+.marquee{background:var(--sage-d);color:var(--cream);overflow:hidden;padding:20px 0;white-space:nowrap}
+.marquee .track{display:inline-flex;align-items:center;gap:40px;animation:marq 38s linear infinite}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:28px;font-weight:500}
+.marquee svg{width:20px;height:20px;opacity:.8}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* sections */
+section.block{padding:120px 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 60px;margin-bottom:60px}
+.head h2{margin-top:16px;max-width:640px}
+.head .lead{max-width:420px}
+
+/* occasions */
+#anlaesse{background:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{display:flex;flex-direction:column;background:var(--cream);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(46,58,42,.35)}
+.card .pic{position:relative;aspect-ratio:4/4.4;overflow:hidden}
+.card .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card:hover .pic img{transform:scale(1.07)}
+.card .tag{position:absolute;left:18px;top:18px;height:34px;padding:0 14px;border-radius:999px;background:rgba(251,248,242,.92);display:flex;align-items:center;font-size:13px;font-weight:600;color:var(--sage-d);letter-spacing:.04em}
+.card .txt{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
+.card .num{font-family:var(--serif);font-style:italic;color:var(--terra);font-size:20px}
+.card h3{margin:4px 0 12px}
+.card p{color:var(--muted);font-size:16px;flex:1}
+.card .more{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;color:var(--moss);font-size:15px}
+.card .more svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.card:hover .more svg{transform:translateX(5px)}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.about .pic{position:relative}
+.about .pic .frame{aspect-ratio:4/5;border-radius:30px 30px 999px 999px;overflow:hidden;box-shadow:0 40px 80px -36px rgba(46,58,42,.5)}
+.about .pic img{width:100%;height:100%;object-fit:cover}
+.about .pic .note{position:absolute;right:-26px;bottom:60px;background:var(--paper);border-radius:18px;padding:16px 20px;box-shadow:0 20px 44px -20px rgba(46,58,42,.4);font-size:14px;line-height:1.4;color:var(--muted)}
+.about .pic .note b{display:block;font-family:var(--serif);font-size:28px;color:var(--terra);font-weight:600;line-height:1}
+.about h2{margin:16px 0 26px}
+.about p{color:var(--muted);margin-bottom:18px;max-width:560px}
+.sign{font-family:var(--script);font-size:50px;color:var(--terra);line-height:1;margin:14px 0 30px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.values div{padding:20px 18px;border-radius:18px;background:var(--paper);border:1px solid var(--line);font-size:14px;line-height:1.45;color:var(--muted)}
+.values svg{width:28px;height:28px;margin-bottom:10px}
+.values b{display:block;color:var(--moss);font-size:15.5px;margin-bottom:2px}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:.8fr repeat(3,1fr);gap:22px;margin-top:100px}
+.rv{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px}
+.rv .q{font-family:var(--serif);font-size:22px;line-height:1.3;color:var(--moss);margin:10px 0 16px}
+.rv small{color:var(--muted);font-size:13.5px}
+.rv .s{color:#D99A3E;letter-spacing:2px}
+.score{background:var(--moss);color:var(--cream);border-radius:22px;padding:30px;display:flex;flex-direction:column;justify-content:center}
+.score b{font-family:var(--serif);font-size:76px;line-height:1;font-weight:600}
+.score .s{color:#E9B866;letter-spacing:3px;font-size:18px;margin:6px 0 10px}
+.score small{opacity:.8;font-size:14px}
+.score .g{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;opacity:.85}
+.demo-hint{grid-column:1/-1;font-size:12.5px;color:var(--muted);opacity:.75;text-align:right;margin-top:-6px}
+
+/* request form */
+#anfrage{background:linear-gradient(180deg,var(--sand),var(--cream))}
+.req{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:start}
+.form{background:var(--paper);border-radius:28px;padding:42px;border:1px solid var(--line);box-shadow:0 30px 70px -40px rgba(46,58,42,.35)}
+.step{margin-bottom:32px}
+.step label.t{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--moss);margin-bottom:14px;font-size:16px}
+.step label.t i{width:28px;height:28px;border-radius:50%;background:var(--blush-l);color:var(--terra-d);font-style:normal;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{height:46px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--cream);font-size:15px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:9px;transition:all .25s var(--ease)}
+.chip:hover{border-color:var(--sage)}
+.chip.on{background:var(--moss);border-color:var(--moss);color:var(--cream)}
+.chip .dots{display:inline-flex}
+.chip .dots u{width:14px;height:14px;border-radius:50%;border:2px solid var(--paper);margin-left:-5px}
+.chip .dots u:first-child{margin-left:0}
+.chip.on .dots u{border-color:var(--moss)}
+.seg{display:inline-flex;padding:5px;border-radius:999px;background:var(--cream);border:1.5px solid var(--line)}
+.seg button{height:40px;padding:0 20px;border-radius:999px;border:0;background:transparent;font-weight:500;cursor:pointer;transition:all .25s var(--ease)}
+.seg button.on{background:var(--paper);box-shadow:0 4px 12px rgba(46,58,42,.14);color:var(--moss);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.field{flex:1;min-width:200px}
+.field input,.field textarea{width:100%;height:52px;padding:0 18px;border-radius:14px;border:1.5px solid var(--line);background:var(--cream);font-size:16px;transition:border-color .25s,box-shadow .25s}
+.field textarea{height:96px;padding:14px 18px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:0;border-color:var(--sage);box-shadow:0 0 0 4px rgba(122,138,106,.15)}
+.field input.err{border-color:#C25B4A;box-shadow:0 0 0 4px rgba(194,91,74,.12)}
+.sendrow{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px;margin-top:6px}
+.sendrow small{color:var(--muted);font-size:13.5px}
+.summary{position:sticky;top:100px;background:var(--paper);border-radius:28px;overflow:hidden;border:1px solid var(--line)}
+.summary .img{aspect-ratio:16/11;overflow:hidden}
+.summary .img img{width:100%;height:100%;object-fit:cover}
+.summary .in{padding:26px 28px 30px}
+.summary h3{font-size:26px;margin-bottom:14px}
+.summary ul{list-style:none}
+.summary li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.summary li span{color:var(--muted)}
+.summary li b{font-weight:600;text-align:right;transition:color .3s}
+.summary li b.flash{color:var(--terra)}
+.summary .direct{margin-top:22px;font-size:14.5px;color:var(--muted);line-height:1.5}
+.summary .direct a{color:var(--terra-d);font-weight:600}
+.done{display:none;text-align:center;padding:50px 20px}
+.done svg{width:84px;height:84px;margin:0 auto 22px}
+.done svg circle{stroke-dasharray:240;stroke-dashoffset:240;animation:draw .8s var(--ease) forwards}
+.done svg path{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .5s .6s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.done h3{font-size:40px;margin-bottom:10px}
+.done p{color:var(--muted);max-width:440px;margin:0 auto}
+.done small{display:block;margin-top:22px;font-size:12.5px;opacity:.7}
+.form.sent .steps{display:none}
+.form.sent .done{display:block}
+
+/* visit */
+.banner{position:relative;height:480px;overflow:hidden;display:flex;align-items:flex-end}
+.banner img{position:absolute;inset:-60px 0;width:100%;height:calc(100% + 120px);object-fit:cover;will-change:transform}
+.banner::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,58,42,0) 30%,rgba(46,58,42,.72))}
+.banner .wrap{position:relative;z-index:1;padding-bottom:56px;color:var(--cream)}
+.banner h2{color:var(--cream);max-width:700px}
+.banner p{margin-top:12px;font-size:19px;opacity:.9}
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:stretch}
+.info{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:40px}
+.info h3{font-size:34px;margin-bottom:22px}
+.line{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.line svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--terra)}
+.line a{font-weight:600;color:var(--moss)}
+.hours{margin-top:24px}
+.hours h4{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-d);margin-bottom:10px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.hours h4 .status{height:32px;font-size:13px;letter-spacing:0;text-transform:none}
+.hours table{width:100%;border-collapse:collapse;font-size:15.5px}
+.hours td{padding:8px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--moss);font-weight:600}
+.hours tr.today td:first-child::after{content:'heute';margin-left:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);background:var(--blush-l);padding:3px 8px;border-radius:999px}
+.map{position:relative;border-radius:28px;overflow:hidden;min-height:440px;background:var(--sand);border:1px solid var(--line)}
+.map .fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:15px}
+.map .fallback svg{width:44px;height:44px;color:var(--terra)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:sepia(.2) saturate(.85) contrast(.98)}
+.map .pin{position:absolute;left:20px;bottom:20px;z-index:2;background:var(--paper);border-radius:16px;padding:14px 18px;box-shadow:0 14px 30px -12px rgba(46,58,42,.4);font-size:14px;line-height:1.4}
+.map .pin b{display:block;color:var(--moss)}
+
+/* footer */
+footer{background:var(--moss);color:rgba(246,241,233,.82);padding:80px 0 34px;margin-top:120px}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}
+footer .logo b{color:var(--cream)}
+footer .logo span{color:#C9D3BC}
+footer h5{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#E8C9A9;margin-bottom:16px;font-weight:600}
+footer p,footer li{font-size:15px;line-height:1.8;list-style:none}
+footer a:hover{color:#fff}
+.copy{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:60px;padding-top:26px;border-top:1px solid rgba(246,241,233,.14);font-size:13.5px;opacity:.75}
+
+/* mobile action bar */
+.mbar{display:none}
+
+@media (max-width:980px){
+  .hero .wrap,.about,.req,.visit{grid-template-columns:1fr}
+  .hero .wrap{gap:70px}
+  .hero-art{max-width:400px}
+  .cards{grid-template-columns:1fr 1fr}
+  .reviews{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .summary{position:static}
+  .about .pic{max-width:460px}
+}
+@media (max-width:760px){
+  body{font-size:16px;padding-bottom:84px}
+  .wrap{padding:0 20px}
+  .menu{display:none}
+  .burger{display:flex}
+  .menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:6px;padding:16px 20px 24px;background:var(--paper);box-shadow:0 20px 40px -20px rgba(46,58,42,.3)}
+  .menu.open a:not(.btn){padding:10px 0;font-size:18px}
+  .notice{font-size:12.5px}
+  .nav{height:72px}
+  .logo b{font-size:26px}
+  .hero{padding:20px 0 70px}
+  .hero h1{font-size:52px}
+  .hero-art{max-width:300px;margin-left:30px}
+  .round{width:140px;height:140px;left:-50px;bottom:30px;border-width:6px}
+  .badge{width:112px;height:112px;right:-22px;top:-14px}
+  .badge svg.ring text{font-size:10px}
+  .badge svg.flower{width:34px;height:34px}
+  section.block{padding:84px 0}
+  .head{margin-bottom:40px}
+  .cards{grid-template-columns:1fr}
+  .about{gap:50px}
+  .about .pic .note{right:-8px}
+  .values{grid-template-columns:1fr}
+  .reviews{grid-template-columns:1fr;margin-top:70px}
+  .form{padding:26px 20px}
+  .banner{height:380px}
+  .info{padding:28px 22px}
+  .map{min-height:340px}
+  .foot{grid-template-columns:1fr}
+  footer{margin-top:84px}
+  .marquee span{font-size:22px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:10px;padding:8px;border-radius:999px;background:rgba(251,248,242,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 14px 40px -12px rgba(46,58,42,.45)}
+  .mbar a{flex:1;height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px}
+  .mbar a svg{width:18px;height:18px}
+  .mbar .call{border:1.5px solid var(--line);color:var(--moss)}
+  .mbar .ask{background:var(--terra);color:#fff}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  [data-reveal]{opacity:1;transform:none;filter:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-flower" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 20c-3-6-1-12 0-14 1 2 3 8 0 14z"/><path d="M27.5 22.5c4.5-5 10.5-5.5 12.8-5.3-.9 2.1-4.6 7-12.8 5.3z"/><path d="M26.5 27c6 2.5 8.5 8 9 10.3-2.3-.3-8-2.6-9-10.3z"/><path d="M21.5 27c-1 7.7-6.7 10-9 10.3.5-2.3 3-7.8 9-10.3z"/><path d="M20.5 22.5c-8.2 1.7-11.9-3.2-12.8-5.3 2.3-.2 8.3.3 12.8 5.3z"/><circle cx="24" cy="24.5" r="3.2"/><path d="M24 30v14"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26C6 14 13 6 27 5c0 14-8 21-21 21z"/><path d="M6 26 18 14"/></g></symbol>
+    <symbol id="i-hands" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 27s-10-5.6-10-13a5.5 5.5 0 0 1 10-3.2A5.5 5.5 0 0 1 26 14c0 7.4-10 13-10 13z"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h20v13H14l-6 5v-5H6z"/><path d="M11 13.5h10M11 17h6"/></g></symbol>
+    <symbol id="i-petal" viewBox="0 0 20 28"><path d="M10 1C3 9 2 18 10 27 18 18 17 9 10 1z"/></symbol>
+  </defs>
+</svg>
+
+<div class="notice">Neu in Regensburg: <b>seit Februar 2026</b> in der Bischof-Konrad-Straße 4</div>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Auer's Blumenparadies">
+      <svg style="color:var(--terra)"><use href="#i-flower"/></svg>
+      <div><b>Auer's</b><span>Blumenparadies</span></div>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#anlaesse">Anlässe</a>
+      <a href="#ueber">Über mich</a>
+      <a href="#besuch">Besuch &amp; Öffnungszeiten</a>
+      <a href="#anfrage" class="btn btn-primary">Strauß anfragen</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div id="petals"></div>
+  <div class="wrap">
+    <div>
+      <span class="kicker" data-reveal>Blumenladen in Regensburg</span>
+      <h1 data-reveal style="--d:.08s">Blumen für die Momente, die <em>bleiben.</em></h1>
+      <p class="lead" data-reveal style="--d:.16s">Handgebundene Sträuße, Hochzeitsfloristik und liebevolle Trauerfloristik. Frisch gebunden in der Bischof-Konrad-Straße&nbsp;4.</p>
+      <div class="cta-row" data-reveal style="--d:.24s">
+        <a href="#anfrage" class="btn btn-primary">Strauß anfragen <svg><use href="#i-arrow"/></svg></a>
+        <a href="tel:+4994194299725" class="btn btn-ghost"><svg><use href="#i-phone"/></svg>0941 94299725</a>
+      </div>
+      <div class="meta-row" data-reveal style="--d:.32s">
+        <span class="status js-status"><i></i><span class="js-status-text">Heute geöffnet</span></span>
+        <span class="stars"><span>★★★★★</span><b>5,0</b> · 14 Google-Bewertungen</span>
+      </div>
+    </div>
+    <div class="hero-art" data-reveal style="--d:.15s">
+      <div class="arch"><img src="{{IMG:hero}}" alt="Zarter Strauß in Rosé auf einem Holztisch"></div>
+      <div class="round"><img src="{{IMG:hero-round}}" alt="Strauß in Kraftpapier mit Juteschnur"></div>
+      <div class="badge" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 134 134"><defs><path id="circ" d="M67 67m-52 0a52 52 0 1 1 104 0a52 52 0 1 1-104 0"/></defs><text><textPath href="#circ">FRISCH GEBUNDEN · MIT LIEBE · REGENSBURG ·</textPath></text></svg>
+        <svg class="flower" style="color:var(--terra)"><use href="#i-flower"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section class="block" id="anlaesse">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker" data-reveal>Anlässe</span>
+        <h2 data-reveal style="--d:.08s">Für jeden Moment das <em>passende</em> Gebinde</h2>
+      </div>
+      <p class="lead" data-reveal style="--d:.16s">Ob großer Tag, kleine Aufmerksamkeit oder ein schwerer Abschied: Jeder Strauß wird von Hand gebunden und auf den Anlass abgestimmt.</p>
+    </div>
+    <div class="cards">
+      <article class="card" data-reveal>
+        <div class="pic"><img src="{{IMG:hochzeit}}" alt="Braut mit natürlichem Brautstrauß"><span class="tag">Hochzeit</span></div>
+        <div class="txt">
+          <span class="num">01</span>
+          <h3>Hochzeitsfloristik</h3>
+          <p>Brautstrauß, Anstecker, Tisch- und Kirchenschmuck. Abgestimmt auf Ihr Kleid, Ihre Farben und Ihre Location.</p>
+          <a href="#anfrage" class="more" data-anlass="Hochzeit">Hochzeit anfragen <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card" data-reveal style="--d:.12s">
+        <div class="pic"><img src="{{IMG:straeusse}}" alt="Bunter Strauß aus Rosen und Ranunkeln"><span class="tag">Geburtstag &amp; Feiern</span></div>
+        <div class="txt">
+          <span class="num">02</span>
+          <h3>Sträuße &amp; Geschenke</h3>
+          <p>Saisonale Sträuße für Geburtstag, Jubiläum oder einfach so. Zum Mitnehmen oder auf Vorbestellung, auf Wunsch mit Grußkarte.</p>
+          <a href="#anfrage" class="more" data-anlass="Geburtstag">Strauß anfragen <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card" data-reveal style="--d:.24s">
+        <div class="pic"><img src="{{IMG:trauer}}" alt="Weißer Strauß mit Schleife auf einem Stuhl"><span class="tag">Trauer</span></div>
+        <div class="txt">
+          <span class="num">03</span>
+          <h3>Trauerfloristik</h3>
+          <p>Kränze, Gestecke und Sargschmuck. Ich nehme mir Zeit für Sie und berate Sie in Ruhe und mit viel Feingefühl.</p>
+          <a href="#anfrage" class="more" data-anlass="Trauer">Trauerfloristik anfragen <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ueber">
+  <div class="wrap">
+    <div class="about">
+      <div class="pic" data-reveal>
+        <div class="frame"><img src="{{IMG:ueber}}" alt="Hände binden einen Strauß aus Hortensien und Rosen"></div>
+        <div class="note"><b>seit 2026</b>in der Bischof-Konrad-<br>Straße 4, Regensburg</div>
+      </div>
+      <div>
+        <span class="kicker" data-reveal>Über mich</span>
+        <h2 data-reveal style="--d:.08s">Hallo, ich bin <em>Veronika.</em></h2>
+        <p data-reveal style="--d:.14s">Im Februar 2026 habe ich mein eigenes Blumenparadies in der Bischof-Konrad-Straße eröffnet. Hier binde ich jeden Strauß von Hand, mit saisonalen Blumen und viel Liebe zum Detail.</p>
+        <p data-reveal style="--d:.2s">Mir ist wichtig, dass jeder Strauß zu dem Menschen passt, für den er gedacht ist. Erzählen Sie mir einfach, worum es geht, den Rest übernehme ich.</p>
+        <div class="sign" data-reveal style="--d:.26s">Veronika Auer</div>
+        <div class="values">
+          <div data-reveal style="--d:.1s"><svg style="color:var(--sage)"><use href="#i-leaf"/></svg><b>Saisonal &amp; frisch</b>Blumen, die gerade Saison haben.</div>
+          <div data-reveal style="--d:.18s"><svg style="color:var(--terra)"><use href="#i-hands"/></svg><b>Von Hand gebunden</b>Jeder Strauß ein Einzelstück.</div>
+          <div data-reveal style="--d:.26s"><svg style="color:var(--sage-d)"><use href="#i-chat"/></svg><b>Persönliche Beratung</b>Im Laden, am Telefon oder per Nachricht.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <div class="score" data-reveal>
+        <b>5,0</b><span class="s">★★★★★</span><small>aus 14 Google-Bewertungen</small>
+        <span class="g"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#fff" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4z"/><path fill="#fff" opacity=".85" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#fff" opacity=".7" d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1A10 10 0 0 0 2 12c0 1.6.4 3.2 1.1 4.6z"/><path fill="#fff" opacity=".55" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10c.8-2.4 3-4.1 5.6-4.1z"/></svg>Google Rezensionen</span>
+      </div>
+      <div class="rv" data-reveal style="--d:.08s"><span class="s">★★★★★</span><p class="q">„Mein Brautstrauß war genau so, wie ich ihn mir vorgestellt habe. Danke für die tolle Beratung!“</p><small>Kundin · Hochzeit</small></div>
+      <div class="rv" data-reveal style="--d:.16s"><span class="s">★★★★★</span><p class="q">„Spontan einen Geburtstagsstrauß geholt, wunderschön gebunden und super freundlich.“</p><small>Kunde · Geburtstag</small></div>
+      <div class="rv" data-reveal style="--d:.24s"><span class="s">★★★★★</span><p class="q">„Sehr einfühlsame Beratung für den Trauerkranz meiner Oma. Vielen Dank.“</p><small>Kundin · Trauerfloristik</small></div>
+      <p class="demo-hint">Beispieltexte für die Vorschau, hier erscheinen Ihre echten Google-Bewertungen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="anfrage">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker" data-reveal>Strauß anfragen</span>
+        <h2 data-reveal style="--d:.08s">Ihr Wunschstrauß, in einer <em>Minute</em> angefragt</h2>
+      </div>
+      <p class="lead" data-reveal style="--d:.16s">Wählen Sie Anlass, Farben und Budget. Ich melde mich mit einem Vorschlag bei Ihnen, ganz unverbindlich.</p>
+    </div>
+    <div class="req">
+      <form class="form" id="form" novalidate data-reveal>
+        <div class="steps">
+          <div class="step">
+            <label class="t"><i>1</i>Für welchen Anlass?</label>
+            <div class="chips" data-group="Anlass">
+              <button type="button" class="chip">Hochzeit</button>
+              <button type="button" class="chip on">Geburtstag</button>
+              <button type="button" class="chip">Trauer</button>
+              <button type="button" class="chip">Jubiläum</button>
+              <button type="button" class="chip">Einfach so</button>
+            </div>
+          </div>
+          <div class="step">
+            <label class="t"><i>2</i>Welche Farbwelt?</label>
+            <div class="chips" data-group="Farben">
+              <button type="button" class="chip" data-v="Weiß &amp; Grün"><span class="dots"><u style="background:#F4F1EA"></u><u style="background:#8A9A7B"></u></span>Weiß &amp; Grün</button>
+              <button type="button" class="chip on" data-v="Rosé &amp; Pastell"><span class="dots"><u style="background:#F2C9C4"></u><u style="background:#F6E2D6"></u></span>Rosé &amp; Pastell</button>
+              <button type="button" class="chip" data-v="Bunt &amp; fröhlich"><span class="dots"><u style="background:#F0A03C"></u><u style="background:#E2577A"></u></span>Bunt &amp; fröhlich</button>
+              <button type="button" class="chip" data-v="Warm &amp; herbstlich"><span class="dots"><u style="background:#C46A3E"></u><u style="background:#D9A65C"></u></span>Warm &amp; herbstlich</button>
+              <button type="button" class="chip" data-v="Überraschen Sie mich">✨ Überraschen Sie mich</button>
+            </div>
+          </div>
+          <div class="step">
+            <label class="t"><i>3</i>Ihr Budget</label>
+            <div class="chips" data-group="Budget">
+              <button type="button" class="chip">bis 30 €</button>
+              <button type="button" class="chip on">30–50 €</button>
+              <button type="button" class="chip">50–80 €</button>
+              <button type="button" class="chip">ab 80 €</button>
+            </div>
+          </div>
+          <div class="step">
+            <label class="t"><i>4</i>Wann und wie?</label>
+            <div class="row">
+              <div class="seg" data-group="Übergabe"><button type="button" class="on">Abholung</button><button type="button">Lieferung</button></div>
+              <div class="field" style="max-width:240px"><input type="date" id="date" aria-label="Wunschdatum"></div>
+            </div>
+          </div>
+          <div class="step">
+            <label class="t"><i>5</i>Wie erreiche ich Sie?</label>
+            <div class="row" style="margin-bottom:14px">
+              <div class="field"><input id="name" placeholder="Ihr Name" autocomplete="name"></div>
+              <div class="field"><input id="contact" placeholder="Telefon oder E-Mail" autocomplete="tel"></div>
+            </div>
+            <div class="field"><textarea id="msg" placeholder="Besondere Wünsche? z. B. Lieblingsblumen, Grußkarte, Uhrzeit …"></textarea></div>
+          </div>
+          <div class="sendrow">
+            <button type="submit" class="btn btn-primary">Anfrage senden <svg><use href="#i-arrow"/></svg></button>
+            <small>Unverbindlich. Antwort meist am selben Tag.</small>
+          </div>
+        </div>
+        <div class="done">
+          <svg viewBox="0 0 84 84" fill="none"><circle cx="42" cy="42" r="38" stroke="#7A8A6A" stroke-width="3"/><path d="M27 43l10 10 20-22" stroke="#B9694A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 id="doneTitle">Danke!</h3>
+          <p>Ihre Anfrage ist angekommen. Veronika meldet sich so schnell wie möglich mit einem Vorschlag bei Ihnen.</p>
+          <small>Vorschau: Auf der fertigen Website landet die Anfrage direkt in Ihrem Postfach.</small>
+        </div>
+      </form>
+      <aside class="summary" data-reveal style="--d:.12s">
+        <div class="img"><img src="{{IMG:anfrage}}" alt="Strauß aus rosa Rosen und Eustoma auf Holz"></div>
+        <div class="in">
+          <h3>Ihre Anfrage</h3>
+          <ul id="sum">
+            <li><span>Anlass</span><b data-k="Anlass">Geburtstag</b></li>
+            <li><span>Farben</span><b data-k="Farben">Rosé &amp; Pastell</b></li>
+            <li><span>Budget</span><b data-k="Budget">30–50 €</b></li>
+            <li><span>Übergabe</span><b data-k="Übergabe">Abholung</b></li>
+            <li><span>Datum</span><b data-k="Datum">–</b></li>
+          </ul>
+          <p class="direct">Lieber direkt sprechen?<br>Rufen Sie an unter <a href="tel:+4994194299725">0941 94299725</a> oder schreiben Sie auf <a href="https://www.instagram.com/auersblumenparadies/" target="_blank" rel="noopener">Instagram</a>.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="banner" id="besuch">
+  <img src="{{IMG:laden}}" alt="Eimer voller frischer Blumen vor einem Blumenladen" id="bannerImg">
+  <div class="wrap">
+    <span class="kicker" style="color:#E8C9A9" data-reveal>Besuch</span>
+    <h2 data-reveal style="--d:.08s">Kommen Sie vorbei und lassen Sie sich <em style="color:#F1C7A7">inspirieren.</em></h2>
+    <p data-reveal style="--d:.16s">Jeden Tag frische Schnittblumen, Pflanzen und kleine Geschenke.</p>
+  </div>
+</div>
+
+<section style="padding-top:70px">
+  <div class="wrap">
+    <div class="visit">
+      <div class="info" data-reveal>
+        <h3>So finden Sie mich</h3>
+        <div class="line"><svg><use href="#i-pin"/></svg><div>Bischof-Konrad-Straße 4<br>93051 Regensburg</div></div>
+        <div class="line"><svg><use href="#i-phone"/></svg><div><a href="tel:+4994194299725">0941 94299725</a></div></div>
+        <div class="line"><svg><use href="#i-insta"/></svg><div><a href="https://www.instagram.com/auersblumenparadies/" target="_blank" rel="noopener">@auersblumenparadies</a></div></div>
+        <div class="hours">
+          <h4><span style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" style="color:var(--terra)"><use href="#i-clock"/></svg>Öffnungszeiten</span><span class="status js-status"><i></i><span class="js-status-text">Geöffnet</span></span></h4>
+          <table id="hours"></table>
+        </div>
+      </div>
+      <div class="map" data-reveal style="--d:.12s">
+        <div class="fallback"><svg><use href="#i-pin"/></svg>Bischof-Konrad-Straße 4, Regensburg</div>
+        <iframe title="Karte" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Bischof-Konrad-Stra%C3%9Fe%204%2C%2093051%20Regensburg&z=16&output=embed"></iframe>
+        <div class="pin"><b>Auer's Blumenparadies</b>Bischof-Konrad-Straße 4 · Regensburg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo"><svg style="color:#E8C9A9"><use href="#i-flower"/></svg><div><b>Auer's</b><span>Blumenparadies</span></div></a>
+        <p style="margin-top:20px;max-width:300px">Handgebundene Sträuße, Hochzeits- und Trauerfloristik in Regensburg.</p>
+      </div>
+      <div><h5>Besuch</h5><p>Bischof-Konrad-Straße 4<br>93051 Regensburg</p></div>
+      <div><h5>Kontakt</h5><ul><li><a href="tel:+4994194299725">0941 94299725</a></li><li><a href="https://www.instagram.com/auersblumenparadies/" target="_blank" rel="noopener">Instagram</a></li><li><a href="#anfrage">Strauß anfragen</a></li></ul></div>
+      <div><h5>Seiten</h5><ul><li><a href="#anlaesse">Anlässe</a></li><li><a href="#ueber">Über mich</a></li><li><a href="#besuch">Öffnungszeiten</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="year">2026</span> Auer's Blumenparadies · <a href="#">Impressum</a> · <a href="#">Datenschutz</a></span><span>Website by VALÍN Studio</span></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+4994194299725" class="call"><svg><use href="#i-phone"/></svg>Anrufen</a>
+  <a href="#anfrage" class="ask">Strauß anfragen</a>
+</div>
+
+<script>
+// Öffnungszeiten (Beispiel – bei Bedarf hier anpassen). Tage: 0 = Sonntag … 6 = Samstag
+const HOURS = { 1: ['09:00', '18:00'], 2: ['09:00', '18:00'], 3: ['09:00', '18:00'], 4: ['09:00', '18:00'], 5: ['09:00', '18:00'], 6: ['09:00', '14:00'], 0: null };
+const DAYS = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+// header + mobile menu
+const header = $('header');
+const onScroll = () => {
+  header.classList.toggle('scrolled', scrollY > 30);
+  const b = $('#bannerImg'), r = b.parentElement.getBoundingClientRect();
+  if (r.bottom > 0 && r.top < innerHeight) b.style.transform = `translateY(${((r.top + r.height / 2 - innerHeight / 2) * -0.12).toFixed(1)}px)`;
+};
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+$('#burger').onclick = () => $('#menu').classList.toggle('open');
+$$('#menu a').forEach((a) => a.addEventListener('click', () => $('#menu').classList.remove('open')));
+
+// reveal on scroll
+const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+$$('[data-reveal]').forEach((el) => io.observe(el));
+
+// marquee
+const words = ['Brautsträuße', 'Geburtstagssträuße', 'Trauerfloristik', 'Tischschmuck', 'Saisonale Blumen', 'Grußkarten', 'Einfach so'];
+const item = (w) => `<span>${w}</span><svg style="color:#E8C9A9"><use href="#i-flower"/></svg>`;
+$('#track').innerHTML = (words.map(item).join('')).repeat(4);
+
+// falling petals in the hero (subtle)
+const colors = ['#EBD3C6', '#E6B9A6', '#D9A28A', '#F2DCD0'];
+for (let i = 0; i < 9; i++) {
+  const s = 12 + Math.random() * 12, p = document.createElement('div');
+  p.className = 'petal';
+  p.style.cssText = `left:${(Math.random() * 100).toFixed(1)}%;width:${s}px;height:${s * 1.4}px;animation-duration:${(16 + Math.random() * 14).toFixed(1)}s;animation-delay:-${(Math.random() * 20).toFixed(1)}s;color:${colors[i % 4]}`;
+  p.innerHTML = `<svg style="animation-duration:${(3 + Math.random() * 3).toFixed(1)}s;fill:currentColor"><use href="#i-petal"/></svg>`;
+  $('#petals').appendChild(p);
+}
+
+// opening hours + live status
+const now = new Date(), today = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
+const toM = (t) => +t.slice(0, 2) * 60 + +t.slice(3);
+$('#hours').innerHTML = [1, 2, 3, 4, 5, 6, 0].map((d) => `<tr class="${d === today ? 'today' : ''}"><td>${DAYS[d]}</td><td>${HOURS[d] ? HOURS[d].join(' – ') + ' Uhr' : 'geschlossen'}</td></tr>`).join('');
+let open = false, text;
+const h = HOURS[today];
+if (h && mins >= toM(h[0]) && mins < toM(h[1])) { open = true; text = `Jetzt geöffnet · bis ${h[1]} Uhr`; }
+else if (h && mins < toM(h[0])) text = `Heute ab ${h[0]} Uhr geöffnet`;
+else { let n = (today + 1) % 7; while (!HOURS[n]) n = (n + 1) % 7; text = `Geschlossen · ${n === (today + 1) % 7 ? 'morgen' : DAYS[n]} ab ${HOURS[n][0]} Uhr`; }
+$$('.js-status').forEach((el) => el.classList.toggle('closed', !open));
+$$('.js-status-text').forEach((el) => (el.textContent = text));
+
+// request form: chips, summary, submit
+const flash = (k, v) => { const b = $(`#sum b[data-k="${k}"]`); if (!b) return; b.textContent = v; b.classList.remove('flash'); void b.offsetWidth; b.classList.add('flash'); setTimeout(() => b.classList.remove('flash'), 700); };
+$$('[data-group]').forEach((g) => g.addEventListener('click', (e) => {
+  const c = e.target.closest('button'); if (!c) return;
+  $$('button', g).forEach((x) => x.classList.toggle('on', x === c));
+  flash(g.dataset.group, c.dataset.v || c.textContent.trim());
+}));
+$$('[data-anlass]').forEach((a) => a.addEventListener('click', () => {
+  const g = $('[data-group="Anlass"]');
+  $$('button', g).forEach((x) => x.classList.toggle('on', x.textContent.trim() === a.dataset.anlass));
+  flash('Anlass', a.dataset.anlass);
+}));
+const date = $('#date'); date.min = now.toISOString().slice(0, 10);
+date.addEventListener('change', () => flash('Datum', date.value ? new Date(date.value).toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'long' }) : '–'));
+$('#form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const n = $('#name'), c = $('#contact'); let ok = true;
+  [n, c].forEach((f) => { const bad = !f.value.trim(); f.classList.toggle('err', bad); if (bad) ok = false; });
+  if (!ok) return;
+  $('#doneTitle').textContent = `Danke, ${n.value.trim().split(' ')[0]}!`;
+  $('#form').classList.add('sent');
+  $('#form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+$$('#name, #contact').forEach((f) => f.addEventListener('input', () => f.classList.remove('err')));
+$('#year').textContent = now.getFullYear();
+</script>
+</body>
+</html>
