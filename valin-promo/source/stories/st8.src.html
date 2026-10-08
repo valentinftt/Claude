@@ -1,0 +1,59 @@
+/* title:VALÍN Guten Morgen;cls:dk;dur:8;dm:Dein Projekt als Nächstes? */
+#stage.dk{background:#000;}
+/* photo background with a slow push-in towards the coffee */
+#bg{position:absolute;inset:0;transform-origin:886px 1470px;}
+#ph{position:absolute;left:-65px;top:-115px;width:1210px;height:2150px;object-fit:cover;filter:saturate(.92) brightness(.92);}
+#dim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.42) 26%,rgba(0,0,0,.12) 50%,rgba(0,0,0,0) 62%,rgba(0,0,0,.18) 78%,rgba(0,0,0,.6) 100%);}
+#steam{position:absolute;left:836px;top:1120px;width:110px;height:250px;filter:blur(6px);mix-blend-mode:screen;}
+#steam svg{position:absolute;left:0;bottom:0;width:60px;height:230px;overflow:visible;}
+
+/* text */
+#kk{position:absolute;left:72px;top:378px;font-family:'Michroma';font-size:22px;letter-spacing:.32em;color:rgba(255,255,255,.8);z-index:20;}
+#hd{position:absolute;left:66px;top:418px;font-family:'Unbounded';font-weight:800;font-size:150px;line-height:1.02;letter-spacing:-.03em;color:#fff;z-index:20;text-shadow:0 10px 40px rgba(0,0,0,.35);}
+#hd .m{display:block;}
+#hd i{font-style:normal;color:var(--lime);display:inline-block;}
+#sub{position:absolute;left:72px;top:762px;font-size:38px;font-weight:500;line-height:1.38;color:rgba(255,255,255,.93);z-index:20;text-shadow:0 4px 20px rgba(0,0,0,.4);}
+#sub .m{display:block;}
+#sub b{font-weight:700;color:var(--lime);}
+
+/* call to action + logo, left of the cup */
+#dm,#dmPulse{left:60px;top:1548px;width:600px;height:96px;border-radius:48px;}
+#dm{font-family:'Inter';font-weight:700;font-size:31px;white-space:nowrap;gap:16px;justify-content:space-between;padding:0 14px 0 34px;}
+#dm i{width:64px;height:64px;}
+#logoTop{left:64px;top:1680px;width:210px;margin-left:0;}
+<!--BODY-->
+<div id="bg">
+  <img id="ph" src="img/morning/cafe.jpg" alt="">
+  <div id="steam">
+    <svg viewBox="0 0 60 230"><path d="M30 230 C 12 190, 48 160, 30 120 S 12 50, 30 10" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/></svg>
+    <svg viewBox="0 0 60 230" style="left:34px"><path d="M30 230 C 46 196, 12 164, 30 126 S 48 58, 30 18" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg>
+    <svg viewBox="0 0 60 230" style="left:64px"><path d="M30 230 C 14 200, 46 168, 30 132 S 14 66, 30 26" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>
+  </div>
+</div>
+<div id="dim"></div>
+<div id="kk">DONNERSTAG · 8. OKTOBER</div>
+<div id="hd"><span class="m"><span class="mi">Guten</span></span><span class="m"><span class="mi">Morgen<i id="dot">.</i></span></span></div>
+<div id="sub"><span class="m"><span class="mi">Der Cappuccino steht, die Timeline läuft.</span></span><span class="m"><span class="mi">Heute entstehen neue <b>Reels &amp; Websites.</b></span></span></div>
+{{LOGO}}
+<!--JS-->
+const W = [...document.querySelectorAll('#steam svg')];
+function build() {
+  tl.fromTo('#bg', { scale: 1.0 }, { scale: 1.07, duration: DUR, ease: 'sine.inOut', ...FT }, 0);
+  tl.fromTo('#dim', { opacity: 0.6 }, { opacity: 1, duration: 1.2, ease: 'power2.out', ...FT }, 0);
+  tl.fromTo('#kk', { letterSpacing: '0.7em', autoAlpha: 0 }, { letterSpacing: '0.32em', autoAlpha: 1, duration: 0.9, ease: 'expo.out', ...FT }, 0.5);
+  rise('#hd .mi', 0.65, { d: 0.75, s: 0.14 });
+  tl.fromTo('#dot', { scale: 0, y: -60 }, { scale: 1, y: 0, duration: 0.55, ease: 'back.out(3)', ...FT }, 1.25);
+  rise('#sub .mi', 1.55, { d: 0.7, s: 0.16 });
+  cta(2.5);
+  logoIn(2.9);
+}
+function after(t) {
+  // three soft wisps of steam rising from the cup, each on its own loop
+  W.forEach((w, i) => {
+    const p = ((t * (0.32 + i * 0.05)) + i * 0.33) % 1;
+    const o = Math.sin(Math.PI * p) * (0.55 - i * 0.08) * clamp(t / 0.8);
+    w.style.opacity = o.toFixed(3);
+    w.style.transform = `translate(${(Math.sin(t * 1.3 + i * 2) * 10).toFixed(1)}px, ${(-p * 120).toFixed(1)}px) scaleY(${(0.8 + p * 0.4).toFixed(3)})`;
+  });
+}
+start(build, after);

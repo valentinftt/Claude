@@ -11,6 +11,7 @@ Jede Story gibt es als Video (`valin-promo/stories/Story_*.mp4`) und als Standbi
 | `st5.src.html` | Preis-Reveal: 2.000 €? → 1.000 €? → Slot-Spin → „ab 299 €“-Stempel | hell |
 | `st6.src.html` | Empfehlungsprogramm (9 s): Betrieb mit wenig Reichweite → „Empfiehl mich dem Betrieb.“ – Zuschauer teilt das VALÍN-Profil im Chat mit dem Café, das antwortet „Hab direkt gebucht“ → Drop „20 %“ vom Auftragswert (z. B. Website 299 € → 59,80 €) → „Empfiehl mich weiter“ + „sag mir per DM, wen du empfohlen hast“ | dunkel, mit Beat |
 | `st7.src.html` | Website-Vorschau (12 s): Beispiel-Website „Wildblüte Floristik“ scrollt auf MacBook + iPhone, am Handy wird live eine Strauß-Anfrage ausgefüllt → „Danke, Sophie!“ + Benachrichtigung → „So könnte Ihre Website aussehen.“ | dunkel, ruhiger Beat |
+| `st8.src.html` | Guten-Morgen-Story (8 s): eigenes Café-Foto als Hintergrund mit langsamem Zoom auf den Cappuccino und aufsteigendem Dampf, „Guten Morgen.“, „Der Cappuccino steht, die Timeline läuft.“, Button „Dein Projekt als Nächstes?“ | Foto, ohne Ton |
 
 - `common.js` / `stories.css` – gemeinsame Helfer (Timeline, Logo-Animation, CTA-Button, Filmkorn)
 - `build.py` erzeugt `st1.html` … `st5.html` (braucht `base.css` und `logo.svg.part` aus `../`, `old.css` für die alte Website)

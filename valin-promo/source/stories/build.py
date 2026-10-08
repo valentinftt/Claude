@@ -17,7 +17,7 @@ TAIL = '''
 </body></html>'''
 LOGO = open('logo.svg.part').read()
 
-for n in sys.argv[1:] or ['1', '2', '3', '4', '5', '6', '7']:
+for n in sys.argv[1:] or ['1', '2', '3', '4', '5', '6', '7', '8']:
     src = open(f'st{n}.src.html').read()
     css, rest = src.split('<!--BODY-->')
     body, js = rest.split('<!--JS-->')
