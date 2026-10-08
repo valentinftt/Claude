@@ -4,6 +4,8 @@ Aus `Leads-Website-Fokus.xlsx` (Stand 06.10.2026), ohne alle bisher angeschriebe
 Vorlage wie in Runde 1: Valentins Paulina-Nachricht, je Studio angepasst, mit Link zum Beispiel-Studio „Nuance“.
 Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Website- und Domain-Abfragen).
 
+**Länge:** Instagram lehnt zu lange DMs ab („Text zu lang“, vermutlich ab 1.000 Zeichen). Deshalb hat jede Nachricht hier höchstens 890 Zeichen, inklusive Leerzeilen, Signatur und Emoji.
+
 **Tipp:** Zusammen mit Runde 1 sind es jetzt 30 DMs. Bei max. 10 pro Tag und Account reicht das für drei Tage, also einfach der Reihe nach abarbeiten. Nach 2–3 Tagen einmal nachfassen.
 
 ---
@@ -15,9 +17,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo Lidia,
 >
-> über 700 Bewertungen bei Treatwell mit glatten fünf Sternen und dazu mehrfach prämiert, das ist wirklich beeindruckend! Bei Google ist als Website aber nur dein Instagram hinterlegt. Wer dich dort findet, landet also erst einmal auf Instagram statt auf einer Seite mit deinen Preisen und freien Terminen.
+> über 700 Bewertungen bei Treatwell mit glatten fünf Sternen und dazu mehrfach prämiert, das ist beeindruckend! Bei Google ist als Website aber nur dein Instagram hinterlegt.
 >
-> Eine eigene Website unter deinem Namen habe ich nicht gefunden. Gibt es eine? Gerade bei Nagelrekonstruktionen würden Vorher-nachher-Bilder dort richtig überzeugen. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
+> Eine eigene Website mit deinen Preisen und freien Terminen habe ich nicht gefunden. Gibt es eine? Gerade bei Nagelrekonstruktionen würden Vorher-nachher-Bilder dort richtig überzeugen.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -35,9 +37,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo liebes SE-Nails-Team,
 >
-> über 5.000 Follower auf Instagram, das ist richtig stark! Bei Google ist als Website aber nur euer Instagram hinterlegt, gebucht wird über Treatwell. Wer euch googelt, landet also auf Instagram oder einer Buchungsplattform statt direkt bei euch.
+> über 5.000 Follower auf Instagram, das ist richtig stark! Bei Google ist als Website aber nur euer Instagram hinterlegt, gebucht wird über Treatwell.
 >
-> Eine eigene Website unter eurem Namen, auf der man eure Designs, die Preise und die Buchung an einem Ort findet, habe ich nicht gefunden. Gibt es eine? Und wer nicht auf Instagram ist, sieht eure Arbeiten bisher gar nicht.
+> Eine eigene Website unter eurem Namen, mit Designs, Preisen und Buchung an einem Ort, habe ich nicht gefunden. Gibt es eine?
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagel- und Wimpernstudios. In meinem Beispiel-Studio buchen Kundinnen Nägel und Wimpern direkt online und wählen bei den Nägeln sogar Farbe, Form und Finish an einer Hand aus. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -55,9 +57,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo liebes Namique-Team,
 >
-> 34 Bewertungen bei Google, eure Kundinnen sind offensichtlich zufrieden! Mir ist aufgefallen, dass bei euch als Website nur Instagram hinterlegt ist. Bei Planity seid ihr zwar eingetragen, online buchen kann man dort aber noch nicht.
+> 34 Bewertungen bei Google, eure Kundinnen sind offensichtlich zufrieden! Als Website ist bei euch aber nur Instagram hinterlegt, und bei Planity kann man euch noch nicht online buchen.
 >
-> Eine eigene Website, über die Kundinnen eure Designs sehen und selbst einen Termin wählen, habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht eure Arbeiten bisher gar nicht.
+> Eine eigene Website, über die Kundinnen selbst einen Termin wählen, habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -75,9 +77,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo liebes ARI-Team,
 >
-> ihr habt schon eine eigene Seite mit Preisliste und Online-Buchung, das haben viele Studios nicht! Mir ist aufgefallen, dass sie noch unter der kostenlosen Framer-Adresse läuft, mit Framer-Werbung am Seitenende.
+> ihr habt schon eine eigene Seite mit Preisliste und Online-Buchung, das haben viele Studios nicht! Sie läuft aber noch unter der kostenlosen Framer-Adresse, mit Framer-Werbung am Seitenende.
 >
-> Mit einer eigenen Adresse wie arinailstudio.de wirkt euer Studio bei Google gleich viel professioneller, und neue Kundinnen fassen schneller Vertrauen. Die Adresse ist übrigens sogar noch frei. Bei 39 Bewertungen habt ihr so einen Auftritt auf jeden Fall verdient.
+> Mit einer eigenen Adresse wie arinailstudio.de wirkt euer Studio bei Google gleich viel professioneller. Die Adresse ist übrigens sogar noch frei.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -95,9 +97,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo liebes Nail-Pro-Team,
 >
-> 38 Bewertungen mit fast fünf Sternen, das spricht für sich! Bei Google ist für euch aber noch gar keine Website hinterlegt. Wer in Steele nach einem Nagelstudio sucht, findet bei euch also weder Preise noch eine Möglichkeit, direkt zu buchen.
+> 38 Bewertungen mit fast fünf Sternen, das spricht für sich! Bei Google ist für euch aber noch gar keine Website hinterlegt, man findet dort also weder Preise noch eine Möglichkeit, direkt zu buchen.
 >
-> Gibt es eine Website, die ich übersehen habe? Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht eure Arbeiten bisher gar nicht.
+> Gibt es eine Website, die ich übersehen habe? Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio buchen Kundinnen Nägel und Wimpern direkt online und wählen bei den Nägeln sogar Farbe, Form und Finish an einer Hand aus. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -115,9 +117,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo liebes Nails1999-Team,
 >
-> ich habe gesehen, dass eure Preisliste in den Instagram-Highlights steckt und bei Google als Website auch nur Instagram hinterlegt ist. Wer euch bei Google findet, muss sich also erst durch Instagram klicken, um die Preise zu sehen.
+> ich habe gesehen, dass eure Preisliste in den Instagram-Highlights steckt und bei Google als Website nur Instagram hinterlegt ist. Wer euch googelt, muss sich also erst durchklicken, um die Preise zu sehen.
 >
-> Eine eigene Website mit Preisen und Online-Terminen habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht eure Arbeiten bisher gar nicht.
+> Eine eigene Website mit Preisen und Online-Terminen habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -135,9 +137,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo Margherita,
 >
-> mir ist aufgefallen, dass der Link in deiner Instagram-Bio (matus-nagelstudio.se) gerade ins Leere führt, die Seite lässt sich nicht öffnen. Bei Google ist für Matus Nail Design auch keine Website hinterlegt, obwohl du dort 29 Bewertungen mit 4,8 Sternen hast.
+> mir ist aufgefallen, dass der Link in deiner Instagram-Bio (matus-nagelstudio.se) gerade ins Leere führt. Und bei Google ist für Matus Nail Design keine Website hinterlegt, obwohl du dort 29 Bewertungen mit 4,8 Sternen hast.
 >
-> Eine funktionierende Website, über die Kundinnen deine Designs sehen und selbst einen Termin wählen, habe ich nicht gefunden. Gibt es vielleicht eine neue? Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
+> Gibt es vielleicht eine neue Seite? Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -155,9 +157,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo Tetiana,
 >
-> über 360 Beiträge auf Instagram, das ist fast einer für jeden Tag im Jahr! Dazu 31 Bewertungen bei Google, da steckt richtig viel Arbeit drin. Als Website führt dein Google-Eintrag aber nur zu Instagram.
+> über 360 Beiträge auf Instagram, das ist fast einer für jeden Tag im Jahr! Als Website führt dein Google-Eintrag aber nur zu Instagram.
 >
-> Eine eigene Website, auf der Kundinnen deine Leistungen und Preise sehen und direkt einen Termin wählen, habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
+> Eine eigene Website mit deinen Leistungen, Preisen und Online-Terminen habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagel- und Wimpernstudios. In meinem Beispiel-Studio buchen Kundinnen Nägel und Wimpern direkt online und wählen bei den Nägeln sogar Farbe, Form und Finish an einer Hand aus. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -175,9 +177,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo liebes Fami-Team,
 >
-> 29 Bewertungen bei Google, da kommen offensichtlich viele gern zu euch! Mir ist aufgefallen, dass euer Eintrag als Link nur Treatwell hat. Wer euch googelt, landet also auf einer Buchungsplattform statt direkt bei euch.
+> 29 Bewertungen bei Google, da kommen offensichtlich viele gern zu euch! Euer Eintrag verlinkt aber nur auf Treatwell. Wer euch googelt, landet also auf einer Buchungsplattform statt direkt bei euch.
 >
-> Eine eigene Website unter eurem Namen, auf der man eure Designs, die Preise und die Buchung an einem Ort findet, habe ich nicht gefunden. Gibt es eine? Und wer nicht auf Instagram ist, sieht eure Arbeiten bisher gar nicht.
+> Eine eigene Website unter eurem Namen habe ich nicht gefunden. Gibt es eine?
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagel- und Wimpernstudios. In meinem Beispiel-Studio buchen Kundinnen Nägel und Wimpern direkt online und wählen bei den Nägeln sogar Farbe, Form und Finish an einer Hand aus. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -199,9 +201,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 >
 > über 5.000 Follower und mehr als 350 Bewertungen bei Treatwell mit glatten fünf Sternen, da bringst du deine Kundinnen wirklich zum Strahlen! Bei Google ist als Website aber nur dein Instagram hinterlegt.
 >
-> Eine eigene Website unter deinem Namen, auf der Kundinnen deine Ergebnisse, die Preise und die Buchung an einem Ort finden, habe ich nicht gefunden. Gibt es eine? Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
+> Eine eigene Website habe ich nicht gefunden. Gibt es eine?
 >
-> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin Schritt für Schritt direkt online, mit allen Preisen auf einen Blick. Bei dir ließe sich das genauso mit Wimpern, Brauen und Gesichtsbehandlungen umsetzen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin Schritt für Schritt direkt online, mit allen Preisen auf einen Blick. Bei dir ginge das genauso mit Wimpern, Brauen und Gesichtsbehandlungen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
 > Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
@@ -217,11 +219,11 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo Anastasia,
 >
-> auf Instagram zeigst du deine Ergebnisse, deine Preise und sogar deine Schulungen, das wirkt richtig professionell! Bei Google führt dein Eintrag aber nur zu Instagram, und in der Bio steckt alles hinter einem Linktree.
+> auf Instagram zeigst du Ergebnisse, Preise und sogar deine Schulungen, richtig professionell! Bei Google führt dein Eintrag aber nur zu Instagram, und in der Bio steckt alles hinter einem Linktree.
 >
-> Eine eigene Website, auf der Kundinnen und Interessentinnen für deine Schulungen alles an einem Ort finden, habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus, ohne erst eine Nachricht zu schreiben. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
+> Eine eigene Website mit allem an einem Ort habe ich nicht gefunden. Gibt es eine?
 >
-> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen ihre Wimpern-Behandlung Schritt für Schritt direkt online: Behandlung wählen, Tag, Uhrzeit, fertig. Für deine Schulungen hätte auf so einer Seite auch ein eigener Bereich Platz. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen ihre Wimpern-Behandlung Schritt für Schritt direkt online: Behandlung wählen, Tag, Uhrzeit, fertig. Auf deiner Seite hätten auch deine Schulungen einen eigenen Bereich. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
 > Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
@@ -237,9 +239,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo Marina,
 >
-> 39 Bewertungen mit 4,8 Sternen, das ist richtig stark! Mir ist aufgefallen, dass bei Google als Website nur Buchungsseiten wie Treatwell hinterlegt sind. Wer dich googelt, landet also auf einer Plattform statt direkt bei dir.
+> 39 Bewertungen mit 4,8 Sternen, das ist richtig stark! Bei Google sind als Website aber nur Buchungsseiten wie Treatwell hinterlegt. Wer dich googelt, landet also auf einer Plattform statt direkt bei dir.
 >
-> Eine eigene Website unter deinem Namen, auf der Kundinnen Wimpernverlängerung, Microblading und Gesichtsbehandlungen mit Preisen an einem Ort sehen, habe ich nicht gefunden. Gibt es eine? Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
+> Eine eigene Website unter deinem Namen habe ich nicht gefunden. Gibt es eine?
 >
 > Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin Schritt für Schritt direkt online, mit allen Preisen auf einen Blick. Das passt fast eins zu eins zu deinem Angebot. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -257,11 +259,11 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo Öznur,
 >
-> über 1.600 Follower auf Instagram, da hast du schon richtig Reichweite aufgebaut! Bei Google stehen für House of Beauty als Links aber nur Instagram und Treatwell.
+> über 1.600 Follower auf Instagram, da hast du schon richtig Reichweite aufgebaut! Bei Google stehen für House of Beauty aber nur Instagram und Treatwell.
 >
-> Eine eigene Website unter deinem Namen, auf der Kundinnen alle Behandlungen vom Permanent Make-up bis zum Body Contouring mit Preisen sehen und direkt buchen, habe ich nicht gefunden. Gibt es eine? Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
+> Eine eigene Website mit allen Behandlungen, Preisen und Buchung habe ich nicht gefunden. Gibt es eine?
 >
-> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin Schritt für Schritt direkt online, mit allen Preisen auf einen Blick. Bei dir ließe sich das genauso mit Permanent Make-up, Wimpern und Gesichtsbehandlungen umsetzen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin Schritt für Schritt direkt online, mit allen Preisen auf einen Blick. Bei dir ginge das genauso mit Permanent Make-up, Wimpern und Gesichtsbehandlungen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
 > Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
@@ -277,9 +279,9 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 
 > Hallo liebes Lashes-Style-Team,
 >
-> auf eurer Facebook-Seite steht lashes-style.de, die Seite lässt sich aber gar nicht aufrufen. Soweit ich sehe, ist die Adresse sogar noch frei. Und bei Google ist für euch keine Website hinterlegt, obwohl euch auf Instagram schon über 1.200 Leute folgen.
+> auf eurer Facebook-Seite steht lashes-style.de, die Seite lässt sich aber nicht aufrufen. Soweit ich sehe, ist die Adresse sogar noch frei.
 >
-> Mit einer eigenen Seite unter genau dieser Adresse würden Kundinnen eure Ergebnisse, Preise und freien Termine direkt finden. Viele buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht eure Arbeiten bisher gar nicht.
+> Bei Google ist für euch auch keine Website hinterlegt, obwohl euch auf Instagram schon über 1.200 Leute folgen. Viele buchen heute am liebsten abends vom Sofa aus.
 >
 > Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen ihre Wimpern-Behandlung Schritt für Schritt direkt online: Behandlung wählen, Tag, Uhrzeit, fertig. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
@@ -299,7 +301,7 @@ Aufhänger und Namen am 08.10.2026 noch einmal geprüft (Treatwell, Planity, Web
 >
 > in eurer Instagram-Bio steht thegentleplace.de, dort erscheint aber nur eine leere Platzhalterseite von STRATO. Und bei Google führt euer Eintrag nur zu Linktree.
 >
-> Die Adresse habt ihr also schon, es fehlt nur noch die Seite dazu. Bei über 2.300 Followern wäre das die perfekte Bühne für eure Behandlungen, Preise und freien Termine. Und wer nicht auf Instagram ist, sieht eure Arbeiten bisher gar nicht.
+> Die Adresse habt ihr also schon, es fehlt nur noch die Seite dazu. Bei über 2.300 Followern wäre das die perfekte Bühne für eure Behandlungen, Preise und freien Termine.
 >
 > Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen ihre Behandlungen Schritt für Schritt direkt online, mit allen Preisen auf einen Blick. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
