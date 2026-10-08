@@ -1,7 +1,7 @@
 # Instagram-DMs – 15 Beauty-Studios
 
 Aus `Leads-Website-Fokus.xlsx` (Stand 06.10.2026): Beauty-Studios mit Instagram, aber ohne eigene Website. Ohne alle Leads aus den beiden Anruflisten und ohne Paulina (@paulinabnails).
-Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
+Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst, mit direktem Link zum Beispiel-Studio „Nuance“ (Wimpern, Nägel, Skin).
 
 **Tipp:** Laut deinen eigenen Regeln max. 10 DMs pro Tag und Account, also auf zwei Tage verteilen (1–8 heute, 9–15 morgen). Nach 2–3 Tagen einmal nachfassen.
 
@@ -20,9 +20,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf euer Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Mögt ihr mal reinschauen? Dann schicke ich euch den Link.
+> Schaut gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für euch ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -40,9 +40,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -60,9 +60,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -80,9 +80,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -100,9 +100,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -120,9 +120,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -140,9 +140,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -160,9 +160,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -180,9 +180,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagelstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -200,9 +200,9 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Ich bin Valentin und baue genau solche Seiten für Nagel- und Fußpflegestudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -220,11 +220,11 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Eine eigene Website, über die Kundinnen deine Arbeiten sehen und selbst einen Termin wählen, habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
 >
-> Ich bin Valentin und baue genau solche Seiten für Nagel- und Wimpernstudios. In meinem Beispiel-Studio wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Für Wimpern lässt sich das genauso mit deinen Looks umsetzen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Nagel- und Wimpernstudios. In meinem Beispiel-Studio buchen Kundinnen Nägel und Wimpern direkt online und wählen bei den Nägeln sogar Farbe, Form und Finish an einer Hand aus. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -242,11 +242,11 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Oder habe ich sie übersehen? Viele Kundinnen buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
 >
-> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio, einem Nagelstudio, wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Für Wimpern lässt sich das genauso umsetzen, etwa mit Natural, Volume oder Mega-Volume zum Auswählen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin Schritt für Schritt direkt online, mit allen Preisen auf einen Blick. Bei dir ließe sich das genauso mit deinen Lash-Looks umsetzen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -262,11 +262,11 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Eine eigene Website habe ich nicht gefunden. Gibt es eine? Viele Kundinnen buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
 >
-> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio, einem Nagelstudio, wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Für Wimpern lässt sich das genauso mit deinen Looks umsetzen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin direkt online, Schritt für Schritt und mit allen Preisen auf einen Blick. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -282,11 +282,11 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Gibt es vielleicht schon eine, die ich übersehen habe? Viele Kundinnen buchen heute am liebsten abends vom Sofa aus, ganz ohne Anruf.
 >
-> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio, einem Nagelstudio, wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Für Wimpern lässt sich das genauso umsetzen, etwa mit deinen Lash-Looks zum Auswählen. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen ihre Wimpern-Behandlung Schritt für Schritt direkt online: Behandlung wählen, Tag, Uhrzeit, fertig. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
@@ -304,11 +304,11 @@ Vorlage: Valentins Paulina-Nachricht, jeweils an Studio und Situation angepasst.
 >
 > Eine eigene Website unter deinem Namen, auf der Kundinnen deine Arbeiten sehen und selbst einen Termin wählen, habe ich nicht gefunden. Gibt es eine? Viele buchen heute am liebsten abends vom Sofa aus. Und wer nicht auf Instagram ist, sieht deine Arbeiten bisher gar nicht.
 >
-> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio, einem Nagelstudio, wählen Kundinnen sogar Farbe, Form und Finish an einer Hand aus und buchen dann direkt. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
+> Ich bin Valentin und baue genau solche Seiten für Beauty-Studios. In meinem Beispiel-Studio buchen Kundinnen Wimpern, Nägel und Skin direkt online und wählen bei den Nägeln sogar Farbe, Form und Finish aus. Den Umfang stimmen wir ganz auf dein Budget ab, auch ein kleines reicht für einen guten Start.
 >
-> Magst du mal reinschauen? Dann schicke ich dir den Link.
+> Schau gern mal rein: https://valinstudio.de/konzepte/nuance/
 >
-> Falls nicht, reicht eine kurze Antwort, und ich melde mich nicht mehr.
+> Falls das gerade kein Thema für dich ist, reicht eine kurze Antwort, und ich melde mich nicht mehr.
 >
 > Liebe Grüße
 > Valentin
