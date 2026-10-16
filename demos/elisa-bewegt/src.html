@@ -123,6 +123,12 @@ section{position:relative}
 .words .w{color:#d6cbbd;transition:color .35s}
 .words .w.on{color:var(--ink)}
 .words .w.k.on{color:var(--coral);font-variation-settings:"wght" 800,"wdth" 108,"slnt" -10}
+.words b{font-weight:inherit}
+.words .nb{white-space:nowrap}
+.words .pill{display:inline-block;width:1.75em;height:.84em;border-radius:99px;overflow:hidden;vertical-align:-.04em;transform:scale(0) rotate(-10deg);transition:transform .7s cubic-bezier(.3,1.6,.5,1);box-shadow:0 10px 24px -12px rgba(17,17,17,.55);background:var(--cream-2)}
+.words .pill.on{transform:none}
+.words .pill img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.words .pill:hover img{transform:scale(1.15)}
 
 /* offers: expanding panels */
 .offers{padding:40px 0 130px}
@@ -284,6 +290,9 @@ section{position:relative}
 /* faq */
 .faq{padding:130px 0}
 .faq-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:60px;align-items:start}
+.faq-pic{position:relative;margin:34px 0 0;max-width:380px;aspect-ratio:4/5;border-radius:26px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(17,17,17,.5)}
+.faq-pic img{width:100%;height:100%;object-fit:cover}
+.faq-pic figcaption{position:absolute;left:14px;bottom:14px;background:var(--coral);color:var(--ink);font-family:var(--display);font-variation-settings:"wght" 800,"wdth" 112,"slnt" 0;font-size:15px;padding:9px 14px;border-radius:99px;transform:rotate(-3deg)}
 .qa{border-top:1.5px solid var(--line)}
 .qa:last-child{border-bottom:1.5px solid var(--line)}
 .qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;padding:24px 0;font-family:var(--display);font-variation-settings:"wght" 760,"wdth" 108,"slnt" 0;font-size:clamp(19px,1.6vw,23px);line-height:1.25}
@@ -417,6 +426,7 @@ section{position:relative}
   .form{padding:24px}
   .row2{grid-template-columns:1fr}
   .qa .ans p{padding-right:0}
+  .faq-pic{display:none}
   .concept{display:none}
   .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:8px;padding:8px;border-radius:22px;background:rgba(17,17,17,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 16px 40px -16px rgba(0,0,0,.7);transform:translateY(120%);transition:transform .5s var(--ease)}
   .mbar.show{transform:none}
@@ -491,7 +501,7 @@ section{position:relative}
 <section class="statement">
   <div class="wrap">
     <p class="kicker rv">Hi, ich bin Elisa</p>
-    <p class="words" id="words">Ob *Schreibtisch, *Sportplatz oder *Stadtpark: Ich bringe dich in *Bewegung. Mit Training, das in deinen Alltag passt und richtig *Spaß macht.</p>
+    <p class="words" id="words">Ob <span class="nb"><span class="pill"><img src="{{IMG:pill-desk}}" alt=""></span> <b>Schreibtisch</b></span>, <span class="nb"><span class="pill"><img src="{{IMG:pill-sport}}" alt=""></span> <b>Sportplatz</b></span> oder <span class="nb"><span class="pill"><img src="{{IMG:pill-park}}" alt=""></span> <b>Stadtpark</b></span>: Ich bringe dich in <b>Bewegung</b>. Mit Training, das in deinen Alltag passt und richtig <b>Spaß</b> macht.</p>
   </div>
 </section>
 
@@ -719,6 +729,7 @@ section{position:relative}
       <p class="kicker rv">FAQ</p>
       <h2 class="rv" style="--d:.08s">Gut zu <em>wissen</em>.</h2>
       <p class="rv" style="--d:.16s">Deine Frage ist nicht dabei? Schreib mir einfach, ich antworte dir persönlich.</p>
+      <figure class="faq-pic rv tilt" data-tilt="5" style="--d:.22s"><img src="{{IMG:community}}" alt="Drei Frauen geben sich nach dem Training ein High Five"><figcaption>Gemeinsam macht’s mehr Spaß 🙌</figcaption></figure>
     </div>
     <div class="qas rv" style="--d:.1s">
       <div class="qa open"><button type="button">Ich bin total unsportlich. Passt das trotzdem?<span class="pm"></span></button><div class="ans"><div><p>Auf jeden Fall! Wir starten genau da, wo du gerade stehst. Jede Übung lässt sich anpassen, und du wirst schneller Fortschritte merken, als du denkst.</p></div></div></div>
@@ -919,11 +930,19 @@ $$('[data-count]').forEach(el => cio.observe(el));
 
 /* statement: words light up while scrolling */
 const words = $('#words');
-words.innerHTML = words.textContent.trim().split(/\s+/).map(w => {
-  const key = w.startsWith('*'); w = w.replace('*', '');
-  const m = w.match(/^(.*?)([,.:]?)$/);
-  return `<span class="w${key ? ' k' : ''}">${m[1]}</span>${m[2] ? `<span class="w">${m[2]}</span>` : ''}`;
-}).join(' ');
+[...words.childNodes].forEach(n => {
+  if (n.nodeType === 3) {
+    const frag = document.createDocumentFragment();
+    n.textContent.split(/(\s+)/).forEach(tok => {
+      if (!tok) return;
+      if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(' ')); return; }
+      const sp = document.createElement('span'); sp.className = 'w'; sp.textContent = tok; frag.appendChild(sp);
+    });
+    n.replaceWith(frag);
+  } else if (n.tagName === 'B') n.classList.add('w', 'k');
+  else if (n.classList && n.classList.contains('pill')) n.classList.add('w');
+});
+$$('.nb', words).forEach(nb => [...nb.children].forEach(c => c.classList.add(...(c.tagName === 'B' ? ['w', 'k'] : ['w']))));
 const wspans = $$('.w', words);
 
 /* marquee bands follow scroll speed */

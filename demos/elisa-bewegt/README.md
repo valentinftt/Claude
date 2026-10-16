@@ -15,13 +15,13 @@ Konzept zum Zeigen im Videocall mit Elisa Gronau am 16.10.2026 um 15:30. One-Pag
 Ex-Skisprung-Profi (Zoccer-Post) · Athletik beim SV Lichtenberg 47 · Individualtraining bei Zoccer · Firmenfitness · Outdoor Bootcamp · Google 5,0 bei 13 Bewertungen · Instagram 41 Beiträge / 1.017 Follower · Telefon aus ihrem Post (+49 1512 8166271) · Bänschstraße, 10247 Berlin · Calisthenics-Park Stralau · Positionierung „Functional Fitness für Menschen, die viel sitzen“ (LinkedIn) · Klimmzug-Foto und Instagram-Kacheln aus ihren Posts.
 
 ## Platzhalter (mit ihr klären)
-- **Fotos**: Für Angebote, Story und Finder sind Unsplash-Fotos als Platzhalter eingesetzt. Diese sollen durch ihre eigenen Bilder ersetzt werden. Das Hero-Foto ist ein Ausschnitt aus ihrem Post und hat geringe Auflösung, deshalb das Original anfragen.
+- **Fotos**: Für Angebote, Story, Finder, die Bild-Pillen im großen Satz und das FAQ-Foto sind Unsplash-Fotos als Platzhalter eingesetzt. Diese sollen durch ihre eigenen Bilder ersetzt werden. Das Hero-Foto ist ein Ausschnitt aus ihrem Post und hat geringe Auflösung, deshalb das Original anfragen.
 - **Kundenstimmen**: Beispieltexte, auf der Seite als solche markiert. Später durch echte Google-Bewertungen ersetzen.
 - **Über-mich-Text, Angebotsdetails, Finder-Empfehlungen**: Entwurf aus öffentlichen Infos.
 - Keine Preise. Ob das Kennenlerntraining kostenlos ist, ist offen.
 - Formular verschickt in der Demo nichts. Impressum und Datenschutz sind noch leer.
 
 ## Bildquellen (Unsplash, images.unsplash.com/photo-…)
-personal `1639653818393-9f5acb08d212` · bootcamp `1645238426817-8c3e7d1396cf` · firma `1713947505684-25b9bf8d544f` · athletik `1641280173256-0ac1b2f4cd78` · skisprung `1642367943176-d1b7d3ce4100` · kids `1526232761682-d26e03ac148e`
+personal `1639653818393-9f5acb08d212` · bootcamp `1645238426817-8c3e7d1396cf` · firma `1713947505684-25b9bf8d544f` · athletik `1641280173256-0ac1b2f4cd78` · skisprung `1642367943176-d1b7d3ce4100` · kids `1526232761682-d26e03ac148e` · pill-desk `1713946598456-a25ab3645730` · pill-sport `1551958219-acbc608c6377` · pill-park `1758274526138-4da003a5a936` · community `1770270402445-b72169c6e48a`
 
 Schriften: Roboto Flex (variabel, alle Achsen) und Manrope, beide SIL Open Font License, via Fontsource.
