@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Angebot Website · Elisa bewegt · VALÍN Studio</title>
+<style>
+@font-face{font-family:'Unbounded';src:url('{{NM}}/@fontsource/unbounded/files/unbounded-latin-800-normal.woff2') format('woff2');font-weight:800}
+@font-face{font-family:'Unbounded';src:url('{{NM}}/@fontsource/unbounded/files/unbounded-latin-600-normal.woff2') format('woff2');font-weight:600}
+@font-face{font-family:'Michroma';src:url('{{NM}}/@fontsource/michroma/files/michroma-latin-400-normal.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Inter';src:url('{{NM}}/@fontsource/inter/files/inter-latin-400-normal.woff2') format('woff2');font-weight:400}
+@font-face{font-family:'Inter';src:url('{{NM}}/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2');font-weight:500}
+@font-face{font-family:'Inter';src:url('{{NM}}/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2');font-weight:600}
+@font-face{font-family:'Inter';src:url('{{NM}}/@fontsource/inter/files/inter-latin-700-normal.woff2') format('woff2');font-weight:700}
+@page{size:A4;margin:0}
+:root{--ink:#0b0b0b;--lime:#c7f431;--grey:#57554f;--soft:#8a8780;--panel:#f4f4f0;--line:#e4e2dc}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:210mm;height:297mm;background:#fff}
+body{font-family:'Inter',sans-serif;color:var(--ink);font-size:8.7pt;line-height:1.42;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.k{font-family:'Michroma',sans-serif;font-size:6.4pt;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+h2{font-family:'Unbounded',sans-serif;font-weight:800;font-size:9.8pt;letter-spacing:-.01em;margin-bottom:2.2mm;display:flex;align-items:center;gap:2.4mm}
+h2::before{content:"";width:2.2mm;height:2.2mm;background:var(--lime);border-radius:50%;flex:none}
+
+/* header */
+.head{flex:none;background:var(--ink);color:#fff;padding:7.5mm 14mm 6mm;position:relative;overflow:hidden}
+.head::after{content:"";position:absolute;right:-18mm;top:-22mm;width:70mm;height:70mm;border-radius:50%;background:radial-gradient(circle,rgba(199,244,49,.22),rgba(199,244,49,0) 65%)}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.logo svg{width:52mm;height:auto;display:block}
+.meta{text-align:right}
+.meta .k{color:var(--lime);font-size:7pt}
+.meta p{font-size:8pt;color:rgba(255,255,255,.72);margin-top:1.2mm;line-height:1.5}
+.title{margin-top:5mm;font-family:'Unbounded',sans-serif;font-weight:800;font-size:21pt;line-height:1.05;letter-spacing:-.02em}
+.title span{color:var(--lime)}
+.sub{margin-top:2.2mm;font-size:8.6pt;color:rgba(255,255,255,.75)}
+.hparties{display:flex;gap:9mm;margin-top:4mm;padding-top:3.2mm;border-top:1px solid rgba(255,255,255,.14);position:relative;z-index:1}
+.hparties .k{color:rgba(255,255,255,.5)}
+.hparties p{font-size:8.4pt;margin-top:.6mm;color:#fff;line-height:1.35}
+
+.body{padding:5mm 14mm 0;flex:1;min-height:0;display:flex;flex-direction:column;gap:3.7mm}
+.parties{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6mm;padding-bottom:4.6mm;border-bottom:1px solid var(--line)}
+.parties p{font-size:8.6pt;margin-top:.8mm;line-height:1.38}
+.intro{font-size:9.2pt;line-height:1.48;color:#22211e}
+.intro b{font-weight:700}
+
+.rowA{display:grid;grid-template-columns:1.55fr 1fr;gap:6mm;align-items:stretch}
+ul.checks{list-style:none;display:grid;gap:.95mm}
+ul.checks li{position:relative;padding-left:4.8mm;color:#2b2a27;font-size:8.3pt}
+ul.checks li::before{content:"";position:absolute;left:0;top:.95mm;width:3mm;height:3mm;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 6.2l2 2 4-4.4' fill='none' stroke='%230b0b0b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.price{background:var(--ink);color:#fff;border-radius:5mm;padding:5mm 5.4mm 4.6mm;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.price::after{content:"";position:absolute;right:-14mm;bottom:-16mm;width:46mm;height:46mm;border-radius:50%;background:radial-gradient(circle,rgba(199,244,49,.2),rgba(199,244,49,0) 65%)}
+.price .k{color:var(--lime)}
+.amount{font-family:'Unbounded',sans-serif;font-weight:800;font-size:31pt;line-height:1;color:var(--lime);margin-top:2.5mm;letter-spacing:-.02em}
+.amount small{font-size:13pt;margin-left:1mm}
+.once{font-size:8.2pt;color:rgba(255,255,255,.8);margin-top:1.4mm;line-height:1.38}
+.price hr{border:0;border-top:1px solid rgba(255,255,255,.16);margin:3.2mm 0 2.6mm}
+.price dl{display:grid;grid-template-columns:auto 1fr;gap:1.6mm 3mm;font-size:8.2pt;position:relative;z-index:1}
+.price dt{color:rgba(255,255,255,.55)}
+.price dd{color:#fff}
+.tax{margin-top:auto;padding-top:2.6mm;font-size:7.4pt;color:rgba(255,255,255,.62);position:relative;z-index:1}
+
+.incl{display:grid;grid-template-columns:repeat(4,1fr);gap:3.2mm}
+.tile{background:var(--panel);border-radius:3.4mm;padding:3mm 3.2mm 2.8mm;border-top:1mm solid var(--lime)}
+.tile svg{width:4.8mm;height:4.8mm;display:block;margin-bottom:1.5mm}
+.tile b{display:block;font-family:'Unbounded',sans-serif;font-weight:600;font-size:7.8pt;line-height:1.2;margin-bottom:1.2mm}
+.tile p{font-size:7.3pt;line-height:1.34;color:var(--grey)}
+
+.rowC{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.box{border:1px solid var(--line);border-radius:4mm;padding:3.6mm 4.4mm}
+.box p{color:#2b2a27;font-size:8.1pt;line-height:1.4}
+.box .contact{margin-top:2.2mm;display:flex;flex-wrap:nowrap;gap:1.4mm}
+.chip{display:inline-flex;align-items:center;gap:1.3mm;background:var(--ink);color:#fff;border-radius:99px;padding:1mm 2.4mm;font-size:7.2pt;font-weight:600;white-space:nowrap}
+.chip i{width:1.6mm;height:1.6mm;border-radius:50%;background:var(--lime);display:inline-block}
+.box ul.checks{gap:.9mm;margin-top:1.8mm}
+.box ul.checks li{font-size:8pt}
+
+.steps{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:2.4mm}
+.steps::before{content:"";position:absolute;left:4%;right:4%;top:3.3mm;height:.5mm;background:repeating-linear-gradient(90deg,var(--ink) 0 1.6mm,transparent 1.6mm 3mm);opacity:.25}
+.step{position:relative;text-align:center}
+.step .n{width:6.6mm;height:6.6mm;border-radius:50%;background:var(--ink);color:var(--lime);font-family:'Unbounded',sans-serif;font-weight:800;font-size:7.6pt;display:grid;place-items:center;margin:0 auto 1.8mm;position:relative}
+.step.go .n{background:var(--lime);color:var(--ink)}
+.step b{display:block;font-size:7.9pt;font-weight:700;line-height:1.2}
+.step p{font-size:7.1pt;color:var(--grey);line-height:1.32;margin-top:.6mm}
+.time{margin-top:2.2mm;font-size:7.6pt;color:var(--grey);text-align:center}
+
+.close{display:grid;grid-template-columns:1.55fr 1fr;gap:6mm;align-items:end;margin-top:auto;padding-bottom:5.6mm}
+.close .small{font-size:7.6pt;color:var(--grey);line-height:1.45}
+.close .small b{color:var(--ink)}
+.next{background:var(--lime);border-radius:4mm;padding:4mm 4.8mm}
+.next b{font-family:'Unbounded',sans-serif;font-weight:800;font-size:8.6pt;display:block;margin-bottom:1mm}
+.next p{font-size:8.2pt;line-height:1.4}
+.sign{margin-top:2.6mm;font-size:8.4pt}
+.sign strong{font-family:'Unbounded',sans-serif;font-weight:800;font-size:10pt;display:block;margin-top:.6mm}
+.foot{flex:none;background:var(--ink);color:rgba(255,255,255,.75);font-size:7.4pt;padding:3.4mm 14mm;display:flex;justify-content:space-between;align-items:center}
+.foot b{color:#fff;font-weight:600}
+.foot i{color:var(--lime);font-style:normal}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="head">
+    <div class="top">
+      <div class="logo">{{LOGO}}</div>
+      <div class="meta"><div class="k">Angebot</div><p>Nr. 2026-1016-01<br>Berlin, 16.10.2026</p></div>
+    </div>
+    <h1 class="title">Website für <span>Elisa bewegt</span></h1>
+    <div class="hparties">
+      <div><div class="k">Für</div><p>Elisa Gronau, Elisa bewegt, Berlin</p></div>
+      <div><div class="k">Von</div><p>Valentin, VALÍN Studio</p></div>
+      <div><div class="k">Gültig bis</div><p>30.10.2026</p></div>
+    </div>
+  </header>
+
+  <main class="body">
+    <p class="intro">Hallo Elisa, für <b>einmalig 800 €</b> baue ich dir deine Website nach dem Konzept, das ich dir gezeigt habe. Pflege, Änderungsrunden, Hosting und Google sind inklusive, und die Website gehört danach <b>dir</b>.</p>
+
+    <section class="rowA">
+      <div>
+        <h2>Was du bekommst</h2>
+        <ul class="checks">
+          <li>One-Pager im Konzept-Design, optimiert für Handy, Tablet und Laptop</li>
+          <li>Startbereich mit deinem animierten Namen und deinem Foto</li>
+          <li>Angebote: Personal Training, Bootcamp, Firmenfitness, Athletik</li>
+          <li>Bewegungs-Finder: drei Fragen, dann die passende Empfehlung</li>
+          <li>Über mich: deine Geschichte vom Skispringen zur Trainerin</li>
+          <li>Instagram-Bereich, Kundenstimmen und häufige Fragen</li>
+          <li>Anfrageformular in dein Postfach, WhatsApp- und Anruf-Button</li>
+          <li>Deine eigenen Fotos und finale Texte, abgestimmt mit dir</li>
+          <li>Google-Grundlagen: Titel, Beschreibungen, schnelle Ladezeit</li>
+          <li>Impressum und Datenschutz eingebunden (Rechtstexte von dir)</li>
+        </ul>
+      </div>
+      <aside class="price">
+        <div class="k">Investition</div>
+        <div class="amount">800<small>€</small></div>
+        <p class="once">Festpreis, einmalig. Alle Leistungen auf dieser Seite sind enthalten.</p>
+        <hr>
+        <dl>
+          <dt>Zahlung</dt><dd>400 € bei Vertragsabschluss<br>400 € beim Livegang</dd>
+          <dt>Gültig</dt><dd>bis 30.10.2026</dd>
+        </dl>
+        <p class="tax">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Im Preis inklusive</h2>
+      <div class="incl">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><b>1 Monat Pflege</b><p>Anpassungen, Updates und Fragen im ersten Monat nach dem Livegang.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5L3 9M4 13a8 8 0 0 0 14.6 4.5L21 15M3 4v5h5M21 20v-5h-5"/></svg><b>2 Änderungsrunden</b><p>Zweimal Wünsche zu Design und Texten, komplett umgesetzt.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg><b>Hosting-Einrichtung</b><p>Hosting, Domain (z. B. elisabewegt.de) und SSL-Verschlüsselung.</p></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0b0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><b>Google-Einrichtung</b><p>Verknüpft mit deinem Unternehmensprofil, angemeldet in der Search Console.</p></div>
+      </div>
+    </section>
+
+    <section class="rowC">
+      <div class="box">
+        <h2>Dein fester Ansprechpartner</h2>
+        <p>Vom ersten Gespräch bis lange nach dem Livegang hast du mit mir einen festen Ansprechpartner. Kein Callcenter, kein Ticketsystem: Du erreichst mich direkt.</p>
+        <div class="contact"><span class="chip"><i></i>0179 730 27 14 · Anruf &amp; WhatsApp</span><span class="chip"><i></i>valinstudio.de</span></div>
+      </div>
+      <div class="box">
+        <h2>Deine Website gehört dir</h2>
+        <p>Nach voller Bezahlung gehört sie dir, vertraglich gesichert:</p>
+        <ul class="checks">
+          <li>Exklusive Nutzungsrechte an Design, Texten und Code</li>
+          <li>Domain und Hosting auf deinen Namen, alle Zugänge</li>
+          <li>Keine Bindung: alle Dateien auf Wunsch jederzeit</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>So läuft es ab</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><b>Vertrag &amp; Start</b><p>Vertrag mit Eigentums&shy;regelung, erste Hälfte</p></div>
+        <div class="step"><div class="n">2</div><b>Deine Inhalte</b><p>Fotos, Preise, Zeiten, Rechtstexte</p></div>
+        <div class="step"><div class="n">3</div><b>Umsetzung</b><p>auf Basis des Konzepts</p></div>
+        <div class="step"><div class="n">4</div><b>2 Änderungs&shy;runden</b><p>du gibst Feedback, ich setze um</p></div>
+        <div class="step go"><div class="n">5</div><b>Livegang</b><p>Hosting, Domain, Google</p></div>
+        <div class="step"><div class="n">6</div><b>1 Monat Pflege</b><p>ich bleibe dran</p></div>
+      </div>
+      <p class="time">In der Regel zwei bis drei Wochen vom Vertrag bis zum Livegang.</p>
+    </section>
+
+    <section class="close">
+      <div>
+        <p class="small"><b>Nicht enthalten:</b> laufende Kosten für Domain und Hosting, direkt an den Anbieter (meist wenige Euro im Monat). Weitere Änderungen und Pflege nach dem ersten Monat nach Absprache.</p>
+        <p class="sign">Liebe Grüße<strong>Valentin</strong></p>
+      </div>
+      <div class="next"><b>Nächster Schritt</b><p>Passt dir das Angebot? Schreib mir einfach ein kurzes „Passt“ per WhatsApp, dann schicke ich dir den Vertrag.</p></div>
+    </section>
+  </main>
+
+  <footer class="foot"><span><b>VALÍN Studio</b> <i>·</i> Websites &amp; Reels für kleine Betriebe</span><span>valinstudio.de <i>·</i> @valin.studio <i>·</i> 0179 730 27 14</span></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+const [,, src, out] = process.argv;
+const b = await chromium.launch();
+const p = await b.newPage();
+await p.goto('file://' + src, { waitUntil: 'networkidle' });
+await p.evaluate(() => document.fonts.ready);
+const over = await p.evaluate(() => { const pg = document.querySelector('.page'); return [pg.scrollHeight, pg.clientHeight]; });
+console.log('page content height vs page height (px):', over);
+await p.pdf({ path: out, format: 'A4', printBackground: true, preferCSSPageSize: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
+await b.close();
